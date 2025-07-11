@@ -42,7 +42,7 @@ body {
   position: relative;
 }
 
-.navbar-links li a {
+.navbar-links li :is(a, p) {
   text-decoration: none;
   color: white;
   font-size: 1rem;
@@ -51,16 +51,7 @@ body {
   opacity: 0.8;
 }
 
-.navbar-links li p {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  position: relative;
-  transition: color 0.3s ease, opacity 0.3s ease;
-  opacity: 0.8;
-}
-
-.navbar.scrolled .navbar-links li a {
+.navbar.scrolled .navbar-links li :is(a, p) {
   color: black;
 }
 
