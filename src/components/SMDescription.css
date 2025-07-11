@@ -10,6 +10,11 @@
   padding: 0; /* Optional: Remove padding for fullscreen look */
 }
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 0px;
+}
 
 .sm-bg-video {
   position: absolute;
@@ -25,7 +30,7 @@
 .sm-wrapper {
   max-width: 1100px;
   text-align: center;
-  color: #000000;
+  color: white;
   position: relative;
   z-index: 2;
 }
@@ -45,11 +50,6 @@
 .sm-subtitle:hover {
   color: #38bdf8;
   transform: translateY(-2px);
-}
-
-.sm-description:hover {
-  color: #050505;
-  letter-spacing: 0.5px;
 }
 
 /* Typography */
@@ -84,5 +84,9 @@
 
   .sm-description {
     font-size: 1rem;
+  }
+  .sm-bg-video {
+    object-fit: cover;
+    object-position: right;
   }
 }

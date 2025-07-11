@@ -13,7 +13,7 @@ import SMServices from '../components/SMServices';
 
 const SmartHome = () => {
   return (
-    <div id='SmartHome'>
+    <div id='SmartHome' className='overflow-hidden'>
       <WhatsappChat />
       <Navbar/>
       
