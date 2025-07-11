@@ -33,7 +33,7 @@ const Welcome = () => {
       slogan: "With next-gen electrical technology",
       buttonText: "EXPLORE",
       buttonLink: "/Our-Serives",
-    }
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,7 +60,7 @@ const Welcome = () => {
                 className="slide-media"
               />
             ) : (
-              <video autoPlay loop muted className="slide-media">
+              <video autoplay muted playsinline loop className="slide-media">
                 <source src={slide.src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
