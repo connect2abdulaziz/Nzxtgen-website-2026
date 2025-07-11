@@ -1,0 +1,123 @@
+/* SMServices.css */
+
+.smservices-section {
+    padding: 100px 20px;
+    background-color: #f1f5f9;
+  }
+  
+  .smservices-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  /* CARD */
+  .smservices-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  /* HOVER ANIMATION */
+  .smservices-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* IMAGE */
+  .smservices-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .smservices-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .smservices-card:hover .smservices-image img {
+    transform: scale(1.05);
+  }
+  
+  /* TEXT */
+  .smservices-text {
+    padding: 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .smservices-text h3,
+  .smservices-text h4,
+  .smservices-text p {
+    transition: all 0.3s ease;
+  }
+  
+  .smservices-text h3 {
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  
+  .smservices-text h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 12px;
+  }
+  
+  .smservices-text p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  
+  /* FULL HOVER EFFECT */
+  .smservices-card:hover .smservices-text h3 {
+    color: #1d4ed8;
+    transform: translateY(-2px);
+  }
+  
+  .smservices-card:hover .smservices-text h4 {
+    color: #0ea5e9;
+    transform: translateY(-2px);
+  }
+  
+  .smservices-card:hover .smservices-text p {
+    color: #1e293b;
+    letter-spacing: 0.3px;
+  }
+  
+  /* RESPONSIVE TABLET */
+  @media (max-width: 1024px) {
+    .smservices-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* RESPONSIVE MOBILE */
+  @media (max-width: 768px) {
+    .smservices-wrapper {
+      grid-template-columns: 1fr;
+    }
+  
+    .smservices-text {
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,88 @@
+.sm-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0; /* Optional: Remove padding for fullscreen look */
+}
+
+
+.sm-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sm-wrapper {
+  max-width: 1100px;
+  text-align: center;
+  color: #000000;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover animations */
+.sm-title,
+.sm-subtitle,
+.sm-description {
+  transition: all 0.3s ease;
+}
+
+.sm-title:hover {
+  color: #00e0ff;
+  transform: scale(1.03);
+}
+
+.sm-subtitle:hover {
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.sm-description:hover {
+  color: #050505;
+  letter-spacing: 0.5px;
+}
+
+/* Typography */
+.sm-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.sm-subtitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sm-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sm-title {
+    font-size: 2.2rem;
+  }
+
+  .sm-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .sm-description {
+    font-size: 1rem;
+  }
+}

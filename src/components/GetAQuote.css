@@ -1,0 +1,201 @@
+/* General Section */
+.quote-section1 {
+  padding: 10vh 2rem;
+  width: 100%;
+  background-color: rgb(13, 135, 94);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.quote-container1 {
+  padding: 40px;
+  background-color: #0b1f39;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1.5rem;
+  z-index: -1;
+}
+
+/* Header */
+.quote-header1 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Form */
+.quote-form1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+}
+
+/* Form Rows */
+.form-row, .form-row1 {
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row1 {
+  flex-direction: row;
+  gap: 20px;
+}
+
+.name {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels and Inputs */
+.name label,
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+input,
+textarea,
+select {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  background-color: #ffffff2a;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 2px solid #00c6ff;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* --- Corrected Vertical Checkbox Layout --- */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 40px 30px;
+  margin-top: 15px;
+}
+
+.checkbox-group label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  gap: 10px;
+  word-break: break-word;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* Notes */
+.note-text {
+  font-size: 0.9rem;
+  color: #eee;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* File Upload Button */
+.file-upload-btn {
+  background: #00c6ff;
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.file-upload-btn:hover {
+  background: #0072ff;
+}
+
+/* Submit Button */
+.request-quote-btn {
+  background: #00c6ff;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.request-quote-btn:hover {
+  background: #0072ff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .checkbox-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row1 {
+    flex-direction: column;
+  }
+
+  .name {
+    width: 100%;
+  }
+
+  .quote-header1 {
+    font-size: 28px;
+  }
+
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+}

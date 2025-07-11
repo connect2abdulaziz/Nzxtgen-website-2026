@@ -1,0 +1,68 @@
+/* Section Background Same as Privacy Page */
+.terms-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 20px;
+  background-image: url("../assets/terms/terms.WEBP");
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Container */
+.terms-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Header */
+.terms-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.terms-date {
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* Content */
+.terms-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.terms-block h2 {
+  font-size: 1.8rem;
+  color: #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.terms-block p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #f1f5f9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terms-title {
+    font-size: 2.2rem;
+  }
+
+  .terms-block h2 {
+    font-size: 1.5rem;
+  }
+
+  .terms-block p {
+    font-size: 1rem;
+  }
+}

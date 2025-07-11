@@ -1,0 +1,133 @@
+/* Welcome Section */
+.welcome-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Fallback background color */
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.1); /* Slight zoom effect */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth fade and scale transition */
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1); /* Reset zoom */
+  z-index: 1;
+}
+
+/* Media (Image or Video) */
+.slide-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Black Overlay */
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* 40% black overlay */
+  z-index: 0;
+}
+
+/* Center the content */
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.welcome-header {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease; /* Optional fade-in animation */
+}
+
+.welcome-slogan {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  animation: fadeIn 2s ease 0.5s; /* Slight delay for slogan */
+}
+
+.welcome-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: white;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: fadeIn 2s ease 1s; /* Slight delay for button */
+}
+
+.welcome-button:hover {
+  background-color: white;
+  color: black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Media Queries for Full Video Display ===== */
+@media (max-width: 1024px) {
+  .slide-media {
+    object-fit: contain;
+    background-color: #000;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-media {
+    object-fit: contain;
+    background-color: #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-media {
+    object-fit: contain;
+    background-color: #000;
+  }
+}
