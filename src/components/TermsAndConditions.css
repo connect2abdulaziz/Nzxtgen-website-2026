@@ -9,6 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* Container */

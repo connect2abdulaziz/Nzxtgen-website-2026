@@ -131,7 +131,7 @@ body {
   margin: 1rem 0;
 }
 
-.navbar-links.active li a {
+.navbar-links.active li :is(a, p) {
   color: black;
   opacity: 1;
 }
