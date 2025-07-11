@@ -127,6 +127,8 @@
 
 @media (max-width: 480px) {
   .slide-media {
+    height: 692px;
+    margin: 120px 0 120px 0;
     object-fit: cover;
     background-color: #000;
   }
