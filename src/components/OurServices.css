@@ -6,7 +6,7 @@
 
 /* Background */
 .services-bg {
-  background: url("../assets/servicebg.jpg") no-repeat center center/cover;   
+  background: url("../assets/servicebg.jpg") no-repeat center center/cover;
   position: relative;
   padding: 6rem 2rem;
   background-attachment: fixed;
@@ -32,19 +32,17 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   text-align: center;
-  
 }
 
 /*serivce title overlay*/
-.services-title-overlay{
+.services-title-overlay {
   width: 100%;
   height: fit-content; /* or desired height */
   display: flex;
   justify-content: center; /* horizontal centering */
-  align-items: center;     /* vertical centering */
+  align-items: center; /* vertical centering */
   text-align: center;
   background-color: rgb(255, 255, 255);
-  
 }
 .services-title h1 {
   font-size: 2.8rem;
@@ -65,7 +63,7 @@
 
 /* Service Card */
 .service-card {
-  background: rgba(255, 255, 255, 0.6);
+  background-color: white;
   padding: 2rem 1.5rem;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -136,5 +134,3 @@
     min-width: 280px;
   }
 }
-
-

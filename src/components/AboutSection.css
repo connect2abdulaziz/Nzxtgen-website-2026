@@ -33,11 +33,10 @@
 }
 
 .about-video-container video {
-  width: 100%;
-  height: auto;
+  width: 84%;
+  height: 559px;
   object-fit: cover;
-  display: block;
-  aspect-ratio: 16 / 9;
+  scale: 1.4;
 }
 
 /* Text Content */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 import siteLogo from "../assets/site-logo.png";
 
@@ -31,11 +31,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleDropdown = (e) => {
-    e.preventDefault();
-    setIsDropdownOpen((prev) => !prev);
-  };
-
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
@@ -51,27 +46,35 @@ const Navbar = () => {
             <a href="/About-us">ABOUT</a>
           </li>
           <li className="dropdown">
-            <a href="/Our-Serives" >
-              SERVICES
-            </a>
+            <p>SERVICES</p>
             <ul className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
-              <li><a href="/areas-we-service">Areas We Service</a></li>
-              <li><a href="/free-quote">Free Online Quote</a></li>
-              <li><a href="/Our-Serives">Our Signature Services</a></li>
-              <li><a href="/switch-board-upgrade">Switchboard Upgrade</a></li>
+              <li>
+                <a href="/areas-we-service">Areas We Service</a>
+              </li>
+              <li>
+                <a href="/free-quote">Free Online Quote</a>
+              </li>
+              <li>
+                <a href="/Our-Serives">Our Signature Services</a>
+              </li>
+              <li>
+                <a href="/switch-board-upgrade">Switchboard Upgrade</a>
+              </li>
             </ul>
           </li>
           <li>
             <a href="/smart-home">SMART HOME</a>
           </li>
-          
+
           <li>
             <a href="/Contact-Us">CONTACT</a>
           </li>
         </ul>
 
         <button className="book-btn">
-          <a className="book-btn-link" href="/free-quote">ONLINE QUOTE</a>
+          <a className="book-btn-link" href="/free-quote">
+            ONLINE QUOTE
+          </a>
         </button>
 
         <div className="hamburger-menu" onClick={toggleMenu}>

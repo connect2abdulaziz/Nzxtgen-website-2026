@@ -51,6 +51,15 @@ body {
   opacity: 0.8;
 }
 
+.navbar-links li p {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
 .navbar.scrolled .navbar-links li a {
   color: black;
 }
@@ -137,8 +146,8 @@ body {
 }
 
 /* Button */
-.book-btn{
-  background-color:  #007bff;
+.book-btn {
+  background-color: #007bff;
   border: none;
 }
 
