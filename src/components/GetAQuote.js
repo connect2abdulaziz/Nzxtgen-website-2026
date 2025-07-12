@@ -28,7 +28,7 @@ const GetAQuote = () => {
           backgroundImage: `url(${OnlineQuoteFormBG})`,
         }}
       >
-        <div className="overlay"></div>
+        <div className="overlay border-radius"></div>
 
         <form className="quote-form1">
           <h1 className="quote-header1">Get A Free Online Quote</h1>

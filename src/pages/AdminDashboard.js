@@ -1,54 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 import "./AdminDashboard.css";
-import img1 from "../assets/about/electrical.jpg";
 function AdminDashboard() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-    {
-      id: 1,
-      name: "House",
-      price: 188457,
-      image: img1,
-    },
-  ]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "products"));
+        const items = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(items);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  console.log("Products:", products);
 
   const handleDelete = (id) => {
-    setItems(items.filter((item) => item.id !== id));
+    alert(`Delete item with ID: ${id}`);
+    // Replace with delete logic
   };
 
   const handleEdit = (id) => {
@@ -71,14 +49,15 @@ function AdminDashboard() {
       </button>
 
       <div className="card-grid">
-        {items.length === 0 ? (
+        {products.length === 0 ? (
           <p className="no-items">No items found.</p>
         ) : (
-          items.map((item) => (
+          products.map((item) => (
             <div className="item-card" key={item.id}>
-              <img src={item.image} alt={item.name} className="product-image" />
+              <img src={item.img} alt={item.name} className="product-image" />
               <h3>{item.name}</h3>
               <p className="price">${item.price.toFixed(2)}</p>
+              <p className="price">{item.des}</p>
               <div className="card-buttons">
                 <button
                   onClick={() => handleEdit(item.id)}

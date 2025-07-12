@@ -6,7 +6,6 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   display: flex;
@@ -24,6 +23,10 @@
   position: relative;
   background-size: cover;
   background-position: center;
+}
+
+.border-radius {
+  border-radius: 1.5rem !important;
 }
 
 /* Overlay */
@@ -57,7 +60,8 @@
 }
 
 /* Form Rows */
-.form-row, .form-row1 {
+.form-row,
+.form-row1 {
   width: 100%;
   margin-bottom: 25px;
   display: flex;
@@ -197,5 +201,18 @@ textarea {
 
   .checkbox-group {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-section1 {
+    background: #999084;
+    background-image: none !important;
+  }
+
+  .quote-container1 {
+    background-image: url("../assets/quote-form-bg.WEBP") !important;
+    background-size: cover;
+    background-position: center;
   }
 }
