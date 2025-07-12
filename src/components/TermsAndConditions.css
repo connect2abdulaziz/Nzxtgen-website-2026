@@ -3,14 +3,13 @@
   width: 100%;
   min-height: 100vh;
   padding: 120px 20px;
-  background-image: url("../assets/terms/terms.WEBP");
+  background-image: url("../assets/terms/terms.jpg");
   background-size: cover;
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   background-position: center;
-  background-attachment: fixed;
 }
 
 /* Container */
