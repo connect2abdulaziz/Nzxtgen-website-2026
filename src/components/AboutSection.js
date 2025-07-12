@@ -28,7 +28,9 @@ const AboutSection = () => {
             delivering reliable, efficient electrical services and ensuring the
             safety and functionality of your systems.
           </p>
-          <button className="learn-more-button">Learn More</button>
+          <a href="/About-us" className="learn-more-button">
+            Learn More
+          </a>
         </div>
       </div>
     </section>
