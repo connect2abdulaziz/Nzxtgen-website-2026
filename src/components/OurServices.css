@@ -134,3 +134,13 @@
     min-width: 280px;
   }
 }
+
+@media (max-width: 480px) {
+  .services-bg {
+    background: url("../assets/service-mobile-bg.WEBP") no-repeat center center/contain;
+    position: relative;
+    padding: 6rem 2rem;
+    background-attachment: fixed;
+    width: 100%;
+  }
+}
