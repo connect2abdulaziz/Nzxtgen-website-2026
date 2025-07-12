@@ -1,28 +1,49 @@
 import React, { useState } from "react";
 import "./AdminDashboard.css";
-
+import img1 from "../assets/about/electrical.jpg";
 function AdminDashboard() {
   const [items, setItems] = useState([
     {
       id: 1,
-      name: "Smart Light",
-      price: 49.99,
-      image:
-        "https://www.google.com/imgres?q=Smart%20Light&imgurl=https%3A%2F%2Fomnicloudsolutions.com%2Fwp-content%2Fuploads%2F2021%2F12%2FSmart-RGB-Bulb-WIFI-Application-and-Voice-Control.png&imgrefurl=https%3A%2F%2Fomnicloudsolutions.com%2Fproduct%2Fwifi-smart-led-bulb%2F%3Fsrsltid%3DAfmBOooYUsjo8g6sNsTJSFITUU-H118JY7ubSJvW8O4T9of4VUOaNiv0&docid=nWi3-l2s7D6aAM&tbnid=tUYCxcK6QwQ3PM&vet=12ahUKEwjg_NXciLaOAxVE1AIHHUliAzMQM3oECG0QAA..i&w=500&h=500&hcb=2&ved=2ahUKEwjg_NXciLaOAxVE1AIHHUliAzMQM3oECG0QAA",
+      name: "House",
+      price: 188457,
+      image: img1,
     },
     {
-      id: 2,
-      name: "Smart Lock",
-      price: 89.99,
-      image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-smart-locks&psig=AOvVaw1rfO6unBOyP9Qmy03HO2i2&ust=1752366659720000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNiQzNSIto4DFQAAAAAdAAAAABAE",
+      id: 1,
+      name: "House",
+      price: 188457,
+      image: img1,
     },
     {
-      id: 3,
-      name: "Security Camera",
-      price: 129.99,
-      image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dcamera&psig=AOvVaw1tJ07WrZ7GnJNuHsJj3s1Y&ust=1752366582717000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPD5hsOIto4DFQAAAAAdAAAAABAE",
+      id: 1,
+      name: "House",
+      price: 188457,
+      image: img1,
+    },
+    {
+      id: 1,
+      name: "House",
+      price: 188457,
+      image: img1,
+    },
+    {
+      id: 1,
+      name: "House",
+      price: 188457,
+      image: img1,
+    },
+    {
+      id: 1,
+      name: "House",
+      price: 188457,
+      image: img1,
+    },
+    {
+      id: 1,
+      name: "House",
+      price: 188457,
+      image: img1,
     },
   ]);
 

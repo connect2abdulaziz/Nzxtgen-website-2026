@@ -55,6 +55,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .terms-section {
+    background: linear-gradient(135deg, #1e1e2f, #3b3b58);
+  }
   .terms-title {
     font-size: 2.2rem;
   }
