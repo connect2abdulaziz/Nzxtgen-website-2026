@@ -33,8 +33,8 @@
 }
 
 .about-video-container video {
+  opacity: 0.9;
   width: 84%;
-  /* height: 559px; */
   object-fit: cover;
   scale: 1.4;
 }
