@@ -40,7 +40,9 @@ function ForgotPassword() {
           <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Send Reset Email"}
           </button>
-          {message && <p style={{ color: "green" }}>{message}</p>}
+          {message && (
+            <p style={{ color: "green", marginTop: 10 }}>{message}</p>
+          )}
           {error && <p className="error-text">{error}</p>}
         </form>
       </div>

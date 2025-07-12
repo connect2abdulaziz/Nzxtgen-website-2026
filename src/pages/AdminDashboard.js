@@ -223,6 +223,12 @@ function AdminDashboard() {
     setIsModalOpen(false);
   };
 
+  const handleLogout = () => {
+    auth.signOut().then(() => {
+      navigate("/admin");
+    });
+  };
+
   return (
     <div className="wrapper">
       <Navbar />
@@ -286,6 +292,21 @@ function AdminDashboard() {
             }}
           >
             + Add New Product
+          </button>
+          <button
+            style={{
+              margin: "20px 0",
+              padding: "10px 24px",
+              backgroundColor: "#dc3545",
+              color: "white",
+              border: "none",
+              borderRadius: "6px",
+              fontSize: "16px",
+              cursor: "pointer",
+            }}
+            onClick={() => handleLogout()}
+          >
+            Logout
           </button>
         </div>
         {showModal && (
@@ -582,10 +603,7 @@ function AdminDashboard() {
                 <h3>{item.name}</h3>
                 <p className="price">${item.price.toLocaleString()}</p>
                 <div className="card-buttons">
-                  <button
-                    className="view-btn"
-                    onClick={() => openModal(item)}
-                  >
+                  <button className="view-btn" onClick={() => openModal(item)}>
                     View
                   </button>
                   <button
