@@ -1,12 +1,17 @@
 .dashboard-container {
-  max-width: 1280px;
-  padding: 100px 20px;
+  max-width: 1240px;
+  padding: 120px 20px;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
   background-color: #5f5f5f;
+  min-height: 100vh;
 }
 
 .dashboard-container h2 {
@@ -40,6 +45,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
 .item-card {
@@ -110,18 +116,15 @@
 
 .no-items {
   font-style: italic;
-  color: #666;
+  color: white;
+  opacity: 0.8;
 }
 
 .create-form {
-  background: #f8f9fa;
-  padding: 24px 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 0 auto 30px auto;
 }
 
 .create-form input {
@@ -147,7 +150,6 @@
   cursor: pointer;
   margin-top: 8px;
   transition: background-color 0.2s;
-  max-width: 150px;
 }
 
 .create-form button[type="submit"]:hover {
@@ -179,7 +181,6 @@
 .image-upload-btn {
   background-color: #007bff !important;
   transition: background-color 0.2s;
-  max-width: 150px;
 }
 
 .image-upload-btn:hover {
@@ -190,8 +191,26 @@
   background-color: #0056b3;
 }
 
+.form-group-row-inner {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 8px;
+}
+
+.form-group-row-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
 @media (max-width: 480px) {
   .form-group-row {
     flex-direction: column;
+  }
+
+  .form-group-row-inner {
+    width: 100%;
   }
 }
