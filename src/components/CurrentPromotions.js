@@ -10,6 +10,7 @@ const CurrentPromotions = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalItem, setModalItem] = useState(null);
   const [promotions, setPromotions] = useState([]);
+  const [loading, setLoading] = useState(true); // Add this line
 
   useEffect(() => {
     const fetchPromotions = async () => {
@@ -23,6 +24,7 @@ const CurrentPromotions = () => {
       } catch (error) {
         console.error("Error fetching promotions:", error);
       }
+      setLoading(false); // Set loading to false after fetch
     };
     fetchPromotions();
   }, []);
@@ -75,27 +77,38 @@ const CurrentPromotions = () => {
       </button>
 
       <div className="promotions-slider" ref={sliderRef}>
-        {promotions.map((item, index) => (
-          <div
-            className="slider-item"
-            key={item.id}
-            ref={index === 0 ? cardRef : null}
-          >
-            <div className="item-image">
-              <img src={item.img} alt={item.name} />
-            </div>
-            <div className="item-details">
-              <div className="item-name">{item.name}</div>
-              <div className="item-price">${item.price}</div>
-              <button
-                className="view-details-btn"
-                onClick={() => openModal(item)}
+        {loading
+          ? Array.from({ length: 4 }).map((_, idx) => (
+              <div className="slider-item skeleton" key={idx}>
+                <div className="item-image skeleton-img" />
+                <div className="item-details">
+                  <div className="item-name skeleton-text" />
+                  <div className="item-price skeleton-text" />
+                  <div className="skeleton-btn" />
+                </div>
+              </div>
+            ))
+          : promotions.map((item, index) => (
+              <div
+                className="slider-item"
+                key={item.id}
+                ref={index === 0 ? cardRef : null}
               >
-                View Details
-              </button>
-            </div>
-          </div>
-        ))}
+                <div className="item-image">
+                  <img src={item.img} alt={item.name} />
+                </div>
+                <div className="item-details">
+                  <div className="item-name">{item.name}</div>
+                  <div className="item-price">${item.price}</div>
+                  <button
+                    className="view-details-btn"
+                    onClick={() => openModal(item)}
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            ))}
       </div>
 
       <div className="terms">

@@ -245,6 +245,43 @@
   }
 }
 
+/* Skeleton Loader */
+.skeleton {
+  background: #f3f3f3;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+  height: 416px;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 240px;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+.skeleton-text {
+  width: 80%;
+  height: 18px;
+  background: #e0e0e0;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+.skeleton-btn {
+  width: 60%;
+  height: 32px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
 /* Responsive Tablet View */
 @media (max-width: 1024px) {
   .slider-item {
