@@ -70,10 +70,11 @@ const RecentSwitchboardUpgrade = () => {
         {upgradeNeededImages.map((img, index) => (
           <div key={index} className="upgrade-card">
             <div className="upgrade-card-wrapper">
-              <img src={img.src} alt={img.title} className="upgrade-card-image" />
-              <div className="upgrade-card-overlay">
-                <h3 className="upgrade-card-text">{img.title}</h3>
-              </div>
+              <img
+                src={img.src}
+                alt={img.title}
+                className="upgrade-card-image"
+              />
             </div>
           </div>
         ))}
@@ -87,10 +88,11 @@ const RecentSwitchboardUpgrade = () => {
         {upgradedImages.map((img, index) => (
           <div key={index} className="upgrade-card">
             <div className="upgrade-card-wrapper">
-              <img src={img.src} alt={img.title} className="upgrade-card-image" />
-              <div className="upgrade-card-overlay">
-                <h3 className="upgrade-card-text">{img.title}</h3>
-              </div>
+              <img
+                src={img.src}
+                alt={img.title}
+                className="upgrade-card-image"
+              />
             </div>
           </div>
         ))}
