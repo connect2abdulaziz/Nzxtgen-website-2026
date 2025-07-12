@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 import "./AdminLogin.css";
 
 function AdminLogin() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simple hardcoded login for demonstration
-    if (username === "admin" && password === "admin123") {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       navigate("/admin/dashboard");
-    } else {
+    } catch (err) {
       setError("Invalid credentials");
     }
   };
@@ -23,10 +25,10 @@ function AdminLogin() {
       <form className="admin-login-form" onSubmit={handleSubmit}>
         <h2>Admin Login</h2>
         <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
