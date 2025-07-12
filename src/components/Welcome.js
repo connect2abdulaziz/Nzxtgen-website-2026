@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Welcome.css";
 // import welcomeImage1 from "../assets/welcome1.jpg";
 // import welcomeImage2 from "../assets/welcome2.jpg";
-import welcomeVideo from "../assets/video/video1.mp4";
+import welcomeVideo from "../assets/video/hero-bg.mp4";
 import welcomeVideoMobile from "../assets/video/mobileWelcome1.mp4";
 
 const Welcome = () => {
@@ -33,7 +33,7 @@ const Welcome = () => {
       slogan: "With next-gen electrical technology",
       buttonText: "EXPLORE",
       buttonLink: "/Our-Serives",
-    }
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

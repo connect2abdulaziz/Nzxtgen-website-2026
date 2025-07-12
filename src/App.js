@@ -10,6 +10,8 @@ import SmartHome from "./pages/SmartHome";
 import Privacypage from "./pages/PrivacyPage";
 import Termspage from "./pages/Termspage";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/Switch-board-upgrade" element={<SwitchBoard />} />
         <Route path="/Terms-and-Conditions" element={<Termspage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </Router>
   );
