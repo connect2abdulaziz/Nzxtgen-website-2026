@@ -11,7 +11,8 @@ function AdminDashboard() {
   const [newItem, setNewItem] = useState({
     name: "",
     price: "",
-    des: "",
+    packageIncludes: [""],
+    features: [""],
     img: "",
   });
   const [loading, setLoading] = useState(false);
@@ -56,6 +57,27 @@ function AdminDashboard() {
     setNewItem((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  const handleArrayChange = (type, idx, value) => {
+    setNewItem((prev) => ({
+      ...prev,
+      [type]: prev[type].map((item, i) => (i === idx ? value : item)),
+    }));
+  };
+
+  const handleAddField = (type) => {
+    setNewItem((prev) => ({
+      ...prev,
+      [type]: [...prev[type], ""],
+    }));
+  };
+
+  const handleRemoveField = (type, idx) => {
+    setNewItem((prev) => ({
+      ...prev,
+      [type]: prev[type].filter((_, i) => i !== idx),
     }));
   };
 
@@ -105,14 +127,25 @@ function AdminDashboard() {
       const docRef = await addDoc(collection(db, "products"), {
         name: newItem.name,
         price: parseFloat(newItem.price),
-        des: newItem.des,
+        packageIncludes: newItem.packageIncludes.filter(Boolean),
+        features: newItem.features.filter(Boolean),
         img: newItem.img,
       });
       setProducts((prev) => [
         ...prev,
-        { id: docRef.id, ...newItem, price: parseFloat(newItem.price) },
+        {
+          id: docRef.id,
+          ...newItem,
+          price: parseFloat(newItem.price),
+        },
       ]);
-      setNewItem({ name: "", price: "", des: "", img: "" });
+      setNewItem({
+        name: "",
+        price: "",
+        packageIncludes: [""],
+        features: [""],
+        img: "",
+      });
       setImgReady(false);
     } catch (error) {
       alert("Error creating item");
@@ -121,7 +154,7 @@ function AdminDashboard() {
   };
 
   return (
-    <>
+    <div className="wrapper">
       <Navbar />
       <div className="dashboard-container">
         <h2>Admin Dashboard</h2>
@@ -132,33 +165,203 @@ function AdminDashboard() {
           style={{ margin: "20px 0" }}
         >
           <div className="form-group-row">
-            <input
-              type="text"
-              name="name"
-              placeholder="Product Name"
-              value={newItem.name}
-              onChange={handleFormChange}
-              required
-            />
-            <input
-              type="number"
-              name="price"
-              placeholder="Price"
-              value={newItem.price}
-              onChange={handleFormChange}
-              required
-              step="0.01"
-            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "50%",
+                gap: "8px",
+              }}
+            >
+              <label htmlFor="name" style={{ textAlign: "start" }}>
+                Product Name <span style={{ color: "red" }}>*</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Product Name"
+                value={newItem.name}
+                onChange={handleFormChange}
+                required
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "50%",
+                gap: "8px",
+              }}
+            >
+              <label htmlFor="price" style={{ textAlign: "start" }}>
+                Price <span style={{ color: "red" }}>*</span>
+              </label>
+              <input
+                type="number"
+                name="price"
+                placeholder="Price"
+                value={newItem.price}
+                onChange={handleFormChange}
+                required
+                step="0.01"
+              />
+            </div>
           </div>
-          <input
-            type="text"
-            name="des"
-            placeholder="Description"
-            value={newItem.des}
-            onChange={handleFormChange}
-            required
-          />
-          <button type="button" className="image-upload-btn" onClick={openCloudinaryWidget}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              gap: "8px",
+            }}
+          >
+            <label style={{ textAlign: "start" }}>
+              Package Includes <span style={{ color: "red" }}>*</span>
+            </label>
+            {newItem.packageIncludes.map((val, idx) => (
+              <div
+                className="form-group-row"
+                style={{ alignItems: "center", marginBottom: 8 }}
+                key={idx}
+              >
+                <span
+                  style={{
+                    width: 10,
+                    height: 9,
+                    backgroundColor: "black",
+                    borderRadius: 9999,
+                  }}
+                ></span>
+                <input
+                  type="text"
+                  value={val}
+                  onChange={(e) =>
+                    handleArrayChange("packageIncludes", idx, e.target.value)
+                  }
+                  placeholder={`Include #${idx + 1}`}
+                  required
+                  style={{ flex: 1 }}
+                />
+                {newItem.packageIncludes.length > 1 &&
+                  idx !== newItem.packageIncludes.length - 1 && (
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveField("packageIncludes", idx)}
+                      style={{
+                        marginTop: "0px",
+                        padding: "4px 8px",
+                        backgroundColor: "#dc3545",
+                        color: "white",
+                        border: "none",
+                        borderRadius: 4,
+                        height: "40px",
+                        width: "fit-content",
+                      }}
+                    >
+                      Remove
+                    </button>
+                  )}
+                {idx === newItem.packageIncludes.length - 1 && (
+                  <button
+                    type="button"
+                    onClick={() => handleAddField("packageIncludes")}
+                    style={{
+                      marginTop: "0px",
+                      padding: "4px 8px",
+                      backgroundColor: "#218838",
+                      color: "white",
+                      border: "none",
+                      borderRadius: 4,
+                      height: "40px",
+                      width: "75px",
+                    }}
+                  >
+                    Add
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              gap: "8px",
+            }}
+          >
+            <label style={{ textAlign: "start" }}>
+              Features <span style={{ color: "red" }}>*</span>
+            </label>
+            {newItem.features.map((val, idx) => (
+              <div
+                className="form-group-row"
+                style={{ alignItems: "center", marginBottom: 8 }}
+                key={idx}
+              >
+                <span
+                  style={{
+                    width: 10,
+                    height: 9,
+                    backgroundColor: "black",
+                    borderRadius: 9999,
+                  }}
+                ></span>
+                <input
+                  type="text"
+                  value={val}
+                  onChange={(e) =>
+                    handleArrayChange("features", idx, e.target.value)
+                  }
+                  placeholder={`Feature #${idx + 1}`}
+                  required
+                  style={{ flex: 1 }}
+                />
+                {newItem.features.length > 1 &&
+                  idx !== newItem.features.length - 1 && (
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveField("features", idx)}
+                      style={{
+                        marginTop: "0px",
+                        padding: "4px 8px",
+                        backgroundColor: "#dc3545",
+                        color: "white",
+                        border: "none",
+                        borderRadius: 4,
+                        height: "40px",
+                        width: "fit-content",
+                      }}
+                    >
+                      Remove
+                    </button>
+                  )}
+                {idx === newItem.features.length - 1 && (
+                  <button
+                    type="button"
+                    onClick={() => handleAddField("features")}
+                    style={{
+                      marginTop: "0px",
+                      padding: "4px 8px",
+                      backgroundColor: "#218838",
+                      color: "white",
+                      border: "none",
+                      borderRadius: 4,
+                      height: "40px",
+                      width: "75px",
+                    }}
+                  >
+                    Add
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="image-upload-btn"
+            onClick={openCloudinaryWidget}
+          >
             Upload Image
           </button>
           {newItem.img && (
@@ -187,7 +390,6 @@ function AdminDashboard() {
                 <img src={item.img} alt={item.name} className="product-image" />
                 <h3>{item.name}</h3>
                 <p className="price">${item.price.toFixed(2)}</p>
-                <p style={{ whiteSpace: "pre-line" }}>{item.des}</p>
                 <div className="card-buttons">
                   <button
                     onClick={() => handleEdit(item.id)}
@@ -207,7 +409,7 @@ function AdminDashboard() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

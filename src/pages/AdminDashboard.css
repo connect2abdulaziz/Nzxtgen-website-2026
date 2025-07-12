@@ -1,18 +1,23 @@
 .dashboard-container {
   max-width: 1280px;
-  margin: 100px auto;
-  padding: 20px;
+  padding: 100px 20px;
+  margin: 0 auto;
   text-align: center;
+}
+
+.wrapper {
+  background-color: #5f5f5f;
 }
 
 .dashboard-container h2 {
   font-size: 32px;
   margin-bottom: 10px;
-  color: #333;
+  color: white;
 }
 
 .subtext {
-  color: #777;
+  color: white;
+  opacity: 0.8;
   margin-bottom: 30px;
 }
 
@@ -142,6 +147,7 @@
   cursor: pointer;
   margin-top: 8px;
   transition: background-color 0.2s;
+  max-width: 150px;
 }
 
 .create-form button[type="submit"]:hover {
@@ -170,16 +176,14 @@
   gap: 10px;
 }
 
-.image-upload-btn{
-  background-color: #007bff;
-  color: white;
-  padding: 10px 0;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 8px;
+.image-upload-btn {
+  background-color: #007bff !important;
   transition: background-color 0.2s;
+  max-width: 150px;
+}
+
+.image-upload-btn:hover {
+  background-color: #0056b3 !important;
 }
 
 .image-upload-btn:hover {
