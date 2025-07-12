@@ -3,7 +3,7 @@
   width: 100%;
   padding: 6rem 2rem;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow: hidden;
   background-image: url("../assets/welcome1.jpg");
   background-size: cover;
@@ -235,6 +235,7 @@
   .about-data {
     padding: 4rem 1rem;
     box-sizing: border-box;
+    background-image: url("../assets/about-mobile-bg.jpeg");
   }
 
   .about-header h1 {

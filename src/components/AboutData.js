@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./AboutData.css";
-import Slider from "react-slick";
 import img1 from "../assets/about/electrical.jpg";
 import img2 from "../assets/about/smarthome.jpg";
 import img3 from "../assets/about/security.jpg";
@@ -86,9 +85,9 @@ const AboutData = ({ isExiting }) => {
               <div
                 key={item.id}
                 id={`about-row-${index}`}
-                className={`about-row ${index % 2 === 0 ? "normal" : "reversed"} ${
-                  inView[index] ? "in-view" : ""
-                }`}
+                className={`about-row ${
+                  index % 2 === 0 ? "normal" : "reversed"
+                } ${inView[index] ? "in-view" : ""}`}
                 style={{ backgroundColor: item.backgroundColor }}
               >
                 <div className="about-text">
