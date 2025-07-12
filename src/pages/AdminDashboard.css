@@ -88,7 +88,8 @@
 }
 
 .edit-btn,
-.delete-btn {
+.delete-btn,
+.view-btn {
   padding: 8px 14px;
   font-size: 14px;
   border: none;
@@ -108,6 +109,15 @@
 .delete-btn {
   background-color: #dc3545;
   color: white;
+}
+
+.view-btn {
+  background-color: #218838;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #1e7e34;
 }
 
 .delete-btn:hover {

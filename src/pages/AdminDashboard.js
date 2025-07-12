@@ -15,7 +15,9 @@ import "./AdminDashboard.css";
 
 function AdminDashboard() {
   const [products, setProducts] = useState([]);
-  const [allProducts, setAllProducts] = useState([]); // Add this line
+  const [allProducts, setAllProducts] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalItem, setModalItem] = useState(null);
   const [newItem, setNewItem] = useState({
     name: "",
     price: "",
@@ -28,7 +30,7 @@ function AdminDashboard() {
   const [showModal, setShowModal] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");   // Add this line
+  const [searchTerm, setSearchTerm] = useState(""); // Add this line
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -210,6 +212,15 @@ function AdminDashboard() {
       alert("Error saving item");
     }
     setLoading(false);
+  };
+
+  const openModal = (item) => {
+    setModalItem(item);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -560,8 +571,8 @@ function AdminDashboard() {
           </div>
         )}
 
-          <h2>Current Products</h2>
-        <div className="card-grid" style={{width:"100%"}}>
+        <h2>Current Products</h2>
+        <div className="card-grid" style={{ width: "100%" }}>
           {products.length === 0 ? (
             <p className="no-items">No items found.</p>
           ) : (
@@ -571,6 +582,12 @@ function AdminDashboard() {
                 <h3>{item.name}</h3>
                 <p className="price">${item.price.toLocaleString()}</p>
                 <div className="card-buttons">
+                  <button
+                    className="view-btn"
+                    onClick={() => openModal(item)}
+                  >
+                    View
+                  </button>
                   <button
                     onClick={() => handleEdit(item.id)}
                     className="edit-btn"
@@ -589,6 +606,36 @@ function AdminDashboard() {
           )}
         </div>
       </div>
+      {isModalOpen && modalItem && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={closeModal}>
+              &times;
+            </button>
+            <div className="modal-body">
+              <div className="modal-image">
+                <img src={modalItem.img} alt={modalItem.name} />
+              </div>
+              <div className="modal-info">
+                <h2 className="modal-title">{modalItem.name}</h2>
+                <h4>Package Includes:</h4>
+                <ul className="package-list">
+                  {modalItem.packageIncludes?.map((pkg, idx) => (
+                    <li key={idx}>{pkg}</li>
+                  ))}
+                </ul>
+                <h4>Features:</h4>
+                <ul className="feature-list">
+                  {modalItem.features?.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+                <div className="modal-price">${modalItem.price}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
