@@ -1,8 +1,10 @@
 import "./AboutSection.css";
 import aboutBackground from "../assets/aboutsecbg.jpg";
 import aboutVideo from "../assets/aboutsecvideo.mp4";
+import aboutVideoDesktop from "../assets/bottom-video-desktop.mp4";
 
 const AboutSection = () => {
+  const isMobile = window.innerWidth <= 480;
   return (
     <section
       className="about-section"
@@ -11,7 +13,13 @@ const AboutSection = () => {
       <div className="about-card">
         {/* Left: Video */}
         <div className="about-video-container">
-          <video src={aboutVideo} autoPlay loop muted playsInline></video>
+          <video
+            src={isMobile ? aboutVideo : aboutVideoDesktop}
+            autoPlay
+            loop
+            muted
+            playsInline
+          ></video>
         </div>
 
         {/* Right: Text */}

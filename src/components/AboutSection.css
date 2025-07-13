@@ -33,9 +33,9 @@
 }
 
 .about-video-container video {
-  width: 84%;
+  width: 100%;
   object-fit: cover;
-  scale: 1.4;
+  scale: 1;
 }
 
 /* Text Content */
