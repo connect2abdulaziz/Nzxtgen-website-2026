@@ -6,7 +6,7 @@ import floorPlanVideo1 from "../assets/bg/videos/smart-home.mov";
 const SMDescription = () => {
   return (
     <section className="sm-section">
-      <div className="overlay"></div>
+      <div className="overlay" style={{ zIndex: 1, borderRadius:0 }}></div>
       <video className="sm-bg-video" autoPlay muted loop playsInline>
         <source src={floorPlanVideo1} type="video/mp4" />
       </video>
