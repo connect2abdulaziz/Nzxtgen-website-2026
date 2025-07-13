@@ -148,6 +148,7 @@
   align-items: center;
   z-index: 1000;
   padding: 1rem;
+  overflow-y:scroll;
 }
 
 /* Modal Container */
@@ -159,6 +160,8 @@
   overflow: hidden;
   animation: fadeIn 0.3s ease;
   position: relative;
+  max-height: 90vh;
+  overflow-y: scroll;
 }
 
 /* Modal Close Button */

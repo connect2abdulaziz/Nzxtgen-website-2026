@@ -35,7 +35,9 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <div className="navbar-logo">
-          <img src={siteLogo} alt="Site Logo" className="sitelogo" />
+          <a href="/">
+            <img src={siteLogo} alt="Site Logo" className="sitelogo" />
+          </a>
         </div>
 
         <ul className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
