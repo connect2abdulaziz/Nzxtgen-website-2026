@@ -1,6 +1,6 @@
 import "./WhatsappChat.css";
 
-const phoneNumber = "0437885910";
+const phoneNumber = "61437885910";
 const defaultMessage = "Hello! I would like to know more about your services.";
 
 const WhatsappChat = () => {

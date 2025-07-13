@@ -39,7 +39,7 @@ const Footer = () => {
           <h3>Get in Touch</h3>
           <a href="/free-quote">Online Quote</a>
           <a href="/Contact-Us">Contact Us Now</a>
-          <a href="https://wa.me/0437885910" target="_blank" rel="noopener noreferrer">Live Chat</a>
+          <a href="https://wa.me/61437885910" target="_blank" rel="noopener noreferrer">Live Chat</a>
           <p className="footer-note">
             Have a question or ready to get started? Reach out anytime using the buttons above!
           </p>
