@@ -161,7 +161,7 @@
   animation: fadeIn 0.3s ease;
   position: relative;
   max-height: 90vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Modal Close Button */
