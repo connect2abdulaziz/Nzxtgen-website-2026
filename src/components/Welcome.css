@@ -145,4 +145,8 @@
   .hamburger-menu span {
     background-color: black;
   }
+
+  .welcome-section{
+    height: 800px;
+  }
 }
