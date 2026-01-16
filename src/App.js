@@ -15,6 +15,10 @@ import AdminDashboard from "./pages/AdminDashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import ServicesDirectory from "./pages/ServicesDirectory";
 import SuburbsDirectory from "./pages/SuburbsDirectory";
+import ElectricService from "./pages/ElectricService";
+import SecurityService from "./pages/SecurityService";
+import EntertainmentService from "./pages/EntertainmentService";
+import DataNetworking from "./pages/DataNetworking";
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/our-services" element={<OurServices />} />
         <Route path="/smart-home" element={<SmartHome />} />
+        <Route path="/electrical-services" element={<ElectricService />} />
+        <Route path="/security-systems" element={<SecurityService />} />
+        <Route path="/entertainment-technology" element={<EntertainmentService />} />
+        <Route path="/data-networking" element={<DataNetworking />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<Privacypage />} />
         <Route path="/areas-we-service" element={<AreaWeService />} />

@@ -1,0 +1,406 @@
+.suburb-content {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Top CTA Section */
+.suburb-top-cta {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 3rem 2rem;
+  border-bottom: 4px solid #667eea;
+}
+
+.suburb-cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.suburb-cta-question {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.suburb-cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.suburb-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+/* Main Container */
+.suburb-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Header Section */
+.suburb-header-section {
+  margin-bottom: 4rem;
+}
+
+.suburb-main-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.suburb-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.suburb-intro-content p {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.suburb-intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section Styling */
+.suburb-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #667eea;
+}
+
+.suburb-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+.suburb-section p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.suburb-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Services Section */
+.suburb-services-section {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.suburb-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.suburb-service-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.suburb-service-link-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.suburb-service-link-icon {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.suburb-service-link-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.suburb-service-link-arrow {
+  font-size: 0.95rem;
+  color: #667eea;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.suburb-service-link-card:hover .suburb-service-link-arrow {
+  transform: translateX(5px);
+}
+
+/* Process List */
+.suburb-process-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.suburb-process-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 8px;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.suburb-check-icon {
+  color: #28a745;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Why Choose Section */
+.suburb-why-choose {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+  border-left: 4px solid #00c6ff;
+}
+
+.suburb-why-choose .suburb-section-title {
+  color: #fff;
+}
+
+.suburb-why-choose p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.suburb-why-choose .suburb-process-list li {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.suburb-why-choose .suburb-check-icon {
+  color: #00c6ff;
+}
+
+/* Service Areas Grid */
+.suburb-areas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.suburb-area-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 25px;
+  color: #1e3c72;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.suburb-area-badge:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.suburb-area-icon {
+  color: #667eea;
+  font-size: 1rem;
+}
+
+/* Final CTA */
+.suburb-final-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+.suburb-final-cta h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .suburb-main-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .suburb-main-title {
+    font-size: 2.3rem;
+  }
+
+  .suburb-section {
+    padding: 2.5rem 2rem;
+  }
+
+  .suburb-services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .suburb-top-cta {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .suburb-cta-question {
+    font-size: 1.2rem;
+  }
+
+  .suburb-main-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .suburb-main-title {
+    font-size: 2rem;
+  }
+
+  .suburb-intro-content p {
+    font-size: 1.05rem;
+    text-align: left;
+  }
+
+  .suburb-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .suburb-section-title {
+    font-size: 1.7rem;
+  }
+
+  .suburb-section p {
+    font-size: 1rem;
+  }
+
+  .suburb-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .suburb-final-cta {
+    padding: 3rem 2rem;
+  }
+
+  .suburb-final-cta h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .suburb-top-cta {
+    padding: 2rem 1rem;
+  }
+
+  .suburb-cta-question {
+    font-size: 1.1rem;
+  }
+
+  .suburb-cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .suburb-main-container {
+    padding: 2rem 1rem;
+  }
+
+  .suburb-main-title {
+    font-size: 1.6rem;
+  }
+
+  .suburb-intro-content p {
+    font-size: 1rem;
+  }
+
+  .suburb-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .suburb-section-title {
+    font-size: 1.5rem;
+  }
+
+  .suburb-section p {
+    font-size: 0.95rem;
+  }
+
+  .suburb-service-link-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .suburb-service-link-icon {
+    font-size: 2rem;
+  }
+
+  .suburb-service-link-title {
+    font-size: 1rem;
+  }
+
+  .suburb-process-list li {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .suburb-area-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .suburb-final-cta {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .suburb-final-cta h2 {
+    font-size: 1.6rem;
+  }
+}

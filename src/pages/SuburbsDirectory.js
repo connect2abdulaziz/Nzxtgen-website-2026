@@ -7,17 +7,69 @@ import SEO from '../components/SEO';
 import './SuburbsDirectory.css';
 
 const SuburbsDirectory = () => {
+  // Main suburbs we service - focusing on Sydney's south-west area around Condell Park
+  // These are the primary suburbs mentioned in your service area
   const mainSuburbs = [
-    { name: 'Condell Park', description: 'Our home base - serving the local community with electrical and smart home solutions.' },
-    { name: 'Bankstown', description: 'Comprehensive electrical services for residential and commercial properties.' },
-    { name: 'Bass Hill', description: 'Professional electrical installations and smart home automation services.' },
-    { name: 'Yagoona', description: 'Licensed electricians providing safe and reliable electrical work.' },
-    { name: 'Chester Hill', description: 'Electrical upgrades, smart home systems, and security installations.' },
-    { name: 'Sefton', description: 'Expert electrical and technology services for homes and businesses.' },
-    { name: 'Birrong', description: 'Quality electrical workmanship and modern smart home solutions.' },
-    { name: 'Regents Park', description: 'Comprehensive electrical services including switchboard upgrades.' },
-    { name: 'Chullora', description: 'Professional electrical installations and maintenance services.' },
-    { name: 'Greenacre', description: 'Smart home automation and electrical services for modern living.' }
+    { 
+      name: 'Condell Park', 
+      description: 'Our home base - serving the local community with electrical and smart home solutions.',
+      category: 'Primary Service Area'
+    },
+    { 
+      name: 'Bankstown', 
+      description: 'Comprehensive electrical services for residential and commercial properties.',
+      category: 'Primary Service Area'
+    },
+    { 
+      name: 'Bass Hill', 
+      description: 'Professional electrical installations and smart home automation services.',
+      category: 'Primary Service Area'
+    },
+    { 
+      name: 'Yagoona', 
+      description: 'Licensed electricians providing safe and reliable electrical work.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Chester Hill', 
+      description: 'Electrical upgrades, smart home systems, and security installations.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Sefton', 
+      description: 'Expert electrical and technology services for homes and businesses.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Birrong', 
+      description: 'Quality electrical workmanship and modern smart home solutions.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Regents Park', 
+      description: 'Comprehensive electrical services including switchboard upgrades.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Chullora', 
+      description: 'Professional electrical installations and maintenance services.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Greenacre', 
+      description: 'Smart home automation and electrical services for modern living.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Belfield', 
+      description: 'Reliable electrical services for homes and small businesses.',
+      category: 'Service Area'
+    },
+    { 
+      name: 'Berala', 
+      description: 'Professional electrical installations and upgrades.',
+      category: 'Service Area'
+    }
   ];
 
   return (
@@ -40,24 +92,29 @@ const SuburbsDirectory = () => {
         </div>
 
         <div className="suburbs-grid">
-          {mainSuburbs.map((suburb, index) => (
-            <div key={index} className="suburb-directory-card">
-              <h2>{suburb.name}</h2>
-              <p className="suburb-description">{suburb.description}</p>
-              <div className="suburb-services">
-                <p>Available Services:</p>
-                <ul>
-                  <li><Link to="/our-services">Electrical Services</Link></li>
-                  <li><Link to="/smart-home">Smart Home Automation</Link></li>
-                  <li><Link to="/our-services">Security Systems</Link></li>
-                  <li><Link to="/switchboard-upgrade">Switchboard Upgrades</Link></li>
-                </ul>
+          {mainSuburbs.map((suburb, index) => {
+            return (
+              <div key={index} className="suburb-directory-card">
+                <div className="suburb-header">
+                  <h2>{suburb.name}</h2>
+                  {suburb.category && <span className="suburb-category">{suburb.category}</span>}
+                </div>
+                <p className="suburb-description">{suburb.description}</p>
+                <div className="suburb-services">
+                  <p>Available Services:</p>
+                  <ul>
+                    <li><Link to="/electrical-services">Electrical Services</Link></li>
+                    <li><Link to="/smart-home">Smart Home Automation</Link></li>
+                    <li><Link to="/security-systems">Security Systems</Link></li>
+                    <li><Link to="/switchboard-upgrade">Switchboard Upgrades</Link></li>
+                  </ul>
+                </div>
+                <Link to="/free-quote" className="suburb-cta">
+                  Get Quote for {suburb.name}
+                </Link>
               </div>
-              <Link to="/free-quote" className="suburb-cta">
-                Get Quote for {suburb.name}
-              </Link>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="directory-footer">

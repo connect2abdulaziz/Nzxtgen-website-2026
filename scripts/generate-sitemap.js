@@ -39,6 +39,30 @@ const publicRoutes = [
     lastmod: new Date().toISOString().split('T')[0]
   },
   {
+    url: '/electrical-services',
+    changefreq: 'monthly',
+    priority: 0.9,
+    lastmod: new Date().toISOString().split('T')[0]
+  },
+  {
+    url: '/security-systems',
+    changefreq: 'monthly',
+    priority: 0.9,
+    lastmod: new Date().toISOString().split('T')[0]
+  },
+  {
+    url: '/entertainment-technology',
+    changefreq: 'monthly',
+    priority: 0.9,
+    lastmod: new Date().toISOString().split('T')[0]
+  },
+  {
+    url: '/data-networking',
+    changefreq: 'monthly',
+    priority: 0.9,
+    lastmod: new Date().toISOString().split('T')[0]
+  },
+  {
     url: '/areas-we-service',
     changefreq: 'monthly',
     priority: 0.8,
