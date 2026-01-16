@@ -4,6 +4,7 @@ import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import WhatsappChat from "../components/WhatsappChat";
 import MobileCallButton from "../components/MobileCallButton";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
 import SwitchBoardDescription from "../components/SwitchBoardDescription";
 import SwitchBoardContent from "../components/SwitchBoardContent";
 import RecentSwitchboardUpgrade from "../components/RecentSwitchboardUpgrade";
@@ -16,6 +17,7 @@ const SwitchBoard = () => {
         description="NZXTGEN provides safe, compliant electrical switchboard upgrades for homes, improving protection, capacity and reliability for modern electrical use."
         canonical={typeof window !== 'undefined' ? window.location.origin + '/switchboard-upgrade' : undefined}
       />
+      <LocalBusinessSchema />
       <WhatsappChat />
       <MobileCallButton />
       <Navbar/>

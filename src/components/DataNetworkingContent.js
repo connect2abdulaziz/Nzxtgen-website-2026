@@ -14,41 +14,45 @@ const DataNetworkingContent = () => {
   const networkingServices = [
     { 
       icon: <FaNetworkWired />, 
-      title: "Structured Cabling",
-      text: "Structured cabling provides the foundation for reliable data networks. We install high-quality cabling systems that support current needs and future expansion. Proper cable management ensures clean installations and easy maintenance."
+      title: "Cat6 and Cat6A Data Cabling",
+      text: "High-quality structured cabling systems that support current needs and future expansion. Proper cable management ensures clean installations and easy maintenance."
     },
     { 
       icon: <FaPlug />, 
-      title: "Data Points Installation",
-      text: "Data points provide network access throughout your property. We install data outlets in strategic locations to ensure reliable connectivity where you need it. Each point is properly terminated and tested for optimal performance."
+      title: "Home and Office Data Points",
+      text: "Strategic data point installation throughout your property to ensure reliable connectivity where you need it. Each point is properly terminated and tested for optimal performance."
     },
     { 
       icon: <FaServer />, 
-      title: "Patch Panels & Network Infrastructure",
-      text: "Patch panels organise and manage network connections efficiently. We install and configure patch panels, switches, and network equipment to create a professional, scalable infrastructure that supports your connectivity needs."
+      title: "Network Cabinets and Racks",
+      text: "Professional network infrastructure with organised cabinets and racks. Centralised network management for easy access and maintenance."
     },
     { 
       icon: <FaWifi />, 
-      title: "Network Setup & Configuration",
-      text: "We configure network equipment to ensure secure, stable connections. This includes setting up routers, switches, access points, and ensuring proper network segmentation for optimal performance and security."
+      title: "Patch Panels and Network Switches",
+      text: "Centralised network connections through patch panels and switches. Organised infrastructure that simplifies network management and troubleshooting."
+    },
+    { 
+      icon: <FaNetworkWired />, 
+      title: "NBN-Ready Cabling and Connection Support",
+      text: "All installations are NBN-ready and designed to support modern networking equipment. Future-proof infrastructure for reliable connectivity."
     }
   ];
 
   const whenYouNeedNetworking = [
-    "Multiple devices require reliable internet access",
-    "Wi-Fi coverage is weak or inconsistent in parts of the property",
-    "You're planning renovations or new builds",
-    "Your business requires stable network connectivity",
-    "You need to support smart home or security systems",
-    "Current network infrastructure is outdated or unreliable"
+    "Slow or inconsistent internet speeds across rooms",
+    "Frequent Wi-Fi dropouts or buffering",
+    "Poor signal in home offices or workspaces",
+    "Network congestion with multiple users or devices",
+    "Messy, unlabelled or outdated cabling"
   ];
 
   const whyChooseUs = [
-    "Assessing your connectivity requirements and property layout",
-    "Designing network infrastructure for current and future needs",
-    "Installing cabling and equipment with professional workmanship",
-    "Testing all connections to ensure reliable performance",
-    "Providing clear documentation and network diagrams"
+    "Assessing current and future connectivity needs",
+    "Advising on Cat6 or Cat6A cabling based on usage",
+    "Planning data point locations for real-world use",
+    "Installing patch panels and network switches to centralise connections",
+    "Testing and labelling every cable for clarity and reliability"
   ];
 
   return (
@@ -56,45 +60,35 @@ const DataNetworkingContent = () => {
       {/* Top CTA Section */}
       <div className="dn-top-cta">
         <div className="dn-cta-container">
-          <p className="dn-cta-question">Need reliable network infrastructure for your property?</p>
+          <p className="dn-cta-question">Need better connectivity at home or work?</p>
           <Link to="/free-quote" className="dn-cta-button">
-            👉 Request a free quote today
+            👉 Request your free quote online
           </Link>
         </div>
       </div>
 
       {/* Main Content Container */}
       <div className="dn-main-container">
-        {/* Main Title and Intro */}
-        <div className="dn-header-section">
-          <h1 className="dn-main-title">Data & Networking Services – NZXTGEN</h1>
-          <div className="dn-intro-content">
-            <p>
-              Data and networking services ensure fast, stable connectivity throughout your property. From structured cabling and data points to patch panels and server racks, we build networks that support modern households and businesses.
-            </p>
-            <p>
-              NZXTGEN provides professional data and networking installation services that focus on reliability, scalability, and clean presentation. We work with homeowners and small businesses to design and install network infrastructure that meets current needs while allowing for future expansion.
-            </p>
-            <p>
-              A well-designed network infrastructure is essential for modern living and working. Whether you need reliable internet access throughout your home, support for smart systems, or business-grade connectivity, proper installation makes a significant difference to performance and reliability.
-            </p>
-          </div>
-        </div>
-
-        {/* What Data & Networking Installation Involves */}
+        {/* What This Service Is */}
         <div className="dn-section">
-          <h2 className="dn-section-title">What Data & Networking Installation Involves</h2>
+          <h2 className="dn-section-title">What This Service Is</h2>
           <p>
-            Data and networking installation involves more than running cables or connecting devices. It requires careful planning of network topology, cable routing, equipment placement, and ensuring the infrastructure can support current and future connectivity needs.
+            Data and networking infrastructure is the foundation of how modern homes and workplaces 
+            operate. From internet access and work-from-home setups to smart technology, security 
+            systems and entertainment, reliable cabling and network design are essential for consistent 
+            performance.
           </p>
           <p>
-            Professional network installation includes structured cabling systems, proper termination of data points, installation of network equipment, and configuration to ensure secure, stable connections. All work is completed to industry standards, ensuring reliability and performance.
+            NZXTGEN provides professional data and networking services that focus on stability, 
+            organisation and long-term reliability. We design and install structured cabling systems that 
+            allow devices to communicate efficiently without relying solely on wireless connections, 
+            which can be affected by distance, interference and network congestion.
           </p>
         </div>
 
         {/* Networking Services Grid */}
         <div className="dn-section dn-services-section">
-          <h2 className="dn-section-title">Our Data & Networking Services</h2>
+          <h2 className="dn-section-title">Our Services Include</h2>
           <div className="dn-services-grid">
             {networkingServices.map((service, index) => (
               <div key={index} className="dn-service-card">
@@ -112,55 +106,21 @@ const DataNetworkingContent = () => {
         <div className="dn-section">
           <h2 className="dn-section-title">Structured Cabling</h2>
           <p>
-            Structured cabling provides the foundation for reliable data networks. This involves installing high-quality network cables in a planned, organised manner that supports current connectivity needs and allows for future expansion.
+            Structured cabling creates a centralised network where all data points run back to one 
+            location, typically a network cabinet or patch panel. This setup allows internet, internal 
+            networks, security systems and smart technology to operate from a single, organised hub. 
+            It also makes fault finding, upgrades and future expansion significantly easier.
           </p>
           <p>
-            We use industry-standard cabling such as Cat6 or Cat6a, which support high-speed data transmission. Cables are installed with proper routing, secured appropriately, and terminated correctly to ensure optimal signal quality and reliability.
+            All cabling is installed neatly, securely and labelled clearly. This ensures every connection 
+            is identifiable, tested and documented, avoiding confusion or unnecessary work later. 
+            Whether the system supports internet access, internal networking, CCTV, audio-visual 
+            equipment or smart home systems, the goal is clean infrastructure that performs reliably 
+            under everyday use.
           </p>
           <p>
-            Proper cable management is essential for both performance and maintenance. Cables are organised, labelled, and installed in a way that makes future upgrades or troubleshooting straightforward. This approach avoids the confusion and reliability issues often caused by ad-hoc installations.
-          </p>
-        </div>
-
-        {/* Data Points Installation Details */}
-        <div className="dn-section">
-          <h2 className="dn-section-title">Data Points Installation</h2>
-          <p>
-            Data points provide network access throughout your property. These outlets allow devices to connect directly to your network via Ethernet cables, providing faster and more stable connections than wireless alternatives.
-          </p>
-          <p>
-            We install data points in strategic locations based on how the space is used. This may include home offices, entertainment areas, bedrooms, or business premises. Each data point is properly terminated, tested, and labelled for easy identification.
-          </p>
-          <p>
-            Data points are particularly valuable for devices that require consistent, high-speed connections such as computers, gaming consoles, smart TVs, or network-attached storage. They also provide backup connectivity when Wi-Fi signals are weak or congested.
-          </p>
-        </div>
-
-        {/* Patch Panels & Network Infrastructure Details */}
-        <div className="dn-section">
-          <h2 className="dn-section-title">Patch Panels & Network Infrastructure</h2>
-          <p>
-            Patch panels organise and manage network connections efficiently. They provide a central point where all network cables terminate, making it easy to connect, disconnect, or reconfigure network devices without affecting the permanent cabling infrastructure.
-          </p>
-          <p>
-            We install patch panels in appropriate locations such as server rooms, network cabinets, or dedicated network areas. This creates a professional, organised setup that simplifies network management and troubleshooting.
-          </p>
-          <p>
-            Network infrastructure also includes switches, routers, and other network equipment. We install and configure these devices to ensure they work together effectively, providing secure, stable connectivity throughout your property.
-          </p>
-        </div>
-
-        {/* Network Setup & Configuration Details */}
-        <div className="dn-section">
-          <h2 className="dn-section-title">Network Setup & Configuration</h2>
-          <p>
-            Network setup involves configuring routers, switches, access points, and other network equipment to work together effectively. Proper configuration ensures secure connections, optimal performance, and reliable operation.
-          </p>
-          <p>
-            We configure networks with security in mind, including proper password protection, network segmentation, and firewall settings. This helps protect your network from unauthorised access while maintaining ease of use for authorised devices.
-          </p>
-          <p>
-            Network configuration also includes setting up Wi-Fi access points for wireless connectivity. We position and configure access points to provide consistent coverage throughout the property, minimising dead zones and ensuring reliable wireless connections.
+            Rather than temporary fixes such as Wi-Fi extenders or exposed cabling, we install 
+            permanent solutions designed to support how properties are used.
           </p>
         </div>
 
@@ -168,9 +128,11 @@ const DataNetworkingContent = () => {
         <div className="dn-section">
           <h2 className="dn-section-title">When You Need Data & Networking Services</h2>
           <p>
-            Data and networking services are often required during new builds, renovations, or when upgrading existing infrastructure. However, there are also clear signs that professional network installation would improve connectivity or reliability.
+            Many properties in Condell Park were built before modern connectivity demands existed. As 
+            internet usage, remote work and smart technology become more common, existing 
+            networks often struggle to keep up.
           </p>
-          <p className="dn-benefits-intro">You may benefit from professional data and networking services if:</p>
+          <p className="dn-benefits-intro">You may need data and networking services if you experience:</p>
           <ul className="dn-benefits-list">
             {whenYouNeedNetworking.map((item, index) => (
               <li key={index}>
@@ -180,13 +142,35 @@ const DataNetworkingContent = () => {
             ))}
           </ul>
           <p>
-            Homeowners often require network upgrades when adding smart home systems, home offices, or entertainment setups that demand reliable connectivity. A professional installation ensures these systems work together effectively.
+            Home offices are one of the most common reasons for data upgrades. Video calls, cloud-based 
+            software and file sharing require stable connections that Wi-Fi alone may not 
+            consistently provide. Installing fixed data points ensures reliable performance and reduces 
+            interruptions during work hours.
           </p>
           <p>
-            Small businesses need reliable network infrastructure to support operations, communication, and data management. Professional installation ensures networks can handle business requirements without downtime or performance issues.
+            Small businesses and home-based operators also benefit from structured cabling. Shared 
+            printers, servers, security systems and point-of-sale equipment all depend on a stable 
+            internal network. Centralising data points through patch panels and network switches 
+            improves performance and simplifies maintenance.
           </p>
           <p>
-            Network infrastructure is also commonly installed alongside electrical, security, or smart home upgrades. Integrating these systems properly ensures they work together smoothly and reduces duplication of cabling or equipment.
+            New builds and renovations are ideal times to plan data cabling properly. Installing Cat6 or 
+            Cat6A cabling during construction avoids surface-mounted solutions later and allows 
+            networks to be designed around the layout of the space. This future-proofs the property as 
+            connectivity requirements continue to grow.
+          </p>
+          <p>
+            Data and networking services are also essential when installing:
+          </p>
+          <ul className="dn-benefits-list">
+            <li><FaCheckCircle className="dn-check-icon" />CCTV and security systems</li>
+            <li><FaCheckCircle className="dn-check-icon" />Smart lighting and automation</li>
+            <li><FaCheckCircle className="dn-check-icon" />Intercoms and access control</li>
+            <li><FaCheckCircle className="dn-check-icon" />Home theatre and audio systems</li>
+          </ul>
+          <p>
+            These systems rely on reliable network connections to function correctly. Poor cabling often 
+            leads to ongoing performance issues and unnecessary troubleshooting.
           </p>
         </div>
 
@@ -194,7 +178,9 @@ const DataNetworkingContent = () => {
         <div className="dn-section dn-why-choose">
           <h2 className="dn-section-title">Why Choose NZXTGEN</h2>
           <p>
-            NZXTGEN approaches data and networking installation with a focus on reliability, scalability, and professional workmanship. We take the time to understand your connectivity needs and design systems accordingly.
+            NZXTGEN approaches data and networking with a practical mindset. We focus on 
+            performance, organisation and flexibility rather than overcomplicated systems that are 
+            difficult to manage.
           </p>
           <p className="dn-process-intro">Our process includes:</p>
           <ul className="dn-process-list">
@@ -206,21 +192,35 @@ const DataNetworkingContent = () => {
             ))}
           </ul>
           <p>
-            We prioritise clean, organised installations. Cabling is routed neatly, equipment is mounted securely, and all connections are properly terminated and tested. This ensures reliable performance and makes future maintenance or upgrades straightforward.
+            We take the time to understand how many devices will be connected, where they are used 
+            and how the network needs to perform. This ensures systems are designed correctly from 
+            the start, reducing future limitations.
           </p>
           <p>
-            Because we also specialise in electrical and smart systems, we understand how network infrastructure integrates with other property systems. This allows us to avoid conflicts, plan installations efficiently, and ensure all systems work together effectively.
+            Attention to detail is a key part of our work. Cables are routed neatly, secured properly and 
+            concealed where possible. Network cabinets and racks are organised logically, allowing 
+            easy access without clutter.
           </p>
           <p>
-            We also focus on future-proofing. Networks are designed to support current needs while allowing for expansion. This means you can add devices, upgrade equipment, or expand coverage without major rework of the existing infrastructure.
+            We also prioritise flexibility. As technology changes, a structured network allows additional 
+            data points, devices or services to be added without major disruption or rework.
+          </p>
+          <p>
+            Clear communication is maintained throughout the project. We explain what is being 
+            installed, how it works and how it can be expanded or maintained. Clients are left with a 
+            network they understand and can rely on.
+          </p>
+          <p>
+            NZXTGEN provides data and networking services throughout Condell Park and the 
+            surrounding south-west Sydney region.
           </p>
         </div>
 
         {/* Final CTA */}
         <div className="dn-final-cta">
-          <h2>Build a reliable network infrastructure for your property</h2>
+          <h2>Upgrade your connectivity today</h2>
           <Link to="/free-quote" className="dn-cta-button">
-            👉 Request your free quote today
+            👉 Get your free quote now
           </Link>
         </div>
 
@@ -234,31 +234,21 @@ const DataNetworkingContent = () => {
             <div className="dn-faq-card">
               <div className="dn-faq-question">
                 <span className="dn-faq-q">Q:</span>
-                <h3>Can data cabling be installed in existing properties?</h3>
+                <h3>Can data points be added without major wall damage?</h3>
               </div>
               <div className="dn-faq-answer">
                 <span className="dn-faq-a">A:</span>
-                <p>Yes. We can install data cabling in existing properties, routing cables through walls, ceilings, or under floors as needed to minimise disruption.</p>
+                <p>In many cases, yes. We assess access paths and existing cavities before installation to minimise disruption.</p>
               </div>
             </div>
             <div className="dn-faq-card">
               <div className="dn-faq-question">
                 <span className="dn-faq-q">Q:</span>
-                <h3>How many data points do I need?</h3>
+                <h3>Do you support NBN-ready installations?</h3>
               </div>
               <div className="dn-faq-answer">
                 <span className="dn-faq-a">A:</span>
-                <p>This depends on your property size and connectivity needs. We assess your requirements and recommend the appropriate number and placement of data points.</p>
-              </div>
-            </div>
-            <div className="dn-faq-card">
-              <div className="dn-faq-question">
-                <span className="dn-faq-q">Q:</span>
-                <h3>Can network infrastructure support smart home systems?</h3>
-              </div>
-              <div className="dn-faq-answer">
-                <span className="dn-faq-a">A:</span>
-                <p>Yes. Proper network infrastructure provides the connectivity foundation that smart home systems require for reliable operation.</p>
+                <p>Yes. All cabling and data points are installed to support NBN connections and modern networking equipment.</p>
               </div>
             </div>
           </div>

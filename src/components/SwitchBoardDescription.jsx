@@ -15,13 +15,11 @@ const SwitchBoardDescription = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="sb-title">Switchboard Upgrades</h2>
+        <h2 className="sb-title">Electrical Switchboard Upgrades</h2>
         <h3 className="sb-subtitle">Safe, Compliant Electrical Protection for Modern Homes</h3>
         <p className="sb-description">
-          NZXTGEN provides professional electrical switchboard upgrades designed to improve 
-          safety, compliance, and performance in residential properties. A switchboard upgrade 
-          involves replacing an outdated electrical board with a modern system that uses circuit 
-          breakers and safety switches.
+          NZXTGEN provides safe, compliant electrical switchboard upgrades for homes, improving 
+          protection, capacity and reliability for modern electrical use.
         </p>
       </motion.div>
     </section>

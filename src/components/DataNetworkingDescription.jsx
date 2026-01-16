@@ -15,12 +15,11 @@ const DataNetworkingDescription = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="dn-title">Data & Networking</h2>
-        <h3 className="dn-subtitle">Reliable Network Infrastructure for Modern Properties</h3>
+        <h2 className="dn-title">Data & Networking Services</h2>
+        <h3 className="dn-subtitle">Professional Data & Networking Services in Condell Park by NZXTGEN</h3>
         <p className="dn-description">
-          NZXTGEN provides professional data and networking services including structured cabling, 
-          data points, patch panels, and network infrastructure. We design and install systems that 
-          deliver fast, stable connectivity throughout your property.
+          Professional data and networking services in Condell Park. Structured cabling, data points, 
+          patch panels and reliable connectivity for homes and businesses.
         </p>
       </motion.div>
     </section>

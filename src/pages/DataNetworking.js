@@ -4,6 +4,7 @@ import MobileCallButton from '../components/MobileCallButton';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
 import DataNetworkingDescription from '../components/DataNetworkingDescription';
 import DataNetworkingContent from '../components/DataNetworkingContent';
 
@@ -11,10 +12,12 @@ const DataNetworking = () => {
   return (
     <div id='DataNetworking' className='overflow-hidden'>
       <SEO 
-        title="Data & Networking Services | Structured Cabling & Network Infrastructure | NZXTGEN"
-        description="Professional data and networking services including structured cabling, data points, patch panels, and network infrastructure. Reliable connectivity solutions by NZXTGEN."
+        title="Data & Networking Services in Condell Park | NZXTGEN"
+        description="Professional data and networking services in Condell Park. Structured cabling, data points, 
+        patch panels and reliable connectivity for homes and businesses."
         canonical={typeof window !== 'undefined' ? window.location.origin + '/data-networking' : undefined}
       />
+      <LocalBusinessSchema />
       <WhatsappChat />
       <MobileCallButton />
       <Navbar/>
