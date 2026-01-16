@@ -13,6 +13,8 @@ import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import ForgotPassword from "./pages/ForgotPassword";
+import ServicesDirectory from "./pages/ServicesDirectory";
+import SuburbsDirectory from "./pages/SuburbsDirectory";
 
 function App() {
   return (
@@ -20,14 +22,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/free-quote" element={<FreeQuote />} />
-        <Route path="/About-us" element={<AboutUs />} />
-        <Route path="/Our-Serives" element={<OurServices />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/our-services" element={<OurServices />} />
         <Route path="/smart-home" element={<SmartHome />} />
-        <Route path="/Contact-Us" element={<ContactUs />} />
-        <Route path="/Privacy-Policy" element={<Privacypage />} />
-        <Route path="/Areas-We-Service" element={<AreaWeService />} />
-        <Route path="/Switch-board-upgrade" element={<SwitchBoard />} />
-        <Route path="/Terms-and-Conditions" element={<Termspage />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/privacy-policy" element={<Privacypage />} />
+        <Route path="/areas-we-service" element={<AreaWeService />} />
+        <Route path="/switchboard-upgrade" element={<SwitchBoard />} />
+        <Route path="/terms-and-conditions" element={<Termspage />} />
+        <Route path="/services" element={<ServicesDirectory />} />
+        <Route path="/suburbs" element={<SuburbsDirectory />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />

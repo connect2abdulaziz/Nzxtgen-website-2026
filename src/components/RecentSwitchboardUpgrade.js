@@ -25,17 +25,17 @@ const RecentSwitchboardUpgrade = () => {
   }, []);
 
   const upgradeNeededImages = [
-    { src: old1, title: "Old Board 1" },
-    { src: old2, title: "Old Board 2" },
-    { src: old3, title: "Old Board 3" },
-    { src: old4, title: "Old Board 4" },
+    { src: old1, title: "Old Electrical Switchboard Requiring Upgrade - Safety Hazard" },
+    { src: old2, title: "Outdated Switchboard Before Upgrade - Non-Compliant Installation" },
+    { src: old3, title: "Old Fuse Box Needing Modern Switchboard Replacement" },
+    { src: old4, title: "Legacy Electrical Panel Requiring Safety Upgrade" },
   ];
 
   const upgradedImages = [
-    { src: new1, title: "New Board 1" },
-    { src: new2, title: "New Board 2" },
-    { src: new3, title: "New Board 3" },
-    { src: new4, title: "New Board 4" },
+    { src: new1, title: "Modern Upgraded Switchboard Installation by NZXTGEN" },
+    { src: new2, title: "New Compliant Electrical Switchboard - Australian Standards" },
+    { src: new3, title: "Professional Switchboard Upgrade Completed" },
+    { src: new4, title: "Modern Safety Switchboard Installation" },
   ];
 
   const sliderSettings = {
@@ -63,9 +63,9 @@ const RecentSwitchboardUpgrade = () => {
   return (
     <div className="upgrade-gallery-container">
       {/* Group 1 */}
-      <h1 className={`upgrade-gallery-header ${loaded ? "fade-in" : ""}`}>
+      <h2 className={`upgrade-gallery-header ${loaded ? "fade-in" : ""}`}>
         UPGRADE NEEDED!
-      </h1>
+      </h2>
       <Slider {...sliderSettings} className="upgrade-gallery-slider">
         {upgradeNeededImages.map((img, index) => (
           <div key={index} className="upgrade-card">
@@ -74,6 +74,8 @@ const RecentSwitchboardUpgrade = () => {
                 src={img.src}
                 alt={img.title}
                 className="upgrade-card-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -81,9 +83,9 @@ const RecentSwitchboardUpgrade = () => {
       </Slider>
 
       {/* Group 2 */}
-      <h1 className={`upgrade-gallery-header ${loaded ? "fade-in" : ""}`}>
+      <h2 className={`upgrade-gallery-header ${loaded ? "fade-in" : ""}`}>
         UPGRADED!
-      </h1>
+      </h2>
       <Slider {...sliderSettings} className="upgrade-gallery-slider">
         {upgradedImages.map((img, index) => (
           <div key={index} className="upgrade-card">
@@ -92,6 +94,8 @@ const RecentSwitchboardUpgrade = () => {
                 src={img.src}
                 alt={img.title}
                 className="upgrade-card-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

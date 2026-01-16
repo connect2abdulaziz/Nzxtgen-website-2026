@@ -141,6 +141,13 @@ const CityNavigation = () => {
           </motion.div>
         ))}
       </motion.div>
+      
+      <div className="city-services-link">
+        <p>
+          We provide <a href="/our-services">electrical, smart home, and security services</a> across all these suburbs. 
+          <a href="/services"> View our services directory</a> or <a href="/free-quote">request a free quote</a>.
+        </p>
+      </div>
 
       {!expanded && filteredCities.length > 30 && (
         <motion.button

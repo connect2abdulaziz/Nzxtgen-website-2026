@@ -58,7 +58,12 @@ const BrandGallery = () => {
       <div className="gallery-grid">
         {displayedBrands.map((brand, index) => (
           <div key={index} className="gallery-item">
-            <img src={brand} alt={`Brand ${index + 1}`} />
+            <img 
+              src={brand} 
+              alt={`Leading Electrical and Smart Home Brand Partner ${index + 1} - NZXTGEN`}
+              loading={index < visibleCount ? "lazy" : "lazy"}
+              decoding="async"
+            />
           </div>
         ))}
       </div>

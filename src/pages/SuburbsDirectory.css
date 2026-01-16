@@ -1,0 +1,190 @@
+.suburbs-directory-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+}
+
+.directory-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.directory-header h1 {
+  font-size: 2.5rem;
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.directory-intro {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.directory-intro a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.directory-intro a:hover {
+  text-decoration: underline;
+}
+
+.suburbs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.suburb-directory-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.suburb-directory-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.suburb-directory-card h2 {
+  font-size: 1.5rem;
+  color: #1e3c72;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.suburb-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.suburb-services {
+  margin-bottom: 1.5rem;
+}
+
+.suburb-services p {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.suburb-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suburb-services li {
+  margin-bottom: 0.5rem;
+}
+
+.suburb-services a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.suburb-services a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.suburb-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.suburb-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.directory-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.directory-footer h2 {
+  font-size: 1.8rem;
+  color: #1e3c72;
+  margin-bottom: 1rem;
+}
+
+.directory-footer p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.directory-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.directory-footer a:hover {
+  text-decoration: underline;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+  .suburbs-directory-container {
+    padding: 2rem 1rem;
+  }
+
+  .directory-header h1 {
+    font-size: 2rem;
+  }
+
+  .suburbs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .suburb-directory-card {
+    padding: 1.5rem;
+  }
+}

@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-logo">
           <a href="/">
-            <img src={siteLogo} alt="Site Logo" className="sitelogo" />
+            <img src={siteLogo} alt="NZXTGEN Electrical and Smart Home Services Logo" className="sitelogo" loading="eager" fetchPriority="high" />
           </a>
         </div>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
             <a href="/">HOME</a>
           </li>
           <li>
-            <a href="/About-us">ABOUT</a>
+            <a href="/about-us">ABOUT</a>
           </li>
           <li className="dropdown">
             <p>SERVICES</p>
@@ -57,10 +57,10 @@ const Navbar = () => {
                 <a href="/free-quote">Free Online Quote</a>
               </li>
               <li>
-                <a href="/Our-Serives">Our Signature Services</a>
+                <a href="/our-services">Our Signature Services</a>
               </li>
               <li>
-                <a href="/switch-board-upgrade">Switchboard Upgrade</a>
+                <a href="/switchboard-upgrade">Switchboard Upgrade</a>
               </li>
             </ul>
           </li>
@@ -69,7 +69,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <a href="/Contact-Us">CONTACT</a>
+            <a href="/contact-us">CONTACT</a>
           </li>
         </ul>
 

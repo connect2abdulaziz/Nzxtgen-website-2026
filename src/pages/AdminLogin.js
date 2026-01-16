@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import "./AdminLogin.css";
 import Navbar from "../components/Navbar";
+import SEO from "../components/SEO";
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -30,6 +31,11 @@ function AdminLogin() {
 
   return (
     <div className="wrapper">
+      <SEO 
+        title="Admin Login | NZXTGEN"
+        description="Admin login page"
+        noindex={true}
+      />
       <Navbar />
       <div className="admin-login-container">
         <form className="admin-login-form" onSubmit={handleSubmit}>

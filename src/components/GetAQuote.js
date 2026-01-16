@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import "./GetAQuote.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import OnlineQuoteBG from "../assets/about/entertainment.jpg";
-import OnlineQuoteFormBG from "../assets/about/electrical.jpg";
+import { trackFormSubmission, trackQuoteRequest } from "../utils/analytics";
+import OnlineQuoteBG from "../assets/about/entertainment-technology-installation.jpg";
+import OnlineQuoteFormBG from "../assets/about/electrical-services-installation.jpg";
 
 const GetAQuote = () => {
   useEffect(() => {
@@ -13,6 +14,14 @@ const GetAQuote = () => {
       once: true,
     });
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    trackFormSubmission('quote', 'free_quote_form');
+    trackQuoteRequest('free_quote_page');
+    // Form submission logic here
+    alert('Thank you for your quote request! We will get back to you soon.');
+  };
 
   return (
     <section
@@ -30,7 +39,7 @@ const GetAQuote = () => {
       >
         <div className="overlay border-radius"></div>
 
-        <form className="quote-form1">
+        <form className="quote-form1" onSubmit={handleSubmit}>
           <h1 className="quote-header1">Get A Free Online Quote</h1>
 
           <div className="form-row1">

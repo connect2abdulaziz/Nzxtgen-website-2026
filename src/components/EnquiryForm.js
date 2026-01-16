@@ -1,14 +1,22 @@
 import React from "react";
 import "./EnquiryForm.css";
+import { trackFormSubmission } from "../utils/analytics";
 
 const EnquiryForm = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    trackFormSubmission('enquiry', 'enquiry_form');
+    // Form submission logic here
+    alert('Thank you for your enquiry! We will get back to you soon.');
+  };
+
   return (
     <div className="enquiry-section">
       <div className="enquiry-card">
         <h2>
           Enquire Now & Save <span>$50 Off</span> Your Electrical, Security & Tech needs!
         </h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
             <input type="text" placeholder="Full Name" required />
             <input type="email" placeholder="Your Email" required />

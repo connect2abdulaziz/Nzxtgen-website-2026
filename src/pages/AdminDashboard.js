@@ -11,6 +11,7 @@ import { db, auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import SEO from "../components/SEO";
 import "./AdminDashboard.css";
 
 function AdminDashboard() {
@@ -231,6 +232,11 @@ function AdminDashboard() {
 
   return (
     <div className="wrapper">
+      <SEO 
+        title="Admin Dashboard | NZXTGEN"
+        description="Admin dashboard"
+        noindex={true}
+      />
       <Navbar />
       <div className="dashboard-container">
         <h2>Admin Dashboard</h2>

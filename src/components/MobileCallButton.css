@@ -1,0 +1,72 @@
+/* Mobile Call Button - Fixed at bottom on mobile devices */
+.mobile-call-button {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  bottom: 80px; /* Above WhatsApp button */
+  right: 20px;
+  z-index: 999;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  transition: all 0.3s ease;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  animation: pulse 2s infinite;
+}
+
+.mobile-call-button:hover,
+.mobile-call-button:active {
+  background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5);
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-call-button .call-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.mobile-call-button .call-text {
+  display: inline-block;
+}
+
+.mobile-call-button .call-number {
+  display: inline-block;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* Show on mobile devices only */
+@media (max-width: 768px) {
+  .mobile-call-button {
+    display: flex;
+  }
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(40, 167, 69, 0.7);
+  }
+}
+
+/* Ensure button doesn't overlap with WhatsApp */
+@media (max-width: 768px) {
+  .whatsapp-button {
+    bottom: 20px;
+  }
+  
+  .mobile-call-button {
+    bottom: 90px;
+  }
+}

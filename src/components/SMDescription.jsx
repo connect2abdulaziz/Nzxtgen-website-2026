@@ -1,7 +1,7 @@
 // src/components/SMDescription.jsx
 import "./SMDescription.css";
 import { motion } from "framer-motion";
-import floorPlanVideo1 from "../assets/bg/videos/smart-home.mov";
+import floorPlanVideo1 from "../assets/bg/videos/smart-home-installation-demo.mov";
 
 const SMDescription = () => {
   return (

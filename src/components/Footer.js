@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import sitelogo from "../assets/site-logo.png";
+import { trackPhoneCall, trackWhatsAppClick } from "../utils/analytics";
 import {
   FaFacebook,
   FaInstagram,
@@ -38,8 +39,9 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Get in Touch</h3>
           <a href="/free-quote">Online Quote</a>
-          <a href="/Contact-Us">Contact Us Now</a>
-          <a href="https://wa.me/61437885910" target="_blank" rel="noopener noreferrer">Live Chat</a>
+          <a href="/contact-us">Contact Us Now</a>
+          <a href="tel:+61437885910" onClick={() => trackPhoneCall('+61437885910', 'footer')}>Call: 0437 885 910</a>
+          <a href="https://wa.me/61437885910" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('61437885910')}>Live Chat</a>
           <p className="footer-note">
             Have a question or ready to get started? Reach out anytime using the buttons above!
           </p>
@@ -48,8 +50,8 @@ const Footer = () => {
         {/* Column 3: Quick Links */}
         <div className="footer-column">
           <h3>Quick Links</h3>
-          <a href="/Privacy-policy">Privacy Policy</a>
-          <a href="/Terms-and-Conditions">Terms & Conditions</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-and-conditions">Terms & Conditions</a>
           <a href="/contact-us">Contact Us</a>
           <a href="/free-quote">Online Quote</a>
         </div>
@@ -58,14 +60,14 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Services</h3>
           <a href="/free-quote">Free Online Quote</a>
-          <a href="/Our-Serives">Our Signature Services</a>
+          <a href="/our-services">Our Signature Services</a>
           <a href="/areas-we-service">Areas We Services</a>
           <a href="/smart-home">Smart Home</a>
         </div>
 
         {/* Column 5: Large Logo */}
         <div className="footer-column footer-logo-large">
-          <img src={sitelogo} alt="Site Logo" />
+          <img src={sitelogo} alt="NZXTGEN Electrical and Smart Home Services Logo" />
         </div>
       </div>
     </footer>

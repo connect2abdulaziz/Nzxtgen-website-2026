@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase";
 import Navbar from "../components/Navbar";
+import SEO from "../components/SEO";
 import "./AdminLogin.css";
 
 function ForgotPassword() {
@@ -26,6 +27,11 @@ function ForgotPassword() {
 
   return (
     <div className="wrapper">
+      <SEO 
+        title="Forgot Password | NZXTGEN"
+        description="Password reset"
+        noindex={true}
+      />
       <Navbar />
       <div className="admin-login-container">
         <form className="admin-login-form" onSubmit={handleSubmit}>

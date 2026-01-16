@@ -66,7 +66,7 @@ const CurrentPromotions = () => {
   return (
     <div className="current-promotions">
       <div className="promotions-header">
-        <h1>CURRENT PROMOTIONS</h1>
+        <h2>CURRENT PROMOTIONS</h2>
       </div>
 
       <button className="slider-arrow left-arrow" onClick={slideLeft}>
@@ -95,7 +95,7 @@ const CurrentPromotions = () => {
                 ref={index === 0 ? cardRef : null}
               >
                 <div className="item-image">
-                  <img src={item.img} alt={item.name} />
+                  <img src={item.img} alt={item.name} loading="lazy" decoding="async" />
                 </div>
                 <div className="item-details">
                   <div className="item-name">{item.name}</div>

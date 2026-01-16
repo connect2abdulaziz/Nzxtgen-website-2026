@@ -1,7 +1,7 @@
 import "./AboutSection.css";
-import aboutBackground from "../assets/aboutsecbg.jpg";
-import aboutVideo from "../assets/aboutsecvideo.mp4";
-import aboutVideoDesktop from "../assets/bottom-video-desktop.mp4";
+import aboutBackground from "../assets/nzxtgen-about-section-background.jpg";
+import aboutVideo from "../assets/nzxtgen-why-choose-nzxtgen-video.mp4";
+import aboutVideoDesktop from "../assets/nzxtgen-electrical-expertise-desktop-video.mp4";
 
 const AboutSection = () => {
   const isMobile = window.innerWidth <= 480;
@@ -24,21 +24,16 @@ const AboutSection = () => {
 
         {/* Right: Text */}
         <div className="about-content">
-          <h2 className="about-heading">Our Mission</h2>
+          <h2 className="about-heading">Why Choose NZXTGEN</h2>
           <p className="about-description">
-            Next Gen Electrical Services is a trusted provider of electrical
-            solutions and services around Sydney. We specialize in construction,
-            renovation, and maintenance for residential, commercial, and
-            industrial projects.
+            We are fully licensed and experienced, with hands-on knowledge across electrical, smart technology and low-voltage systems. This means fewer trades, better integration, and a smoother experience from start to finish.
           </p>
           <p className="about-description">
-            Our focus is on quality workmanship and customer satisfaction,
-            delivering reliable, efficient electrical services and ensuring the
-            safety and functionality of your systems.
+            Our approach is practical and transparent. We explain what's required, what your options are, and what makes sense for your space and budget. You get solutions that work — not unnecessary extras.
           </p>
-          <a href="/About-us" className="learn-more-button">
-            Learn More
-          </a>
+          <p className="about-description">
+            We respect your home or workplace. Jobs are completed cleanly, safely, and with minimal disruption, and we don't leave until everything is tested and working correctly.
+          </p>
         </div>
       </div>
     </section>

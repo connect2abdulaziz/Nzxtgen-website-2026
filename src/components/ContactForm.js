@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './ContactForm.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { trackFormSubmission } from '../utils/analytics';
 
 const ContactForm = () => {
   useEffect(() => {
@@ -11,11 +12,18 @@ const ContactForm = () => {
     });
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    trackFormSubmission('contact', 'contact_form');
+    // Form submission logic here
+    alert('Thank you for your message! We will get back to you soon.');
+  };
+
   return (
     <section className="contact-section">
       {/* Header Section */}
       <div className="contact-header" data-aos="fade-up">
-        <h1>Contact Us</h1>
+        <h2>Contact Us</h2>
         <p>
           We'd love to hear from you. Reach out with any questions, comments,
           or just to say hello.
@@ -28,11 +36,11 @@ const ContactForm = () => {
         <div className="contact-form-container">
           <h3 className="form-title">Get In Touch</h3>
           <p className="form-description">
-            Please fill out the form below, and we’ll get back to you as soon
+            Please fill out the form below, and we'll get back to you as soon
             as possible.
           </p>
 
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label>First Name</label>

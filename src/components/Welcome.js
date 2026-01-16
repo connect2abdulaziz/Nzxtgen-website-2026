@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Welcome.css";
-// import welcomeImage1 from "../assets/welcome1.jpg";
-// import welcomeImage2 from "../assets/welcome2.jpg";
-import welcomeVideo from "../assets/video/hero-bg.mp4";
-import welcomeVideoMobile from "../assets/video/mobileWelcome1.mp4";
+// import welcomeImage1 from "../assets/nzxtgen-electrical-services-hero.jpg";
+// import welcomeImage2 from "../assets/nzxtgen-smart-home-solutions.jpg";
+import welcomeVideo from "../assets/video/nzxtgen-electrical-services-hero-video.mp4";
+import welcomeVideoMobile from "../assets/video/nzxtgen-mobile-hero-video.mp4";
 
 const Welcome = () => {
   const isMobile = window.innerWidth <= 480;
@@ -32,7 +32,7 @@ const Welcome = () => {
       title: "Start Living In The Future",
       slogan: "With next-gen electrical technology",
       buttonText: "EXPLORE",
-      buttonLink: "/Our-Serives",
+      buttonLink: "/our-services",
     },
   ];
 
@@ -56,11 +56,13 @@ const Welcome = () => {
             {slide.type === "image" ? (
               <img
                 src={slide.src}
-                alt={`Slide ${slide.id}`}
+                alt="NZXTGEN Electrical and Smart Home Services - Modern Technology Solutions"
                 className="slide-media"
+                loading="eager"
+                fetchPriority="high"
               />
             ) : (
-              <video autoPlay loop muted playsInline className="slide-media">
+              <video autoPlay loop muted playsInline className="slide-media" preload="metadata">
                 <source src={slide.src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -68,7 +70,7 @@ const Welcome = () => {
             <div className="slider-overlay"></div>
 
             <div className="slide-content">
-              <h1 className="welcome-header">{slide.title}</h1>
+              <h2 className="welcome-header">{slide.title}</h2>
               <p className="welcome-slogan">{slide.slogan}</p>
               {slide.buttonLink ? (
                 <a href={slide.buttonLink} className="welcome-button">
