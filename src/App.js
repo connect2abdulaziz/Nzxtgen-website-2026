@@ -7,6 +7,7 @@ import ContactUs from "./pages/ContactUs";
 import AreaWeService from "./pages/AreaWeService";
 import SwitchBoard from "./pages/SwitchBoard";
 import SmartHome from "./pages/SmartHome";
+import SmartHomeMoreInfo from "./pages/SmartHomeMoreInfo";
 import Privacypage from "./pages/PrivacyPage";
 import Termspage from "./pages/Termspage";
 import NotFound from "./pages/NotFound";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/our-services" element={<OurServices />} />
         <Route path="/smart-home" element={<SmartHome />} />
+        <Route path="/smart-home-more-info" element={<SmartHomeMoreInfo />} />
         <Route path="/electrical-services" element={<ElectricService />} />
         <Route path="/security-systems" element={<SecurityService />} />
         <Route path="/entertainment-technology" element={<EntertainmentService />} />

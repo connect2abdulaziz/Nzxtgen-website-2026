@@ -6,6 +6,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSmartHomeDropdownOpen, setIsSmartHomeDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,7 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (!event.target.closest(".dropdown")) {
         setIsDropdownOpen(false);
+        setIsSmartHomeDropdownOpen(false);
       }
     };
 
@@ -64,8 +66,16 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li>
-            <a href="/smart-home">SMART HOME</a>
+          <li className="dropdown">
+            <p>SMART HOME</p>
+            <ul className={`dropdown-menu ${isSmartHomeDropdownOpen ? "show" : ""}`}>
+              <li>
+                <a href="/smart-home">Smart Home</a>
+              </li>
+              <li>
+                <a href="/smart-home-more-info">Smart Home - More Info</a>
+              </li>
+            </ul>
           </li>
 
           <li>

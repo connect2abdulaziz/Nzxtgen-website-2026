@@ -3,7 +3,11 @@ import "./SMDescription.css";
 import { motion } from "framer-motion";
 import floorPlanVideo1 from "../assets/bg/videos/smart-home-installation-demo.mov";
 
-const SMDescription = () => {
+const SMDescription = ({ 
+  title = "Smart Home",
+  subtitle = "Smart Homes, Smarter Living",
+  description = "A smart home integrates advanced technology to enhance comfort, convenience, and security. From automated lighting and temperature control to voice-activated assistants and smart security systems, a smart home allows homeowners to manage their environment remotely and efficiently. With seamless connectivity and intuitive interfaces, smart homes offer a personalized experience that adapts to individual needs, creating a more connected and efficient living space."
+}) => {
   return (
     <section className="sm-section">
       <div className="overlay" style={{ zIndex: 1, borderRadius:0 }}></div>
@@ -18,16 +22,10 @@ const SMDescription = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="sm-title">Smart Home</h2>
-        <h3 className="sm-subtitle">Smart Homes, Smarter Living</h3>
+        <h2 className="sm-title">{title}</h2>
+        <h3 className="sm-subtitle">{subtitle}</h3>
         <p className="sm-description">
-          A smart home integrates advanced technology to enhance comfort,
-          convenience, and security. From automated lighting and temperature
-          control to voice-activated assistants and smart security systems, a
-          smart home allows homeowners to manage their environment remotely and
-          efficiently. With seamless connectivity and intuitive interfaces,
-          smart homes offer a personalized experience that adapts to individual
-          needs, creating a more connected and efficient living space.
+          {description}
         </p>
       </motion.div>
     </section>
