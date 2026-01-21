@@ -13,14 +13,13 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form-section">
-      <div className="contact-form-overlay"></div>
       <div className="contact-form-wrapper">
-        <div className="contact-form-header">
-          <h2>Send Us a Message</h2>
-          <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-        </div>
+        <div className="contact-form-container">
+          <h3 className="form-title">Get In Touch</h3>
+          <p className="form-description">
+            Please fill out the form below, and we'll get back to you as soon as possible.
+          </p>
 
-        <div className="contact-form-content">
           <form className="modern-contact-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">

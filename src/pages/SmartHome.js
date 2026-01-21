@@ -5,9 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import SMDescription from '../components/SMDescription';
-import SmartHomeContent from '../components/SmartHomeContent';
-
-
+import SMServices from '../components/SMServices';
 
 
 
@@ -25,7 +23,7 @@ const SmartHome = () => {
       <MobileCallButton />
       <Navbar/>
       <SMDescription/>
-      <SmartHomeContent/>
+      <SMServices/>
       <Footer/>
     </div>
   );

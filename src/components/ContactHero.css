@@ -1,7 +1,10 @@
 .contact-hero-section {
   width: 100%;
   min-height: 60vh;
-  background: url("../assets/nzxtgen-about-section-background.jpg") no-repeat center center/cover;
+  background-image: url("../assets/contact-page/electric-support-contact.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center 60% !important;
+  background-size: cover !important;
   background-attachment: fixed;
   position: relative;
   display: flex;
@@ -60,6 +63,8 @@
   .contact-hero-section {
     min-height: 50vh;
     padding: 6rem 1.5rem 3rem;
+    background-image: url("../assets/contact-page/electric-support-contact.jpg") !important;
+    background-position: center 60% !important;
     background-attachment: scroll;
   }
 
@@ -78,6 +83,8 @@
 
 @media (max-width: 480px) {
   .contact-hero-section {
+    background-image: url("../assets/contact-page/electric-support-contact.jpg") !important;
+    background-position: center 60% !important;
     background-attachment: scroll;
   }
 
