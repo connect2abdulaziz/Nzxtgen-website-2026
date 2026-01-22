@@ -103,7 +103,7 @@ const SuburbsDirectory = () => {
                 <div className="suburb-services">
                   <p>Available Services:</p>
                   <ul>
-                    <li><Link to="/electrical-services">Electrical Services</Link></li>
+                    <li><Link to="/services/electrical-services">Electrical Services</Link></li>
                     <li><Link to="/smart-home">Smart Home Automation</Link></li>
                     <li><Link to="/security-systems">Security Systems</Link></li>
                     <li><Link to="/switchboard-upgrade">Switchboard Upgrades</Link></li>

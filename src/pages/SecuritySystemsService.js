@@ -7,13 +7,13 @@ import SEO from '../components/SEO';
 import SecurityServiceDescription from '../components/SecurityServiceDescription';
 import SecurityServiceContent from '../components/SecurityServiceContent';
 
-const SecurityService = () => {
+const SecuritySystemsService = () => {
   return (
-    <div id='SecurityService'>
+    <div id='SecuritySystemsService'>
       <SEO 
-        title="Security Systems Installation for Homes & Businesses | NZXTGEN"
+        title="Security Systems Installation | NZXTGEN"
         description="Professional security system installation including CCTV, alarms, access control and intercoms. Reliable protection for homes and businesses by NZXTGEN."
-        canonical={typeof window !== 'undefined' ? window.location.origin + '/security-systems' : undefined}
+        canonical={typeof window !== 'undefined' ? window.location.origin + '/services/security-systems' : undefined}
       />
       <WhatsappChat />
       <MobileCallButton />
@@ -25,4 +25,4 @@ const SecurityService = () => {
   );
 };
 
-export default SecurityService;
+export default SecuritySystemsService;

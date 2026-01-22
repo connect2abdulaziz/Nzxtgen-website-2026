@@ -53,6 +53,9 @@ const Navbar = () => {
             <p>SERVICES</p>
             <ul className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
               <li>
+                <a href="/services">Our Services</a>
+              </li>
+              <li>
                 <a href="/areas-we-service">Areas We Service</a>
               </li>
               <li>

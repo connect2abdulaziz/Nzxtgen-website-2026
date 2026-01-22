@@ -4,20 +4,17 @@ import MobileCallButton from '../components/MobileCallButton';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import LocalBusinessSchema from '../components/LocalBusinessSchema';
 import DataNetworkingDescription from '../components/DataNetworkingDescription';
 import DataNetworkingContent from '../components/DataNetworkingContent';
 
-const DataNetworking = () => {
+const DataNetworkingService = () => {
   return (
-    <div id='DataNetworking'>
+    <div id='DataNetworkingService'>
       <SEO 
-        title="Data & Networking Services in Condell Park | NZXTGEN"
-        description="Professional data and networking services in Condell Park. Structured cabling, data points, 
-        patch panels and reliable connectivity for homes and businesses."
-        canonical={typeof window !== 'undefined' ? window.location.origin + '/data-networking' : undefined}
+        title="Data & Networking Services | NZXTGEN"
+        description="Professional data and networking services. Structured cabling, data points, patch panels and reliable connectivity for homes and businesses."
+        canonical={typeof window !== 'undefined' ? window.location.origin + '/services/data-networking' : undefined}
       />
-      <LocalBusinessSchema />
       <WhatsappChat />
       <MobileCallButton />
       <Navbar/>
@@ -28,4 +25,4 @@ const DataNetworking = () => {
   );
 };
 
-export default DataNetworking;
+export default DataNetworkingService;
