@@ -59,6 +59,9 @@ const Navbar = () => {
                 <a href="/areas-we-service">Areas We Service</a>
               </li>
               <li>
+                <a href="/suburbs">Suburbs Directory</a>
+              </li>
+              <li>
                 <a href="/free-quote">Free Online Quote</a>
               </li>
               <li>
