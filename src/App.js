@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
-import FreeQuote from "./pages/FreeQuote"; // Import the FreeQuote page component
+import FreeQuote from "./pages/FreeQuote";
 import AboutUs from "./pages/AboutUs";
 import OurServices from "./pages/OurServices";
 import ContactUs from "./pages/ContactUs";
@@ -21,6 +21,15 @@ import SmartHomeService from "./pages/SmartHomeService";
 import SecuritySystemsService from "./pages/SecuritySystemsService";
 import DataNetworkingService from "./pages/DataNetworkingService";
 import EntertainmentService from "./pages/EntertainmentService";
+// Builders & Contracting pages
+import ResidentialElectrical from "./pages/ResidentialElectrical";
+import CommercialIndustrialElectrical from "./pages/CommercialIndustrialElectrical";
+import NewBuildsRenovations from "./pages/NewBuildsRenovations";
+import ComplianceLicensing from "./pages/ComplianceLicensing";
+// Quick Links pages
+import ComplianceLicence from "./pages/ComplianceLicence";
+import EmergencyElectrician from "./pages/EmergencyElectrician";
+import ElectricalFaultFindingRepairs from "./pages/ElectricalFaultFindingRepairs";
 
 function App() {
   return (
@@ -42,6 +51,15 @@ function App() {
         <Route path="/security-systems" element={<Navigate to="/services/security-systems" replace />} />
         <Route path="/data-networking" element={<Navigate to="/services/data-networking" replace />} />
         <Route path="/entertainment-technology" element={<Navigate to="/services/entertainment-technology" replace />} />
+        {/* Builders & Contracting routes */}
+        <Route path="/residential-electrical" element={<ResidentialElectrical />} />
+        <Route path="/commercial-industrial-electrical" element={<CommercialIndustrialElectrical />} />
+        <Route path="/new-builds-renovations" element={<NewBuildsRenovations />} />
+        <Route path="/compliance-licensing" element={<ComplianceLicensing />} />
+        {/* Quick Links routes */}
+        <Route path="/compliance-licence" element={<ComplianceLicence />} />
+        <Route path="/emergency-electrician" element={<EmergencyElectrician />} />
+        <Route path="/electrical-fault-finding-repairs" element={<ElectricalFaultFindingRepairs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<Privacypage />} />
         <Route path="/areas-we-service" element={<AreaWeService />} />

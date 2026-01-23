@@ -35,7 +35,7 @@ const Footer = () => {
           <p>Sun: Closed</p>
         </div>
 
-        {/* ✅ Column 2: Get in Touch */}
+        {/* Column 2: Get in Touch */}
         <div className="footer-column">
           <h3>Get in Touch</h3>
           <a href="/free-quote">Online Quote</a>
@@ -52,17 +52,23 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <a href="/privacy-policy">Privacy Policy</a>
           <a href="/terms-and-conditions">Terms & Conditions</a>
-          <a href="/contact-us">Contact Us</a>
-          <a href="/free-quote">Online Quote</a>
+          <a href="/compliance-licence">Compliance & Licence</a>
+          <a href="/emergency-electrician">Emergency Electrician</a>
+          <a href="/electrical-fault-finding-repairs">Electrical Fault Finding & Repairs</a>
         </div>
 
-        {/* Column 4: Services */}
+        {/* Column 4: Service Areas */}
         <div className="footer-column">
-          <h3>Services</h3>
-          <a href="/free-quote">Free Online Quote</a>
-          <a href="/our-services">Our Signature Services</a>
-          <a href="/areas-we-service">Areas We Services</a>
-          <a href="/smart-home">Smart Home</a>
+          <h3>Service Areas</h3>
+          <a href="/areas-we-service">Areas We Service</a>
+          <a href="/suburbs">Padstow</a>
+          <a href="/suburbs">Condell Park</a>
+          <a href="/suburbs">Bankstown</a>
+          <a href="/suburbs">Revesby</a>
+          <a href="/suburbs">Canterbury</a>
+          <a href="/suburbs">Earlwood</a>
+          <a href="/suburbs">Panania</a>
+          <a href="/suburbs">Strathfield</a>
         </div>
 
         {/* Column 5: Large Logo */}

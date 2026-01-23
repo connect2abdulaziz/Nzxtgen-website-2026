@@ -51,6 +51,27 @@ body {
   opacity: 0.8;
 }
 
+/* Ensure clickable dropdown links maintain same styling */
+.contact-link,
+.about-link,
+.services-link,
+.smart-home-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.navbar.scrolled .contact-link,
+.navbar.scrolled .about-link,
+.navbar.scrolled .services-link,
+.navbar.scrolled .smart-home-link {
+  color: black;
+}
+
 .navbar.scrolled .navbar-links li :is(a, p) {
   color: black;
 }
@@ -77,6 +98,42 @@ body {
   display: block;
 }
 
+/* Clickable Dropdowns - Hover functionality */
+.contact-dropdown:hover .contact-dropdown-menu,
+.contact-dropdown-menu.show,
+.about-dropdown:hover .about-dropdown-menu,
+.about-dropdown-menu.show,
+.services-dropdown:hover .services-dropdown-menu,
+.services-dropdown-menu.show,
+.smart-home-dropdown:hover .smart-home-dropdown-menu,
+.smart-home-dropdown-menu.show {
+  display: block;
+}
+
+/* Fix gap issue for clickable dropdowns */
+.contact-dropdown-menu,
+.about-dropdown-menu,
+.services-dropdown-menu,
+.smart-home-dropdown-menu {
+  z-index: 1001;
+  margin-top: 0;
+  padding-top: 0.75rem; /* Creates invisible bridge area to catch mouse */
+}
+
+/* Invisible bridge area to prevent gap when moving mouse */
+.contact-dropdown-menu::before,
+.about-dropdown-menu::before,
+.services-dropdown-menu::before,
+.smart-home-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  left: 0;
+  right: 0;
+  height: 0.75rem;
+  background: transparent;
+}
+
 .dropdown-menu li {
   padding: 0.5rem 1rem;
 }
@@ -93,7 +150,11 @@ body {
 }
 
 /* Line Under Navbar Item */
-.navbar-links li a::after {
+.navbar-links li a::after,
+.contact-link::after,
+.about-link::after,
+.services-link::after,
+.smart-home-link::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -104,15 +165,27 @@ body {
   transition: width 0.3s ease, background-color 0.3s ease;
 }
 
-.navbar.scrolled .navbar-links li a::after {
+.navbar.scrolled .navbar-links li a::after,
+.navbar.scrolled .contact-link::after,
+.navbar.scrolled .about-link::after,
+.navbar.scrolled .services-link::after,
+.navbar.scrolled .smart-home-link::after {
   background-color: black;
 }
 
-.navbar-links li a:hover::after {
+.navbar-links li a:hover::after,
+.contact-link:hover::after,
+.about-link:hover::after,
+.services-link:hover::after,
+.smart-home-link:hover::after {
   width: 100%;
 }
 
-.navbar-links li a:hover {
+.navbar-links li a:hover,
+.contact-link:hover,
+.about-link:hover,
+.services-link:hover,
+.smart-home-link:hover {
   opacity: 1;
 }
 
@@ -131,7 +204,11 @@ body {
   margin: 1rem 0;
 }
 
-.navbar-links.active li :is(a, p) {
+.navbar-links.active li :is(a, p),
+.navbar-links.active .contact-link,
+.navbar-links.active .about-link,
+.navbar-links.active .services-link,
+.navbar-links.active .smart-home-link {
   color: black;
   opacity: 1;
 }
