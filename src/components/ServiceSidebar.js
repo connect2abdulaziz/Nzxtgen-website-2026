@@ -7,8 +7,10 @@ const ServiceSidebar = () => {
     { name: "Electrical Services", link: "/services/electrical-services" },
     { name: "Smart Home Solutions", link: "/services/smart-home" },
     { name: "Security Systems", link: "/services/security-systems" },
+    { name: "Lighting", link: "/lighting-installation" },
     { name: "Data & Networking", link: "/services/data-networking" },
-    { name: "Entertainment Technology", link: "/services/entertainment-technology" }
+    { name: "Entertainment Technology", link: "/services/entertainment-technology" },
+    { name: "Switchboard Upgrades", link: "/switchboard-upgrade" }
   ];
 
   return (

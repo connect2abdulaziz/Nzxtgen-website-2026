@@ -52,7 +52,8 @@ const Navbar = () => {
           <li>
             <a href="/">HOME</a>
           </li>
-          <li className="dropdown about-dropdown">
+          {/* About section commented out - not showing in navbar */}
+          {/* <li className="dropdown about-dropdown">
             <a 
               href="/about-us" 
               className="about-link"
@@ -79,7 +80,7 @@ const Navbar = () => {
                 <a href="/areas-we-service">Areas We Service</a>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li className="dropdown services-dropdown">
             <a 
               href="/services" 
@@ -107,7 +108,13 @@ const Navbar = () => {
                 <a href="/our-services">Our Signature Services</a>
               </li>
               <li>
+                <a href="/areas-we-service">Areas We Service</a>
+              </li>
+              <li>
                 <a href="/services/security-systems">Home Security Systems</a>
+              </li>
+              <li>
+                <a href="/lighting-installation">Lighting</a>
               </li>
               <li>
                 <a href="/services/electrical-services">Electrical Services</a>
@@ -187,7 +194,7 @@ const Navbar = () => {
               }}
             >
               <li>
-                <a href="/free-quote">Get Quote</a>
+                <a href="/free-quote">Free Online Quote</a>
               </li>
             </ul>
           </li>

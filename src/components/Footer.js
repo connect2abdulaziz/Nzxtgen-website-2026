@@ -63,12 +63,12 @@ const Footer = () => {
           <a href="/areas-we-service">Areas We Service</a>
           <a href="/suburbs">Padstow</a>
           <a href="/suburbs">Condell Park</a>
-          <a href="/suburbs">Bankstown</a>
-          <a href="/suburbs">Revesby</a>
-          <a href="/suburbs">Canterbury</a>
-          <a href="/suburbs">Earlwood</a>
-          <a href="/suburbs">Panania</a>
-          <a href="/suburbs">Strathfield</a>
+          <a href="/electrician-bankstown">Bankstown</a>
+          <a href="/electrician-revesby">Revesby</a>
+          <a href="/electrician-canterbury">Canterbury</a>
+          <a href="/electrician-earlwood">Earlwood</a>
+          <a href="/electrician-panania">Panania</a>
+          <a href="/electrician-strathfield">Strathfield</a>
         </div>
 
         {/* Column 5: Large Logo */}

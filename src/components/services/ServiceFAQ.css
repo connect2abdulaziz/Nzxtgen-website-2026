@@ -1,11 +1,17 @@
 .service-faq-section {
   padding: 20px 20px;
-  background: #fff;
+  background: transparent;
 }
 
 .service-faq-container {
   max-width: 1450px;
   margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  backdrop-filter: blur(10px);
 }
 
 /* Header */
@@ -128,7 +134,7 @@
 
 .faq-question-text {
   flex: 1;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #1a1a1a;
 }
@@ -167,7 +173,7 @@
 }
 
 .service-faq-answer p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #666;
   line-height: 1.8;
   margin: 0;
@@ -178,6 +184,10 @@
 @media (max-width: 1024px) {
   .service-faq-section {
     padding: 60px 20px;
+  }
+
+  .service-faq-container {
+    padding: 2rem;
   }
 
   .service-faq-header {
@@ -211,6 +221,10 @@
     padding: 50px 15px;
   }
 
+  .service-faq-container {
+    padding: 1.75rem;
+  }
+
   .service-faq-header {
     margin-bottom: 30px;
   }
@@ -233,7 +247,7 @@
   }
 
   .faq-question-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .faq-number {
@@ -242,7 +256,7 @@
   }
 
   .service-faq-answer p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     padding-left: 20px;
   }
 
@@ -254,6 +268,10 @@
 @media (max-width: 480px) {
   .service-faq-section {
     padding: 40px 12px;
+  }
+
+  .service-faq-container {
+    padding: 1.5rem;
   }
 
   .service-faq-header {
@@ -285,7 +303,7 @@
   }
 
   .faq-question-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .faq-number {
@@ -299,7 +317,7 @@
   }
 
   .service-faq-answer p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-left: 15px;
     line-height: 1.6;
   }

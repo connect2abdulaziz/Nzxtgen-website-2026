@@ -3,33 +3,27 @@ import faqImage from '../../assets/services/service-image-6.jpg';
 import './ServiceFAQ.css';
 
 const ServiceFAQ = () => {
-  const [openIndex, setOpenIndex] = useState(0);
-
   const faqItems = [
     {
-      question: "What types of electrical services do you offer?",
-      answer: "We offer a wide range of services including residential electrical installations, smart home automation, security systems, data networking, and entertainment technology setups."
+      question: "Can multiple services be completed during one visit?",
+      answer: "Yes. Many clients combine electrical, data, and smart home work into one streamlined job."
     },
     {
-      question: "Are your electricians licensed and insured?",
-      answer: "Yes, all our electricians are fully licensed, insured, and comply with Australian Standards. We maintain current certifications and ongoing training."
-    },
-    {
-      question: "Do you provide emergency electrical services?",
-      answer: "Yes, we offer emergency electrical services for urgent issues. Contact us directly for availability and response times in your area."
-    },
-    {
-      question: "How much do your services cost?",
-      answer: "Our pricing varies based on the scope of work. We provide free quotes for all projects, ensuring transparent and competitive pricing with no hidden fees."
-    },
-    {
-      question: "Can you help with energy-efficient upgrades?",
-      answer: "Absolutely! We specialize in energy-efficient solutions including LED lighting upgrades, smart automation systems, and electrical improvements to reduce power consumption."
+      question: "Do you supply equipment as well as installation?",
+      answer: "Yes. We can supply, install and configure compatible products or work with client-supplied equipment where appropriate."
     }
   ];
 
+  const [openIndexes, setOpenIndexes] = useState(() =>
+    faqItems.map((_, index) => index)
+  );
+
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
+    setOpenIndexes((prevIndexes) =>
+      prevIndexes.includes(index)
+        ? prevIndexes.filter((item) => item !== index)
+        : [...prevIndexes, index]
+    );
   };
 
   return (
@@ -60,7 +54,7 @@ const ServiceFAQ = () => {
             {faqItems.map((item, index) => (
               <div 
                 key={index} 
-                className={`service-faq-item ${openIndex === index ? 'active' : ''}`}
+                className={`service-faq-item ${openIndexes.includes(index) ? 'active' : ''}`}
               >
                 <button 
                   className="service-faq-question"
@@ -69,7 +63,7 @@ const ServiceFAQ = () => {
                   <span className="faq-number">{index + 1}.</span>
                   <span className="faq-question-text">{item.question}</span>
                   <span className="faq-icon">
-                    {openIndex === index ? (
+                    {openIndexes.includes(index) ? (
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M8 12h8"/>

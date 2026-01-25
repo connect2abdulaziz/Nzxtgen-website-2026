@@ -16,20 +16,27 @@ import AdminDashboard from "./pages/AdminDashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import ServicesDirectory from "./pages/ServicesDirectory";
 import SuburbsDirectory from "./pages/SuburbsDirectory";
+import Canterbury from "./pages/city/Canterbury/Canterbury";
+import Bankstown from "./pages/city/Bankstown/Bankstown";
+import Earlwood from "./pages/city/Earlwood/Earlwood";
+import Panania from "./pages/city/Panania/Panania";
+import Revesby from "./pages/city/Revesby/Revesby";
+import Strathfield from "./pages/city/Strathfield/Strathfield";
 import ElectricService from "./pages/ElectricService";
 import SmartHomeService from "./pages/SmartHomeService";
 import SecuritySystemsService from "./pages/SecuritySystemsService";
 import DataNetworkingService from "./pages/DataNetworkingService";
 import EntertainmentService from "./pages/EntertainmentService";
 // Builders & Contracting pages
-import ResidentialElectrical from "./pages/ResidentialElectrical";
+import ResidentialElectrical from "./pages/BUILDERS & CONTRACTING/ResidentialElectrical";
 import CommercialIndustrialElectrical from "./pages/CommercialIndustrialElectrical";
-import NewBuildsRenovations from "./pages/NewBuildsRenovations";
+import NewBuildsRenovations from "./pages/BUILDERS & CONTRACTING/NewBuildsRenovations";
 import ComplianceLicensing from "./pages/ComplianceLicensing";
+import ComplianceLicence from "./pages/BUILDERS & CONTRACTING/ComplianceLicence";
 // Quick Links pages
-import ComplianceLicence from "./pages/ComplianceLicence";
 import EmergencyElectrician from "./pages/EmergencyElectrician";
 import ElectricalFaultFindingRepairs from "./pages/ElectricalFaultFindingRepairs";
+import LightingInstallation from "./pages/LightingInstallation";
 
 function App() {
   return (
@@ -45,6 +52,7 @@ function App() {
         <Route path="/services/electrical-services" element={<ElectricService />} />
         <Route path="/services/smart-home" element={<SmartHomeService />} />
         <Route path="/services/security-systems" element={<SecuritySystemsService />} />
+        <Route path="/lighting-installation" element={<LightingInstallation />} />
         <Route path="/services/data-networking" element={<DataNetworkingService />} />
         <Route path="/services/entertainment-technology" element={<EntertainmentService />} />
         {/* Redirects from old URLs to new service URLs for SEO */}
@@ -60,12 +68,19 @@ function App() {
         <Route path="/compliance-licence" element={<ComplianceLicence />} />
         <Route path="/emergency-electrician" element={<EmergencyElectrician />} />
         <Route path="/electrical-fault-finding-repairs" element={<ElectricalFaultFindingRepairs />} />
+        <Route path="/lighting-installation" element={<LightingInstallation />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<Privacypage />} />
         <Route path="/areas-we-service" element={<AreaWeService />} />
         <Route path="/switchboard-upgrade" element={<SwitchBoard />} />
         <Route path="/terms-and-conditions" element={<Termspage />} />
         <Route path="/suburbs" element={<SuburbsDirectory />} />
+        <Route path="/electrician-canterbury" element={<Canterbury />} />
+        <Route path="/electrician-bankstown" element={<Bankstown />} />
+        <Route path="/electrician-earlwood" element={<Earlwood />} />
+        <Route path="/electrician-panania" element={<Panania />} />
+        <Route path="/electrician-revesby" element={<Revesby />} />
+        <Route path="/electrician-strathfield" element={<Strathfield />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
