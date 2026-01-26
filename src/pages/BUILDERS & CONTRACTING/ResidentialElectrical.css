@@ -400,6 +400,7 @@
 @media (max-width: 768px) {
   .residential-hero {
     background-attachment: scroll;
+    margin-top: 100px;
   }
 
   .residential-why-choose {
@@ -436,6 +437,10 @@
 }
 
 @media (max-width: 480px) {
+  .residential-hero {
+    margin-top: 90px;
+  }
+
   .residential-hero h1 {
     font-size: 2rem;
   }

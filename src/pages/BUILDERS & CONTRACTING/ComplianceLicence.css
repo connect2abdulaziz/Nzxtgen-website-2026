@@ -496,7 +496,7 @@
   }
 
   .compliance-hero-inner {
-    padding: 3rem 1.5rem;
+    padding: 8rem 1.5rem 3rem;
   }
 
   .compliance-hero h1 {
@@ -533,6 +533,10 @@
 }
 
 @media (max-width: 480px) {
+  .compliance-hero-inner {
+    padding: 7rem 1.5rem 2.5rem;
+  }
+
   .compliance-hero h1 {
     font-size: 2rem;
   }

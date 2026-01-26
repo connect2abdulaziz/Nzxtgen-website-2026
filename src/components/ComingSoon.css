@@ -87,7 +87,9 @@
 
 @media (max-width: 768px) {
   .coming-soon-container {
+    margin-top: 100px;
     padding: 3rem 1.5rem;
+    min-height: 50vh;
   }
 
   .coming-soon-title {
@@ -105,5 +107,17 @@
   .coming-soon-button {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-container {
+    margin-top: 90px;
+    padding: 2.5rem 1.5rem;
+    min-height: 45vh;
+  }
+
+  .coming-soon-title {
+    font-size: 1.75rem;
   }
 }
