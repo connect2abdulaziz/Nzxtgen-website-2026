@@ -4,7 +4,9 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  position: relative;
+  overflow: hidden;
 }
 
 .coming-soon-content {
@@ -14,11 +16,12 @@
 }
 
 .coming-soon-icon {
-  color: #667eea;
+  color: #fff;
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   animation: float 3s ease-in-out infinite;
+  opacity: 0.9;
 }
 
 @keyframes float {
@@ -33,16 +36,18 @@
 .coming-soon-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 1rem;
   line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .coming-soon-description {
   font-size: 1.15rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.8;
   margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .coming-soon-actions {
@@ -71,13 +76,13 @@
 
 .coming-soon-button.secondary {
   background: transparent;
-  border: 2px solid #667eea;
-  color: #667eea;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .coming-soon-button.secondary:hover {
-  background: #667eea;
-  color: #fff;
+  background: #fff;
+  color: #1e3c72;
 }
 
 @media (max-width: 768px) {
