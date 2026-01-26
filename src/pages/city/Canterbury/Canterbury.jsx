@@ -13,27 +13,27 @@ import "../cityLayout.css";
 
 const Canterbury = () => {
   const serviceList = [
-    "Lighting installations and upgrades for indoor and outdoor areas",
-    "Power point additions and layout improvements",
-    "Switchboard inspections and safety upgrades",
-    "Smoke alarm installation and compliance checks",
-    "Ceiling fan installation for comfort and airflow",
-    "Fault finding and electrical repairs",
-    "Smart home and automation systems",
-    "Security solutions such as CCTV and alarms",
+    { label: "Lighting installations and upgrades for indoor and outdoor areas", to: "/lighting-installation" },
+    { label: "Power point additions and layout improvements", to: "/services/electrical-services" },
+    { label: "Switchboard inspections and safety upgrades", to: "/switchboard-upgrade" },
+    { label: "Smoke alarm installation and compliance checks", to: "/smoke-alarms-electrical-safety-checks" },
+    { label: "Ceiling fan installation for comfort and airflow", to: "/services/electrical-services" },
+    { label: "Fault finding and electrical repairs", to: "/electrical-fault-finding-repairs" },
+    { label: "Smart home and automation systems", to: "/services/smart-home" },
+    { label: "Security solutions such as CCTV and alarms", to: "/services/security-systems" },
   ];
 
   const olderHomesList = [
-    "Replacing outdated switchboards with modern safety protection",
-    "Installing additional circuits to handle increased load",
-    "Upgrading lighting to improve efficiency and visibility",
+    { label: "Replacing outdated switchboards with modern safety protection", to: "/switchboard-upgrade" },
+    { label: "Installing additional circuits to handle increased load", to: "/services/electrical-services" },
+    { label: "Upgrading lighting to improve efficiency and visibility", to: "/lighting-installation" },
     "Resolving recurring tripping or power fluctuations",
   ];
 
   const renovationsList = [
-    "Planning electrical layouts alongside builders and designers",
-    "Installing concealed cabling before walls are closed",
-    "Ensuring bathroom and kitchen electrical compliance",
+    { label: "Planning electrical layouts alongside builders and designers", to: "/new-builds-renovations" },
+    { label: "Installing concealed cabling before walls are closed", to: "/new-builds-renovations" },
+    { label: "Ensuring bathroom and kitchen electrical compliance", to: "/compliance-licensing" },
     "Coordinating lighting, switching, and appliance connections",
   ];
 
@@ -178,10 +178,16 @@ const Canterbury = () => {
               <div className="canterbury-services-content">
                 <div className="canterbury-services-group">
                   <div className="canterbury-services-items">
-                    {serviceList.map((item) => (
-                      <div key={item} className="canterbury-service-item">
+                    {serviceList.map((item, index) => (
+                      <div key={index} className="canterbury-service-item">
                         <div className="canterbury-service-indicator"></div>
-                        <span className="canterbury-service-text">{item}</span>
+                        <span className="canterbury-service-text">
+                          {item.to ? (
+                            <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                          ) : (
+                            item.label || item
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -225,8 +231,14 @@ const Canterbury = () => {
                   </p>
                   <p>Common upgrade needs include:</p>
                   <ul className="canterbury-list">
-                    {olderHomesList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {olderHomesList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>
@@ -244,8 +256,14 @@ const Canterbury = () => {
                   </p>
                   <p>We regularly support renovation projects by:</p>
                   <ul className="canterbury-list">
-                    {renovationsList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {renovationsList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>
@@ -263,8 +281,14 @@ const Canterbury = () => {
                   </p>
                   <p>We help clients adapt their homes and workplaces by:</p>
                   <ul className="canterbury-list">
-                    {technologyList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {technologyList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>

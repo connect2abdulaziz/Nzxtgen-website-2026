@@ -13,14 +13,14 @@ import "../cityLayout.css";
 
 const Panania = () => {
   const serviceList = [
-    "Lighting installation and upgrades for indoor and outdoor areas",
-    "Power point installation and relocation",
-    "Switchboard upgrades and safety improvements",
-    "Smoke alarm installation and compliance checks",
-    "Ceiling fan installation for bedrooms and living areas",
-    "Electrical fault finding and repairs",
-    "Smart home and automation solutions",
-    "Security lighting, alarms, and CCTV systems",
+    { label: "Lighting installation and upgrades for indoor and outdoor areas", to: "/lighting-installation" },
+    { label: "Power point installation and relocation", to: "/services/electrical-services" },
+    { label: "Switchboard upgrades and safety improvements", to: "/switchboard-upgrade" },
+    { label: "Smoke alarm installation and compliance checks", to: "/smoke-alarms-electrical-safety-checks" },
+    { label: "Ceiling fan installation for bedrooms and living areas", to: "/services/electrical-services" },
+    { label: "Electrical fault finding and repairs", to: "/electrical-fault-finding-repairs" },
+    { label: "Smart home and automation solutions", to: "/services/smart-home" },
+    { label: "Security lighting, alarms, and CCTV systems", to: "/services/security-systems" },
   ];
 
   const ageingSignsList = [
@@ -31,8 +31,8 @@ const Panania = () => {
   ];
 
   const outdoorList = [
-    "Outdoor lighting for gardens and pathways",
-    "Weatherproof power points",
+    { label: "Outdoor lighting for gardens and pathways", to: "/lighting-installation" },
+    { label: "Weatherproof power points", to: "/services/electrical-services" },
     "Electrical connections for sheds or granny flats",
     "Safe wiring for outdoor kitchens and entertainment areas",
   ];
@@ -159,10 +159,16 @@ const Panania = () => {
               <div className="canterbury-services-content">
                 <div className="canterbury-services-group">
                   <div className="canterbury-services-items">
-                    {serviceList.map((item) => (
-                      <div key={item} className="canterbury-service-item">
+                    {serviceList.map((item, index) => (
+                      <div key={index} className="canterbury-service-item">
                         <div className="canterbury-service-indicator"></div>
-                        <span className="canterbury-service-text">{item}</span>
+                        <span className="canterbury-service-text">
+                          {item.to ? (
+                            <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                          ) : (
+                            item.label || item
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -225,8 +231,14 @@ const Panania = () => {
                   </p>
                   <p>We regularly assist with:</p>
                   <ul className="canterbury-list">
-                    {outdoorList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {outdoorList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>

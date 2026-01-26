@@ -6,68 +6,64 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import earlwoodHero from "../../../assets/cities/earlwood-1.jpg";
-import earlwoodParallax from "../../../assets/cities/earlwood-2.jpg";
-import earlwoodThree from "../../../assets/cities/earlwood-3.jpg";
 import "../cityLayout.css";
 
-const Earlwood = () => {
+// Using require for files with spaces in names
+const condellParkHero = require("../../../assets/cities/Condell Park-1.jpeg");
+const condellParkParallax = require("../../../assets/cities/CondellPark2.webp");
+const condellParkThree = require("../../../assets/cities/Condell Park-3.jpg");
+
+const CondellPark = () => {
   const serviceList = [
-    { label: "Power point upgrades and additional outlets", to: "/services/electrical-services" },
-    { label: "Lighting installations and replacements", to: "/lighting-installation" },
-    { label: "Switchboard inspections and safety improvements", to: "/switchboard-upgrade" },
-    { label: "Smoke alarm installation and testing", to: "/smoke-alarms-electrical-safety-checks" },
-    { label: "Ceiling fans and ventilation solutions", to: "/services/electrical-services" },
+    { label: "Lighting upgrades for indoor and outdoor areas", to: "/lighting-installation" },
+    { label: "Additional power points and circuit improvements", to: "/services/electrical-services" },
+    { label: "Ceiling fan installation and ventilation solutions", to: "/services/electrical-services" },
+    { label: "Smoke alarm installation and improved coverage", to: "/smoke-alarms-electrical-safety-checks" },
+    { label: "Smart lighting control and automation", to: "/services/smart-home" },
+    { label: "Outdoor security cameras and CCTV systems", to: "/services/security-systems" },
+    { label: "Data connectivity and structured cabling", to: "/services/data-networking" },
     { label: "Fault finding and electrical repairs", to: "/electrical-fault-finding-repairs" },
-    { label: "Smart home and automation installations", to: "/services/smart-home" },
-    { label: "Security systems including alarms and CCTV", to: "/services/security-systems" },
   ];
 
-  const renovationsList = [
-    { label: "Appliance circuit planning and installation", to: "/new-builds-renovations" },
-    { label: "Bathroom electrical compliance and IP-rated fittings", to: "/compliance-licensing" },
-    { label: "Lighting layout adjustments and switching changes", to: "/lighting-installation" },
-    { label: "Wall chasing and concealed cabling", to: "/new-builds-renovations" },
-    "Coordination with builders and other trades",
+  const homeServicesList = [
+    { label: "Lighting upgrades to improve visibility and efficiency", to: "/lighting-installation" },
+    { label: "Additional power points where needed", to: "/services/electrical-services" },
+    { label: "Ceiling fans for comfort and airflow", to: "/services/electrical-services" },
+    { label: "Improved smoke alarm coverage for safety", to: "/smoke-alarms-electrical-safety-checks" },
   ];
 
-  const safetyList = [
-    { label: "Assessing switchboard condition and capacity", to: "/switchboard-upgrade" },
-    { label: "Improving safety switch coverage", to: "/switchboard-upgrade" },
-    "Replacing worn or damaged components",
-    { label: "Addressing recurring faults or tripping circuits", to: "/electrical-fault-finding-repairs" },
+  const smartTechnologyList = [
+    { label: "Smarter lighting control systems", to: "/services/smart-home" },
+    { label: "Outdoor security cameras", to: "/services/security-systems" },
+    { label: "Better data connectivity for work-from-home setups", to: "/services/data-networking" },
+    "Integrated systems that work together",
   ];
 
-  const lifestyleList = [
-    { label: "Additional power points in study areas", to: "/services/electrical-services" },
-    { label: "Improved lighting for home offices", to: "/lighting-installation" },
-    { label: "Smart lighting and switching for flexibility", to: "/services/smart-home" },
-    "Structured cabling where required",
+  const businessServicesList = [
+    { label: "Reliable data cabling for connectivity", to: "/services/data-networking" },
+    { label: "Security systems for protection", to: "/services/security-systems" },
+    "Clear CCTV coverage",
+    "Functional and compliant installations",
   ];
 
   const trustPillars = [
     { title: "Fully Licensed & Insured", description: "Compliant electrical work carried out by qualified professionals." },
-    { title: "Clear Explanations Before Work", description: "We explain what is needed before starting — no surprises." },
-    { title: "Practical Recommendations Based on Real Usage", description: "Advice tailored to how you actually use your space." },
-    { title: "Neat, Organised Workmanship", description: "Clean installations with minimal disruption." },
-    { title: "Reliable Scheduling and Communication", description: "We show up when we say we will and keep you informed." },
+    { title: "Practical Solutions", description: "Clean installations designed for real-world use, not unnecessary complexity." },
+    { title: "Straightforward Controls", description: "Systems that are easy to maintain and operate." },
+    { title: "Minimal Disruption", description: "Work completed efficiently with respect for your home and schedule." },
+    { title: "Local Knowledge", description: "Familiar with Condell Park housing layouts and renovation patterns." },
   ];
 
   const faqItems = [
     {
-      question: "Do you work on older homes in Earlwood?",
+      question: "Do you work on older homes common in Condell Park?",
       answer:
-        "Yes. We regularly upgrade and repair electrical systems in older properties while preserving the integrity of the home.",
+        "Yes. We regularly upgrade and rework electrical systems in older properties to meet modern safety standards.",
     },
     {
-      question: "Can electrical work be completed during renovations?",
+      question: "Can smart home systems be added without major renovations?",
       answer:
-        "Yes. We coordinate with builders and trades to ensure electrical work is completed at the correct stages.",
-    },
-    {
-      question: "Do you provide electrical services for small local businesses?",
-      answer:
-        "Yes. We support offices, studios, and small commercial spaces with compliant and reliable electrical solutions.",
+        "In many cases, yes. We design solutions that work with existing wiring where possible.",
     },
   ];
 
@@ -80,11 +76,11 @@ const Earlwood = () => {
   };
 
   return (
-    <div id="EarlwoodPage" className="canterbury-page">
+    <div id="CondellParkPage" className="canterbury-page">
       <SEO
-        title="Electrician in Earlwood | Trusted Local Electrical Services"
-        description="Licensed electricians servicing Earlwood homes and businesses. Electrical, safety, smart home and security work by NZXTGEN."
-        canonical={typeof window !== "undefined" ? window.location.origin + "/electrician-earlwood" : undefined}
+        title="Electrician & Smart Home Services in Condell Park | NZXTGEN"
+        description="NZXTGEN provides electrical, smart home, security and data services for homes and businesses in Condell Park, NSW. Licensed and reliable."
+        canonical={typeof window !== "undefined" ? window.location.origin + "/electrician-condell-park" : undefined}
       />
       <LocalBusinessSchema />
       <WhatsappChat />
@@ -94,15 +90,14 @@ const Earlwood = () => {
       <main className="canterbury-content">
         <section
           className="canterbury-hero"
-          style={{ backgroundImage: `url(${earlwoodHero})` }}
+          style={{ backgroundImage: `url(${condellParkHero})` }}
         >
           <div className="canterbury-hero-overlay">
             <div className="canterbury-hero-inner">
-              <p className="canterbury-kicker">Need a dependable local electrician you can trust?</p>
-              <h1>Electrician in Earlwood – NZXTGEN</h1>
+              <p className="canterbury-kicker">Need reliable electrical and smart home services in Condell Park?</p>
+              <h1>Electrician & Smart Home Services in Condell Park – NZXTGEN</h1>
               <p className="canterbury-hero-subtext">
-                Licensed electricians servicing Earlwood homes and businesses. Electrical, safety,
-                smart home and security work by NZXTGEN.
+                NZXTGEN provides electrical, smart home, security and data services for homes and businesses in Condell Park, NSW. Licensed and reliable.
               </p>
               <Link className="canterbury-cta" to="/free-quote">
                 👉 Request a free quote from NZXTGEN today
@@ -115,27 +110,20 @@ const Earlwood = () => {
           <div className="canterbury-section-inner canterbury-intro-grid">
             <div className="canterbury-intro-copy">
               <h2 className="canterbury-section-title">
-                Electrician in Earlwood <span className="canterbury-highlight">– NZXTGEN</span>
+                Electrician & Smart Home Services in Condell Park <span className="canterbury-highlight">– NZXTGEN</span>
               </h2>
               <p className="canterbury-lead">
-                Earlwood is known for its established residential streets, family homes, and steady
-                renovation activity. With many properties sitting between older electrical systems
-                and modern living expectations, electrical work in this area often requires careful
-                planning rather than quick fixes. From classic brick homes near the Cooks River to
-                updated townhouses and small commercial spaces, each property brings its own
-                electrical challenges.
+                Condell Park is known for its quieter streets, family-friendly homes, and a mix of older properties and modern upgrades. Electrical and technology needs here often involve improving safety, updating ageing systems, and integrating modern features without disrupting the character of the home.
               </p>
               <p>
-                NZXTGEN provides licensed electrical services throughout Earlwood, supporting
-                homeowners and small businesses who want safe, compliant, and practical solutions. We
-                also regularly work in nearby areas such as Marrickville and Bexley, which share
-                similar building styles and infrastructure considerations. Our work focuses on
-                improving safety, functionality, and long-term reliability without unnecessary
-                complexity.
+                We regularly work in Condell Park homes that require lighting upgrades, additional power points, ceiling fans, and improved smoke alarm coverage. Many properties also benefit from smarter lighting control, outdoor security cameras, and better data connectivity to support work-from-home setups.
+              </p>
+              <p>
+                Local households often look for practical solutions rather than overly complex systems. Our approach suits this well — clean installations, straightforward controls and systems that are easy to maintain.
               </p>
             </div>
             <div className="canterbury-intro-image-card">
-              <img src={earlwoodThree} alt="Earlwood residential streetscape" />
+              <img src={condellParkThree} alt="Condell Park residential streetscape" />
             </div>
           </div>
         </section>
@@ -145,16 +133,13 @@ const Earlwood = () => {
             <div className="canterbury-services-container">
               <div className="canterbury-services-context">
                 <h2 className="canterbury-services-headline">
-                  Electrical Services Suited to Earlwood Properties
+                  Electrical & Technology Services for Condell Park Homes
                 </h2>
                 <div className="canterbury-services-intro">
                   <p>
-                    Many Earlwood homes were built at a time when electrical demand was far lower than it
-                    is today. As families add air conditioning, modern kitchens, home offices, and smart
-                    technology, older electrical systems can struggle to keep up. This often leads to
-                    overloaded circuits, limited power access, or outdated safety protection.
+                    Small businesses and home-based operators in the area commonly need reliable data cabling, security systems, and clear CCTV coverage. We design installations that are functional, compliant, and discreet.
                   </p>
-                  <p>We commonly assist Earlwood clients with:</p>
+                  <p>We provide a wide range of services for Condell Park properties, including:</p>
                 </div>
               </div>
               <div className="canterbury-services-content">
@@ -177,10 +162,7 @@ const Earlwood = () => {
                 <div className="canterbury-services-divider"></div>
                 <div className="canterbury-services-business">
                   <p className="canterbury-services-business-text">
-                    For small businesses operating from shopfronts, studios, or mixed-use buildings,
-                    electrical systems must support daily operations while meeting compliance and safety
-                    requirements. We provide electrical support that prioritises reliability, clear
-                    access, and tidy installations suited to professional environments.
+                    Because Condell Park sits close to major connecting roads and nearby commercial hubs, reliability and security are key concerns for many property owners. Our integrated approach allows electrical, data, and security systems to work together without unnecessary duplication.
                   </p>
                 </div>
               </div>
@@ -190,32 +172,44 @@ const Earlwood = () => {
 
         <section
           className="canterbury-feature-band"
-          style={{ backgroundImage: `url(${earlwoodParallax})` }}
+          style={{ backgroundImage: `url(${condellParkParallax})` }}
         >
           <div className="canterbury-feature-overlay">
             <div className="canterbury-section-inner">
               <div className="canterbury-section-header light">
-                <h2 className="canterbury-section-title">
-                  Common Electrical Work in Earlwood Homes & Businesses
-                </h2>
+                <h2 className="canterbury-section-title">Common Electrical & Technology Needs in Condell Park</h2>
                 <p>
-                  Electrical work in Earlwood often reflects how the suburb is evolving. Renovations,
-                  extensions, and upgrades are common, but many properties still retain parts of
-                  their original wiring. This mix requires an electrician who understands how to
-                  integrate new systems without creating future issues.
+                  Being familiar with local housing layouts and renovation patterns helps us plan work efficiently, avoid common issues, and complete projects with minimal disruption.
                 </p>
               </div>
               <div className="canterbury-feature-grid">
                 <article className="canterbury-feature-card">
-                  <h3>Renovations and Home Improvements</h3>
+                  <h3>Home Electrical Improvements</h3>
                   <p>
-                    Kitchen and bathroom renovations are particularly common in Earlwood. These
-                    spaces require careful electrical planning due to higher power demands and strict
-                    safety requirements.
+                    We regularly work in Condell Park homes that require practical electrical upgrades to improve safety, functionality, and modern living standards.
                   </p>
-                  <p>Our renovation-related work includes:</p>
+                  <p>Common home improvements include:</p>
                   <ul className="canterbury-list">
-                    {renovationsList.map((item, index) => (
+                    {homeServicesList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+
+                <article className="canterbury-feature-card">
+                  <h3>Smart Technology Integration</h3>
+                  <p>
+                    Many properties benefit from modern technology that enhances convenience and security without disrupting the character of the home.
+                  </p>
+                  <p>We help integrate:</p>
+                  <ul className="canterbury-list">
+                    {smartTechnologyList.map((item, index) => (
                       <li key={index}>
                         {typeof item === 'object' && item.to ? (
                           <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
@@ -226,21 +220,18 @@ const Earlwood = () => {
                     ))}
                   </ul>
                   <p>
-                    By planning electrical work early in the renovation process, homeowners can
-                    avoid surface-mounted cabling and reduce the need for later modifications.
+                    Local households often look for practical solutions rather than overly complex systems. Our approach suits this well — clean installations, straightforward controls and systems that are easy to maintain.
                   </p>
                 </article>
 
                 <article className="canterbury-feature-card">
-                  <h3>Safety and Compliance Upgrades</h3>
+                  <h3>Small Business & Home-Based Services</h3>
                   <p>
-                    Older switchboards, limited safety switches, and ageing wiring are frequent
-                    findings in Earlwood homes. These issues are not always visible but can pose
-                    serious safety risks if left unaddressed.
+                    Small businesses and home-based operators in the area commonly need reliable infrastructure to support their operations.
                   </p>
-                  <p>We help homeowners improve safety by:</p>
+                  <p>We provide:</p>
                   <ul className="canterbury-list">
-                    {safetyList.map((item, index) => (
+                    {businessServicesList.map((item, index) => (
                       <li key={index}>
                         {typeof item === 'object' && item.to ? (
                           <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
@@ -251,33 +242,7 @@ const Earlwood = () => {
                     ))}
                   </ul>
                   <p>
-                    These upgrades not only improve safety but also help properties meet current
-                    Australian standards.
-                  </p>
-                </article>
-
-                <article className="canterbury-feature-card">
-                  <h3>Work-From-Home and Lifestyle Changes</h3>
-                  <p>
-                    With more residents working remotely, demand for reliable power, lighting, and
-                    data access has increased. Many Earlwood homes were not designed with dedicated
-                    workspaces in mind.
-                  </p>
-                  <p>We design practical solutions such as:</p>
-                  <ul className="canterbury-list">
-                    {lifestyleList.map((item, index) => (
-                      <li key={index}>
-                        {typeof item === 'object' && item.to ? (
-                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
-                        ) : (
-                          item.label || item
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  <p>
-                    These upgrades support productivity without disrupting the overall layout of the
-                    home.
+                    We design installations that are functional, compliant, and discreet, ensuring they support business operations without unnecessary complexity.
                   </p>
                 </article>
               </div>
@@ -289,20 +254,15 @@ const Earlwood = () => {
           <div className="canterbury-section-inner">
             <div className="canterbury-why-choose-container">
               <div className="canterbury-why-choose-content">
-                <h2 className="canterbury-why-choose-title">Why Choose NZXTGEN in Earlwood</h2>
+                <h2 className="canterbury-why-choose-title">Why Choose NZXTGEN in Condell Park</h2>
                 <p className="canterbury-why-choose-text">
-                  Electrical work should be completed with care, transparency, and respect for the
-                  property. NZXTGEN focuses on doing the job properly, rather than rushing through
-                  tasks or offering unnecessary upgrades.
+                  Our approach focuses on practical solutions that improve safety, functionality, and modern living standards without disrupting the character of your home. We understand that Condell Park residents value clean installations, straightforward controls, and systems that are easy to maintain.
                 </p>
                 <p className="canterbury-why-choose-text">
-                  We understand the building styles common in Earlwood and surrounding suburbs like
-                  Marrickville and Bexley. That familiarity allows us to anticipate access challenges,
-                  plan efficient cable routes, and avoid unnecessary disruption during installations.
+                  Because Condell Park sits close to major connecting roads and nearby commercial hubs, reliability and security are key concerns for many property owners. Our integrated approach allows electrical, data, and security systems to work together without unnecessary duplication.
                 </p>
                 <p className="canterbury-why-choose-text">
-                  Our approach suits homeowners who want long-term reliability and small businesses
-                  that depend on consistent electrical performance.
+                  Being familiar with local housing layouts and renovation patterns helps us plan work efficiently, avoid common issues, and complete projects with minimal disruption.
                 </p>
               </div>
               <div className="canterbury-trust-pillars">
@@ -335,7 +295,7 @@ const Earlwood = () => {
 
         <section className="canterbury-cta-band">
           <div className="canterbury-cta-band-inner">
-            <h2 className="canterbury-cta-band-title">Ready to improve the safety and functionality of your electrical system?</h2>
+            <h2 className="canterbury-cta-band-title">Ready to improve your electrical and smart home systems?</h2>
             <Link className="canterbury-cta-band-button" to="/free-quote">
               👉 Contact NZXTGEN today for a free quote
             </Link>
@@ -348,15 +308,14 @@ const Earlwood = () => {
               <div className="canterbury-area-faq-service">
                 <h2 className="canterbury-section-title">Service Area</h2>
                 <p className="canterbury-area-faq-text">
-                  NZXTGEN provides electrical services across Earlwood, with regular work completed in
-                  nearby areas including Marrickville and Bexley.
+                  NZXTGEN provides electrical, smart home, security and data services for homes and businesses in Condell Park, NSW.
                 </p>
                 <Link className="canterbury-service-area-cta" to="/free-quote">
                   Request a free quote
                 </Link>
               </div>
               <div className="canterbury-area-faq-faq">
-                <h2 className="canterbury-section-title">Earlwood Electrical Services – FAQs</h2>
+                <h2 className="canterbury-section-title">Condell Park Electrical Services – FAQs</h2>
                 <div className="canterbury-faq">
                   {faqItems.map((item, index) => (
                     <div
@@ -390,4 +349,4 @@ const Earlwood = () => {
   );
 };
 
-export default Earlwood;
+export default CondellPark;

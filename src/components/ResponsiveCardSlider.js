@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ResponsiveCardSlider.css';
 
 import img1 from "../assets/servicePage/1.jpg";
@@ -47,7 +48,7 @@ import img43 from "../assets/servicePage/43.webp";
 
 const items = [
   { img: img1, title: 'EV Car Chargers', description: 'Quick & Fast Charging Options Available' },
-  { img: img2, title: 'Smoke Alarms', description: 'Smoke Alarms With Battery Backup' },
+  { img: img2, title: 'Smoke Alarms', description: 'Smoke Alarms With Battery Backup', link: '/smoke-alarms-electrical-safety-checks' },
   { img: img3, title: 'Speaker Mounting & Installation', description: 'Wall & Ceilings Mounts / Surface & Flush Mounts' },
   { img: img4, title: 'Downlights', description: 'Switchable 3000k, 4000k, 6000k & Option To Smart Control' },
   { img: img5, title: 'Home Control With Smartphone or Tablet', description: 'Control & Monitor Your Home Remotely With Your Smartphone or Tablet' },
@@ -108,21 +109,35 @@ const ResponsiveCardSlider = () => {
 
       {/* Desktop View */}
       <div className="desktop-view">
-        {items.map((item, index) => (
-          <div key={index} className="card">
-            <div className="card-img-wrapper">
-              <img src={item.img} alt={item.title} className="card-img" />
+        {items.map((item, index) => {
+          const CardContent = (
+            <>
+              <div className="card-img-wrapper">
+                <img src={item.img} alt={item.title} className="card-img" />
+              </div>
+              <h3 className="card-title">{item.title}</h3>
+              <p className="card-description">{item.description}</p>
+            </>
+          );
+          
+          return (
+            <div key={index} className="card">
+              {item.link ? (
+                <Link to={item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {CardContent}
+                </Link>
+              ) : (
+                CardContent
+              )}
             </div>
-            <h3 className="card-title">{item.title}</h3>
-            <p className="card-description">{item.description}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Mobile View */}
       <div className="mobile-view">
-        {items.map((item, index) => (
-          <div key={index} className="card mobile-card">
+        {items.map((item, index) => {
+          const CardContent = (
             <div className="card-img-wrapper">
               <img src={item.img} alt={item.title} className="card-img" />
               <h3 className="card-title">{item.title}</h3>
@@ -133,8 +148,20 @@ const ResponsiveCardSlider = () => {
                 ♥
               </div>*/}
             </div>
-          </div>
-        ))}
+          );
+          
+          return (
+            <div key={index} className="card mobile-card">
+              {item.link ? (
+                <Link to={item.link} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                  {CardContent}
+                </Link>
+              ) : (
+                CardContent
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

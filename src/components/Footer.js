@@ -62,7 +62,7 @@ const Footer = () => {
           <h3>Service Areas</h3>
           <a href="/areas-we-service">Areas We Service</a>
           <a href="/suburbs">Padstow</a>
-          <a href="/suburbs">Condell Park</a>
+          <a href="/electrician-condell-park">Condell Park</a>
           <a href="/electrician-bankstown">Bankstown</a>
           <a href="/electrician-revesby">Revesby</a>
           <a href="/electrician-canterbury">Canterbury</a>

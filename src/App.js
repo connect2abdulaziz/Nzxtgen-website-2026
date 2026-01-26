@@ -22,6 +22,7 @@ import Earlwood from "./pages/city/Earlwood/Earlwood";
 import Panania from "./pages/city/Panania/Panania";
 import Revesby from "./pages/city/Revesby/Revesby";
 import Strathfield from "./pages/city/Strathfield/Strathfield";
+import CondellPark from "./pages/city/CondellPark/CondellPark";
 import ElectricService from "./pages/ElectricService";
 import SmartHomeService from "./pages/SmartHomeService";
 import SecuritySystemsService from "./pages/SecuritySystemsService";
@@ -37,6 +38,7 @@ import ComplianceLicence from "./pages/BUILDERS & CONTRACTING/ComplianceLicence"
 import EmergencyElectrician from "./pages/EmergencyElectrician";
 import ElectricalFaultFindingRepairs from "./pages/ElectricalFaultFindingRepairs";
 import LightingInstallation from "./pages/LightingInstallation";
+import SmokeAlarmSafetyChecks from "./pages/SmokeAlarmSafetyChecks";
 
 function App() {
   return (
@@ -69,6 +71,7 @@ function App() {
         <Route path="/emergency-electrician" element={<EmergencyElectrician />} />
         <Route path="/electrical-fault-finding-repairs" element={<ElectricalFaultFindingRepairs />} />
         <Route path="/lighting-installation" element={<LightingInstallation />} />
+        <Route path="/smoke-alarms-electrical-safety-checks" element={<SmokeAlarmSafetyChecks />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<Privacypage />} />
         <Route path="/areas-we-service" element={<AreaWeService />} />
@@ -81,6 +84,7 @@ function App() {
         <Route path="/electrician-panania" element={<Panania />} />
         <Route path="/electrician-revesby" element={<Revesby />} />
         <Route path="/electrician-strathfield" element={<Strathfield />} />
+        <Route path="/electrician-condell-park" element={<CondellPark />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />

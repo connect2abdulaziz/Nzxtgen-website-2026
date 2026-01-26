@@ -13,11 +13,11 @@ import "../cityLayout.css";
 
 const Strathfield = () => {
   const serviceList = [
-    { label: "Lighting installation and upgrades for living spaces, gardens, and driveways", to: "/services/electrical-services" },
+    { label: "Lighting installation and upgrades for living spaces, gardens, and driveways", to: "/lighting-installation" },
     { label: "Power point installation to improve accessibility and convenience", to: "/services/electrical-services" },
     { label: "Switchboard upgrades to meet current safety standards", to: "/switchboard-upgrade" },
-    { label: "Smoke alarm installation and testing for compliance", to: "/services/electrical-services" },
-    { label: "Ceiling fan installation for improved airflow and comfort", to: "/services/electrical-services" },
+    { label: "Smoke alarm installation and testing for compliance", to: "/smoke-alarms-electrical-safety-checks" },
+    { label: "Ceiling fan installation for improved airflow and comfort", to: "/lighting-installation" },
     { label: "Electrical fault finding and repairs", to: "/electrical-fault-finding-repairs" },
     { label: "Smart home solutions and automation", to: "/services/smart-home" },
     { label: "Security systems including CCTV and alarms", to: "/services/security-systems" },
@@ -25,15 +25,15 @@ const Strathfield = () => {
 
   const capacityIssuesList = [
     "Overloaded circuits causing frequent power trips",
-    "Outdated switchboards lacking modern safety protection",
-    "Limited power points leading to unsafe extension use",
-    "Inconsistent lighting performance",
+    { label: "Outdated switchboards lacking modern safety protection", to: "/switchboard-upgrade" },
+    { label: "Limited power points leading to unsafe extension use", to: "/services/electrical-services" },
+    { label: "Inconsistent lighting performance", to: "/lighting-installation" },
   ];
 
   const renovationsList = [
     { label: "Electrical planning before construction begins", to: "/new-builds-renovations" },
     { label: "Installing new circuits for kitchens, bathrooms, and extensions", to: "/new-builds-renovations" },
-    { label: "Upgrading lighting layouts to suit renovated spaces", to: "/services/electrical-services" },
+    { label: "Upgrading lighting layouts to suit renovated spaces", to: "/lighting-installation" },
     { label: "Ensuring all work meets current Australian Standards", to: "/compliance-licensing" },
   ];
 
@@ -206,8 +206,14 @@ const Strathfield = () => {
                   </p>
                   <p>Typical issues we address include:</p>
                   <ul className="canterbury-list">
-                    {capacityIssuesList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {capacityIssuesList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>

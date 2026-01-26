@@ -1,4 +1,4 @@
-.es-hero-section {
+.sa-hero-section {
   width: 1450px;
   height: 400px;
   background-image: url("../assets/services/services-heor-bg.png");
@@ -16,7 +16,7 @@
   border-radius: 20px;
 }
 
-.es-hero-overlay {
+.sa-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,7 +26,7 @@
   z-index: 1;
 }
 
-.es-hero-content {
+.sa-hero-content {
   width: 100%;
   text-align: center;
   position: relative;
@@ -35,16 +35,16 @@
   padding-top: 4rem;
 }
 
-.es-hero-title {
-  font-size: 3.5rem;
+.sa-hero-title {
+  font-size: 2.5rem;
   font-weight: 800;
   margin: 0 0 1.5rem 0;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.es-hero-description {
+.sa-hero-description {
   font-size: 1.2rem;
   line-height: 1.8;
   max-width: 900px;
@@ -54,7 +54,7 @@
 }
 
 @media (max-width: 1500px) {
-  .es-hero-section {
+  .sa-hero-section {
     width: 95%;
     max-width: 1450px;
     height: auto;
@@ -63,7 +63,7 @@
 }
 
 @media (max-width: 1024px) {
-  .es-hero-section {
+  .sa-hero-section {
     width: 95%;
     max-width: 1450px;
     height: auto;
@@ -71,23 +71,23 @@
     margin-top: 80px;
   }
 
-  .es-hero-title {
-    font-size: 3rem;
-    letter-spacing: 2px;
+  .sa-hero-title {
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
   }
 
-  .es-hero-description {
+  .sa-hero-description {
     font-size: 1.1rem;
     max-width: 700px;
   }
 
-  .es-hero-content {
+  .sa-hero-content {
     padding: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .es-hero-section {
+  .sa-hero-section {
     width: 95%;
     max-width: 1450px;
     height: auto;
@@ -97,26 +97,26 @@
     margin-top: 30px;
   }
 
-  .es-hero-title {
-    font-size: 2rem;
-    letter-spacing: 2px;
+  .sa-hero-title {
+    font-size: 1.75rem;
+    letter-spacing: 1.5px;
     margin-bottom: 1rem;
   }
 
-  .es-hero-description {
+  .sa-hero-description {
     font-size: 0.95rem;
     line-height: 1.6;
     padding: 0 1rem;
     max-width: 100%;
   }
 
-  .es-hero-content {
+  .sa-hero-content {
     padding: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .es-hero-section {
+  .sa-hero-section {
     width: 95%;
     max-width: 1450px;
     height: auto;
@@ -126,39 +126,39 @@
     margin-top: 80px;
   }
 
-  .es-hero-title {
-    font-size: 1.6rem;
+  .sa-hero-title {
+    font-size: 1.4rem;
     letter-spacing: 1px;
     margin-bottom: 0.75rem;
   }
 
-  .es-hero-description {
+  .sa-hero-description {
     font-size: 0.85rem;
     line-height: 1.6;
     padding: 0 0.5rem;
   }
 
-  .es-hero-content {
+  .sa-hero-content {
     padding: 1.25rem;
   }
 }
 
 @media (max-width: 360px) {
-  .es-hero-section {
+  .sa-hero-section {
     aspect-ratio: 1 / 1;
   }
 
-  .es-hero-title {
-    font-size: 1.4rem;
+  .sa-hero-title {
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
 
-  .es-hero-description {
+  .sa-hero-description {
     font-size: 0.8rem;
     line-height: 1.5;
   }
 
-  .es-hero-content {
+  .sa-hero-content {
     padding: 1rem;
   }
 }

@@ -13,27 +13,27 @@ import "../cityLayout.css";
 
 const Bankstown = () => {
   const serviceList = [
-    "Power point additions and upgrades",
-    "Lighting installation and upgrades",
-    "Switchboard assessments and safety improvements",
-    "Smoke alarm installation and testing",
-    "Fault finding and electrical repairs",
-    "Ceiling fans and ventilation solutions",
-    "Smart home and automation systems",
-    "Security systems including CCTV and alarms",
+    { label: "Power point additions and upgrades", to: "/services/electrical-services" },
+    { label: "Lighting installation and upgrades", to: "/lighting-installation" },
+    { label: "Switchboard assessments and safety improvements", to: "/switchboard-upgrade" },
+    { label: "Smoke alarm installation and testing", to: "/smoke-alarms-electrical-safety-checks" },
+    { label: "Fault finding and electrical repairs", to: "/electrical-fault-finding-repairs" },
+    { label: "Ceiling fans and ventilation solutions", to: "/services/electrical-services" },
+    { label: "Smart home and automation systems", to: "/services/smart-home" },
+    { label: "Security systems including CCTV and alarms", to: "/services/security-systems" },
   ];
 
   const olderHomesList = [
     "Identifying overloaded or outdated circuits",
-    "Improving safety switch coverage",
-    "Upgrading lighting to safer, more efficient options",
-    "Addressing recurring faults or nuisance tripping",
+    { label: "Improving safety switch coverage", to: "/switchboard-upgrade" },
+    { label: "Upgrading lighting to safer, more efficient options", to: "/lighting-installation" },
+    { label: "Addressing recurring faults or nuisance tripping", to: "/electrical-fault-finding-repairs" },
   ];
 
   const renovationsList = [
-    "Power and lighting layout planning",
-    "Wall chasing and concealed cabling",
-    "Bathroom and kitchen electrical compliance",
+    { label: "Power and lighting layout planning", to: "/new-builds-renovations" },
+    { label: "Wall chasing and concealed cabling", to: "/new-builds-renovations" },
+    { label: "Bathroom and kitchen electrical compliance", to: "/compliance-licensing" },
     "Coordination with builders and other trades",
   ];
 
@@ -149,10 +149,16 @@ const Bankstown = () => {
               <div className="canterbury-services-content">
                 <div className="canterbury-services-group">
                   <div className="canterbury-services-items">
-                    {serviceList.map((item) => (
-                      <div key={item} className="canterbury-service-item">
+                    {serviceList.map((item, index) => (
+                      <div key={index} className="canterbury-service-item">
                         <div className="canterbury-service-indicator"></div>
-                        <span className="canterbury-service-text">{item}</span>
+                        <span className="canterbury-service-text">
+                          {item.to ? (
+                            <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                          ) : (
+                            item.label || item
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -198,8 +204,14 @@ const Bankstown = () => {
                   </p>
                   <p>We often help homeowners by:</p>
                   <ul className="canterbury-list">
-                    {olderHomesList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {olderHomesList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                 </article>
@@ -213,8 +225,14 @@ const Bankstown = () => {
                   </p>
                   <p>Our renovation support includes:</p>
                   <ul className="canterbury-list">
-                    {renovationsList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {renovationsList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>

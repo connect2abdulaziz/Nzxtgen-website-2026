@@ -13,35 +13,35 @@ import "../cityLayout.css";
 
 const Revesby = () => {
   const serviceList = [
-    "Power point installations and reconfiguration",
-    "Lighting upgrades for indoor and outdoor areas",
-    "Switchboard inspections and modernisation",
-    "Smoke alarm installation and compliance checks",
-    "Ceiling fan installation and ventilation solutions",
-    "Fault finding and electrical repairs",
-    "Smart home installations and automation",
-    "Security systems including alarms and CCTV",
+    { label: "Power point installations and reconfiguration", to: "/services/electrical-services" },
+    { label: "Lighting upgrades for indoor and outdoor areas", to: "/lighting-installation" },
+    { label: "Switchboard inspections and modernisation", to: "/switchboard-upgrade" },
+    { label: "Smoke alarm installation and compliance checks", to: "/smoke-alarms-electrical-safety-checks" },
+    { label: "Ceiling fan installation and ventilation solutions", to: "/services/electrical-services" },
+    { label: "Fault finding and electrical repairs", to: "/electrical-fault-finding-repairs" },
+    { label: "Smart home installations and automation", to: "/services/smart-home" },
+    { label: "Security systems including alarms and CCTV", to: "/services/security-systems" },
   ];
 
   const safetyList = [
-    "Switchboard assessments and upgrades",
-    "Safety switch installation and testing",
+    { label: "Switchboard assessments and upgrades", to: "/switchboard-upgrade" },
+    { label: "Safety switch installation and testing", to: "/switchboard-upgrade" },
     "Repairs to ageing wiring and fittings",
-    "Investigation of recurring electrical faults",
+    { label: "Investigation of recurring electrical faults", to: "/electrical-fault-finding-repairs" },
   ];
 
   const renovationsList = [
-    "Appliance circuit planning and installation",
-    "Bathroom electrical compliance during wet works",
-    "Lighting layout changes and switching upgrades",
-    "Wall chasing and concealed cabling",
+    { label: "Appliance circuit planning and installation", to: "/new-builds-renovations" },
+    { label: "Bathroom electrical compliance during wet works", to: "/compliance-licensing" },
+    { label: "Lighting layout changes and switching upgrades", to: "/lighting-installation" },
+    { label: "Wall chasing and concealed cabling", to: "/new-builds-renovations" },
     "Coordination with builders and other trades",
   ];
 
   const lifestyleList = [
-    "Additional power points for workspaces",
-    "Improved lighting for productivity and comfort",
-    "Smart switches and lighting controls",
+    { label: "Additional power points for workspaces", to: "/services/electrical-services" },
+    { label: "Improved lighting for productivity and comfort", to: "/lighting-installation" },
+    { label: "Smart switches and lighting controls", to: "/services/smart-home" },
     "Data and power planning for home offices",
   ];
 
@@ -160,10 +160,16 @@ const Revesby = () => {
               <div className="canterbury-services-content">
                 <div className="canterbury-services-group">
                   <div className="canterbury-services-items">
-                    {serviceList.map((item) => (
-                      <div key={item} className="canterbury-service-item">
+                    {serviceList.map((item, index) => (
+                      <div key={index} className="canterbury-service-item">
                         <div className="canterbury-service-indicator"></div>
-                        <span className="canterbury-service-text">{item}</span>
+                        <span className="canterbury-service-text">
+                          {item.to ? (
+                            <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                          ) : (
+                            item.label || item
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -205,8 +211,14 @@ const Revesby = () => {
                   </p>
                   <p>We regularly carry out:</p>
                   <ul className="canterbury-list">
-                    {safetyList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {safetyList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>
@@ -224,8 +236,14 @@ const Revesby = () => {
                   </p>
                   <p>Our renovation-related services include:</p>
                   <ul className="canterbury-list">
-                    {renovationsList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {renovationsList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>
@@ -243,8 +261,14 @@ const Revesby = () => {
                   </p>
                   <p>We provide practical upgrades such as:</p>
                   <ul className="canterbury-list">
-                    {lifestyleList.map((item) => (
-                      <li key={item}>{item}</li>
+                    {lifestyleList.map((item, index) => (
+                      <li key={index}>
+                        {typeof item === 'object' && item.to ? (
+                          <Link to={item.to} className="canterbury-text-link">{item.label}</Link>
+                        ) : (
+                          item.label || item
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <p>

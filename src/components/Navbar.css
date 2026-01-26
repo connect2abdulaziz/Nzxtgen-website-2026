@@ -55,7 +55,8 @@ body {
 .contact-link,
 .about-link,
 .services-link,
-.smart-home-link {
+.smart-home-link,
+.builders-link {
   text-decoration: none;
   color: white;
   font-size: 1rem;
@@ -65,10 +66,16 @@ body {
   cursor: pointer;
 }
 
+/* Make BUILDERS & CONTRACTING non-clickable on all devices */
+.builders-link {
+  cursor: default;
+}
+
 .navbar.scrolled .contact-link,
 .navbar.scrolled .about-link,
 .navbar.scrolled .services-link,
-.navbar.scrolled .smart-home-link {
+.navbar.scrolled .smart-home-link,
+.navbar.scrolled .builders-link {
   color: black;
 }
 
@@ -106,7 +113,9 @@ body {
 .services-dropdown:hover .services-dropdown-menu,
 .services-dropdown-menu.show,
 .smart-home-dropdown:hover .smart-home-dropdown-menu,
-.smart-home-dropdown-menu.show {
+.smart-home-dropdown-menu.show,
+.builders-dropdown:hover .builders-dropdown-menu,
+.builders-dropdown-menu.show {
   display: block;
 }
 
@@ -114,7 +123,8 @@ body {
 .contact-dropdown-menu,
 .about-dropdown-menu,
 .services-dropdown-menu,
-.smart-home-dropdown-menu {
+.smart-home-dropdown-menu,
+.builders-dropdown-menu {
   z-index: 1001;
   margin-top: 0;
   padding-top: 0.75rem; /* Creates invisible bridge area to catch mouse */
@@ -124,7 +134,8 @@ body {
 .contact-dropdown-menu::before,
 .about-dropdown-menu::before,
 .services-dropdown-menu::before,
-.smart-home-dropdown-menu::before {
+.smart-home-dropdown-menu::before,
+.builders-dropdown-menu::before {
   content: '';
   position: absolute;
   top: -0.75rem;
@@ -154,7 +165,8 @@ body {
 .contact-link::after,
 .about-link::after,
 .services-link::after,
-.smart-home-link::after {
+.smart-home-link::after,
+.builders-link::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -169,7 +181,8 @@ body {
 .navbar.scrolled .contact-link::after,
 .navbar.scrolled .about-link::after,
 .navbar.scrolled .services-link::after,
-.navbar.scrolled .smart-home-link::after {
+.navbar.scrolled .smart-home-link::after,
+.navbar.scrolled .builders-link::after {
   background-color: black;
 }
 
@@ -177,7 +190,8 @@ body {
 .contact-link:hover::after,
 .about-link:hover::after,
 .services-link:hover::after,
-.smart-home-link:hover::after {
+.smart-home-link:hover::after,
+.builders-link:hover::after {
   width: 100%;
 }
 
@@ -185,7 +199,8 @@ body {
 .contact-link:hover,
 .about-link:hover,
 .services-link:hover,
-.smart-home-link:hover {
+.smart-home-link:hover,
+.builders-link:hover {
   opacity: 1;
 }
 
@@ -208,7 +223,8 @@ body {
 .navbar-links.active .contact-link,
 .navbar-links.active .about-link,
 .navbar-links.active .services-link,
-.navbar-links.active .smart-home-link {
+.navbar-links.active .smart-home-link,
+.navbar-links.active .builders-link {
   color: black;
   opacity: 1;
 }

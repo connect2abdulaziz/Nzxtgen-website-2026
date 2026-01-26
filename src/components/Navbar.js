@@ -124,9 +124,34 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li className="dropdown">
-            <p>BUILDERS & CONTRACTING</p>
-            <ul className={`dropdown-menu ${isBuildersDropdownOpen ? "show" : ""}`}>
+          <li className="dropdown builders-dropdown">
+            <a 
+              href="#" 
+              className="builders-link"
+              onMouseEnter={() => setIsBuildersDropdownOpen(true)}
+              onMouseLeave={() => setIsBuildersDropdownOpen(false)}
+              onFocus={() => setIsBuildersDropdownOpen(true)}
+              onClick={(e) => {
+                // Prevent navigation on all devices - non-clickable
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+              aria-haspopup="true"
+              aria-expanded={isBuildersDropdownOpen}
+            >
+              BUILDERS & CONTRACTING
+            </a>
+            <ul 
+              className={`dropdown-menu builders-dropdown-menu ${isBuildersDropdownOpen ? "show" : ""}`}
+              onMouseEnter={() => setIsBuildersDropdownOpen(true)}
+              onMouseLeave={() => setIsBuildersDropdownOpen(false)}
+              onFocus={() => setIsBuildersDropdownOpen(true)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget)) {
+                  setIsBuildersDropdownOpen(false);
+                }
+              }}
+            >
               <li>
                 <a href="/residential-electrical">Residential Electrical</a>
               </li>
