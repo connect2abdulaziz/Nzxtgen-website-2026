@@ -66,9 +66,20 @@ body {
   cursor: pointer;
 }
 
-/* Make BUILDERS & CONTRACTING non-clickable on all devices */
+/* Make BUILDERS & CONTRACTING trigger look like nav link (no navigation) */
 .builders-link {
-  cursor: default;
+  cursor: pointer;
+}
+
+/* Reset native button styles so it matches other nav links on all devices */
+button.builders-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .navbar.scrolled .contact-link,

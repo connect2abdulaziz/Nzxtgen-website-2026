@@ -23,6 +23,7 @@ import Panania from "./pages/city/Panania/Panania";
 import Revesby from "./pages/city/Revesby/Revesby";
 import Strathfield from "./pages/city/Strathfield/Strathfield";
 import CondellPark from "./pages/city/CondellPark/CondellPark";
+import Padstow from "./pages/city/Padstow/Padstow";
 import ElectricService from "./pages/ElectricService";
 import SmartHomeService from "./pages/SmartHomeService";
 import SecuritySystemsService from "./pages/SecuritySystemsService";
@@ -85,6 +86,7 @@ function App() {
         <Route path="/electrician-revesby" element={<Revesby />} />
         <Route path="/electrician-strathfield" element={<Strathfield />} />
         <Route path="/electrician-condell-park" element={<CondellPark />} />
+        <Route path="/electrician-padstow" element={<Padstow />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />

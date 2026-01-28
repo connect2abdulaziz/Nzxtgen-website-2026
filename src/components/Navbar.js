@@ -125,22 +125,18 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="dropdown builders-dropdown">
-            <a 
-              href="#" 
+            <button
+              type="button"
               className="builders-link"
               onMouseEnter={() => setIsBuildersDropdownOpen(true)}
               onMouseLeave={() => setIsBuildersDropdownOpen(false)}
               onFocus={() => setIsBuildersDropdownOpen(true)}
-              onClick={(e) => {
-                // Prevent navigation on all devices - non-clickable
-                e.preventDefault();
-                e.stopPropagation();
-              }}
+              onClick={() => setIsBuildersDropdownOpen((prev) => !prev)}
               aria-haspopup="true"
               aria-expanded={isBuildersDropdownOpen}
             >
               BUILDERS & CONTRACTING
-            </a>
+            </button>
             <ul 
               className={`dropdown-menu builders-dropdown-menu ${isBuildersDropdownOpen ? "show" : ""}`}
               onMouseEnter={() => setIsBuildersDropdownOpen(true)}
