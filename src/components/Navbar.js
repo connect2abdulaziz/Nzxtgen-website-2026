@@ -52,7 +52,10 @@ const Navbar = () => {
           <li>
             <a href="/">HOME</a>
           </li>
-          {/* About section commented out - not showing in navbar */}
+          <li>
+            <a href="/about-us">ABOUT US</a>
+          </li>
+          {/* About dropdown - kept for reference */}
           {/* <li className="dropdown about-dropdown">
             <a 
               href="/about-us" 

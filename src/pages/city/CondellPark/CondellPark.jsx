@@ -7,10 +7,9 @@ import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
 import "../cityLayout.css";
+import condellParkHero from "../../../assets/suburb images/condell-park/Webp/condell-park-shops-2200.WEBP";
+import condellParkParallax from "../../../assets/suburb images/condell-park/Webp/simmat-street-condell-park-view-2200.WEBP";
 
-// Using require for files with spaces in names
-const condellParkHero = require("../../../assets/cities/Condell Park-1.jpeg");
-const condellParkParallax = require("../../../assets/cities/CondellPark2.webp");
 const condellParkThree = require("../../../assets/cities/Condell Park-3.jpg");
 
 const CondellPark = () => {

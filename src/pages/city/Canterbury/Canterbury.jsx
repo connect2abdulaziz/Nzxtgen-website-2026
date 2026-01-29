@@ -6,9 +6,9 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import canterburyHero from "../../../assets/cities/caterbury-1.jpg";
-import canterburyParallax from "../../../assets/cities/caterbury-2.jpg";
-import canterburyThree from "../../../assets/cities/canterbury-3.jpg";
+import canterburyHero from "../../../assets/suburb images/canterbury/Webp/canterbury-2193-city-night-ligts-overview-drone-shot_065219.WEBP";
+import canterburyParallax from "../../../assets/suburb images/canterbury/Webp/canterbury-2193-city-night-street-lights_065210.WEBP";
+import canterburyThree from "../../../assets/suburb images/canterbury/Webp/canterbury-2193-park-view-lake-night-lights_065217.WEBP";
 import "../cityLayout.css";
 
 const Canterbury = () => {

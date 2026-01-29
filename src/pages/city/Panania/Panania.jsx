@@ -7,7 +7,7 @@ import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
 import pananiaHero from "../../../assets/cities/Panania-1.webp";
-import pananiaParallax from "../../../assets/cities/Panania-2.jpeg";
+import pananiaParallax from "../../../assets/suburb images/panania/Webp/panania-drone-shot-2213.WEBP";
 import pananiaThree from "../../../assets/cities/Panania-3.jpg";
 import "../cityLayout.css";
 

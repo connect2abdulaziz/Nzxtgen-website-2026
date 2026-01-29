@@ -6,9 +6,9 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import padstowHero from "../../../assets/cities/padstow-1.jpg";
-import padstowParallax from "../../../assets/cities/padstow-2.webp";
-import padstowThree from "../../../assets/cities/padstow-3.jpeg";
+import padstowHero from "../../../assets/suburb images/pasdstow/Webp/padstow-2211-shops-street-stockland-map-overview_064922.WEBP";
+import padstowParallax from "../../../assets/suburb images/pasdstow/Webp/padstow-2211-shops-street-stockland_064924.WEBP";
+import padstowThree from "../../../assets/suburb images/pasdstow/Webp/padstow-2211-shops-street_064927.WEBP";
 import "../cityLayout.css";
 
 const Padstow = () => {

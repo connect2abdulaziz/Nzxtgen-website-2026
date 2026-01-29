@@ -5,10 +5,10 @@ import MobileCallButton from "../components/MobileCallButton";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import faultHero from "../assets/services/service-image-2.jpg";
-import circuitImage from "../assets/electricity/circuit-1.jpg";
-import electricianWorking from "../assets/services/service-image-3.jpg";
-import whyChooseBg from "../assets/services/service-image-4.jpg";
+import faultHero from "../assets/services/service-image-2.WEBP";
+import circuitImage from "../assets/electricity/circuit-1.WEBP";
+import electricianWorking from "../assets/services/service-image-3.WEBP";
+import whyChooseBg from "../assets/services/service-image-4.WEBP";
 import "./ElectricalFaultFindingRepairs.css";
 
 const ElectricalFaultFindingRepairs = () => {

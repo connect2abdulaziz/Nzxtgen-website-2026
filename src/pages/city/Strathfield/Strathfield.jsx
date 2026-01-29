@@ -6,9 +6,9 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import strathfieldHero from "../../../assets/cities/Strathfield-1.jpg";
+import strathfieldHero from "../../../assets/suburb images/strathfield/Webp/strathfield-library-2135-065716.WEBP";
 import strathfieldParallax from "../../../assets/cities/Strathfield-2.jpg";
-import strathfieldThree from "../../../assets/cities/Strathfield-3.webp";
+import strathfieldThree from "../../../assets/suburb images/strathfield/Webp/strathfield-festival-2135-065730(1).WEBP";
 import "../cityLayout.css";
 
 const Strathfield = () => {

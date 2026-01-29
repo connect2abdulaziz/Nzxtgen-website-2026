@@ -6,7 +6,7 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import revesbyHero from "../../../assets/cities/ravesby-1.JPG";
+import revesbyHero from "../../../assets/suburb images/revesby/Webp/revesby-drone-shot-2212_064430.WEBP";
 import revesbyParallax from "../../../assets/cities/ravesby-2.jpeg";
 import revesbyThree from "../../../assets/cities/ravesby-3.jpeg";
 import "../cityLayout.css";

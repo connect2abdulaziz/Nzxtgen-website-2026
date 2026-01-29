@@ -3,8 +3,8 @@ import "./GetAQuote.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { trackFormSubmission, trackQuoteRequest } from "../utils/analytics";
-import OnlineQuoteBG from "../assets/about/entertainment-technology-installation.jpg";
-import OnlineQuoteFormBG from "../assets/about/electrical-services-installation.jpg";
+import OnlineQuoteBG from "../assets/about/entertainment-technology-installation.WEBP";
+import OnlineQuoteFormBG from "../assets/about/electrical-services-installation.WEBP";
 
 const GetAQuote = () => {
   useEffect(() => {

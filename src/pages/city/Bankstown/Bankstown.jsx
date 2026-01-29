@@ -6,8 +6,8 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import bankstownHero from "../../../assets/cities/Bankstown-1.jpg";
-import bankstownParallax from "../../../assets/cities/Bankstown-2.webp";
+import bankstownHero from "../../../assets/suburb images/bankstown/webp/bankstown-city-centre-master-plan-2200.WEBP";
+import bankstownParallax from "../../../assets/suburb images/bankstown/webp/bankstown-central-square-centro-uws-university-park-hoytz-2200.WEBP";
 import bankstownThree from "../../../assets/cities/Bankstown-3.jpg";
 import "../cityLayout.css";
 

@@ -6,9 +6,9 @@ import SEO from "../../../components/SEO";
 import LocalBusinessSchema from "../../../components/LocalBusinessSchema";
 import WhatsappChat from "../../../components/WhatsappChat";
 import MobileCallButton from "../../../components/MobileCallButton";
-import earlwoodHero from "../../../assets/cities/earlwood-1.jpg";
-import earlwoodParallax from "../../../assets/cities/earlwood-2.jpg";
-import earlwoodThree from "../../../assets/cities/earlwood-3.jpg";
+import earlwoodHero from "../../../assets/suburb images/earlwood/Webp/earlwood-shops-2206-street-lake-river-water_065415.WEBP";
+import earlwoodParallax from "../../../assets/suburb images/earlwood/Webp/earlwood-shops-2206-street-drone-shot-map_065419.WEBP";
+import earlwoodThree from "../../../assets/suburb images/earlwood/Webp/earlwood-shops-2206-street-lake-river-water_065411.WEBP";
 import "../cityLayout.css";
 
 const Earlwood = () => {

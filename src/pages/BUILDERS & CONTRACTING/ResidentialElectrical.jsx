@@ -5,9 +5,9 @@ import MobileCallButton from "../../components/MobileCallButton";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SEO from "../../components/SEO";
-import residentialHero from "../../assets/services/service-image-5.jpg";
-import circuitImage from "../../assets/electricity/circuit-1.jpg";
-import electricianWorking from "../../assets/services/service-image-6.jpg";
+import residentialHero from "../../assets/services/service-image-5.WEBP";
+import circuitImage from "../../assets/electricity/circuit-1.WEBP";
+import electricianWorking from "../../assets/services/service-image-6.WEBP";
 import whyChooseBg from "../../assets/contact-page/electric-support-contact.jpg";
 import "./ResidentialElectrical.css";
 

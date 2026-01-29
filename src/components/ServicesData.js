@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./ServicesData.css";
 import ServiceFAQ from "./services/ServiceFAQ";
 // Using same images as nextgen about us page
-import img1 from "../assets/about/electrical.jpg";
-import img2 from "../assets/about/smarthome.jpg";
-import img3 from "../assets/about/security.jpg";
-import img4 from "../assets/about/entertainment.jpg";
+import img1 from "../assets/about/electrical.WEBP";
+import img2 from "../assets/about/smarthome.WEBP";
+import img3 from "../assets/about/security.WEBP";
+import img4 from "../assets/about/entertainment.WEBP";
 
 const data = [
   {
