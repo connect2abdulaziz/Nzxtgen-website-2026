@@ -3,9 +3,9 @@ import React from 'react';
 import './SMServices.css';
 import { motion } from 'framer-motion';
 import sm1 from "../assets/sm/sm3.WEBP";
-import sm2 from "../assets/sm/sm2.WEBP";
-import sm3 from "../assets/sm/sm4.WEBP";
-import sm4 from "../assets/sm/sm6.WEBP";
+import sm2 from "../assets/sm/sm2.webp";
+import sm3 from "../assets/sm/sm4.webp";
+import sm4 from "../assets/sm/sm6.webp";
 import sm5 from "../assets/sm/sm1.WEBP";
 import sm6 from "../assets/sm/sm5.WEBP";
 const servicesData = [
