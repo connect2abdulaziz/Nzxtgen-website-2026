@@ -9,13 +9,13 @@ import Slider from "react-slick";
 import old1 from "../assets/upn/upn1.WEBP";
 import old2 from "../assets/upn/upn2.WEBP";
 import old3 from "../assets/upn/upn3.WEBP";
-import old4 from "../assets/upn/upn4.webp";
+import old4 from "../assets/upn/upn4.WEBP";
 
 // New (Upgraded) Images
-import new1 from "../assets/upd/UPG1.WEBP";
-import new2 from "../assets/upd/UPG2.WEBP";
-import new3 from "../assets/upd/UPG3.WEBP";
-import new4 from "../assets/upd/UPG4.WEBP";
+import new1 from "../assets/upd/UPG1(1).WEBP";
+import new2 from "../assets/upd/UPG2(1).WEBP";
+import new3 from "../assets/upd/UPG3(1).WEBP";
+import new4 from "../assets/upd/UPG4(1).WEBP";
 
 const RecentSwitchboardUpgrade = () => {
   const [loaded, setLoaded] = useState(false);

@@ -1,17 +1,26 @@
 import React from 'react';
 import './ContactHero.css';
+import heroImage from '../assets/contact-page/electric-support-contact.WEBP';
+import heroImageMobile from '../assets/contact-page/electric-contact-mobile.png';
 
 const ContactHero = () => {
   return (
     <section className="contact-hero-section">
-      <div className="contact-hero-overlay"></div>
-      <div className="contact-hero-content">
-        <h1 className="contact-hero-title">Get In Touch</h1>
-        <p className="contact-hero-subtitle">We're Here to Help with Your Electrical & Smart Home Needs</p>
-        <p className="contact-hero-description">
-          Whether you need electrical work, smart home installation, or security systems, our team is ready to assist. 
-          Reach out today for a free consultation and quote.
-        </p>
+      <div className="contact-hero-image-wrapper">
+        <div className="contact-hero-image-inner">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={heroImageMobile}
+            />
+            <img
+              src={heroImage}
+              alt="NXTGEN Electrical - Contact us"
+              className="contact-hero-image"
+            />
+          </picture>
+          <div className="contact-hero-overlay" aria-hidden="true" />
+        </div>
       </div>
     </section>
   );

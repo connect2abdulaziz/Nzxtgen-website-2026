@@ -1,29 +1,51 @@
 .contact-hero-section {
   width: 100%;
-  /* height: 58vh; */
-  min-height: 60vh;
-  background-image: url("../assets/contact-page/electric-support-contact.WEBP") !important;
-  background-repeat: no-repeat !important;
-  background-position: bottom bottom;
-  background-size: contain !important;
-  background-attachment: fixed;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8rem 2rem 4rem;
-  color: #fff;
   overflow: hidden;
+  height: 100%;
+}
+
+.contact-hero-image-wrapper {
+  width: 100%;
+  padding-top: 2rem;
+  /* padding-left: 2rem; */
+  /* padding-right: 2rem; */
+  /* padding-bottom: 4rem; */
+  min-height: 50vh;
+  box-sizing: border-box;
+  object-fit:fill !important;
+  background-color: #DCDCDC;
+}
+
+.contact-hero-image-inner {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.contact-hero-image-inner picture {
+  display: block;
+  width: 100%;
+}
+
+.contact-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  object-position: bottom center;
 }
 
 .contact-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 92%;
-  background: rgba(0, 0, 0, 0.329);
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.137);
   z-index: 1;
+  pointer-events: none;
 }
 
 .contact-hero-content {
@@ -65,13 +87,15 @@
 }
 
 @media (max-width: 768px) {
-  .contact-hero-section {
-    min-height: 70vh;
-    padding: 6rem 1.5rem 3rem;
-    background-image: url("../assets/contact-page/electric-support-contact.WEBP") !important;
-    background-size: cover !important;
-    background-position: center center;
-    background-attachment: scroll;
+  .contact-hero-image-wrapper {
+    min-height: 50vh;
+    /* padding: 6rem 1.5rem 3rem; */
+  }
+
+  .contact-hero-image {
+    max-height: 65vh;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .contact-hero-content {
@@ -93,13 +117,15 @@
 }
 
 @media (max-width: 480px) {
-  .contact-hero-section {
-    min-height: 75vh;
-    padding: 5rem 1rem 2.5rem;
-    background-image: url("../assets/contact-page/electric-support-contact.WEBP") !important;
-    background-size: cover !important;
-    background-position: center center;
-    background-attachment: scroll;
+  .contact-hero-image-wrapper {
+    min-height: 50vh;
+    padding-top: 5rem;
+  }
+
+  .contact-hero-image {
+    max-height: 60vh;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .contact-hero-content {

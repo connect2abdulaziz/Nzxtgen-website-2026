@@ -98,9 +98,9 @@ const ServicesData = ({ isExiting }) => {
         </div>
 
         {/* Main Services Title */}
-        <div className="services-main-title">
+        {/* <div className="services-main-title">
           <h2>Our Main Services</h2>
-        </div>
+        </div> */}
 
         {/* Content Section */}
         {!isMobile ? (

@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import SwitchBoardDescription from '../components/SwitchBoardDescription';
 import SwitchBoardContent from '../components/SwitchBoardContent';
+import RecentSwitchboardUpgrade from '../components/RecentSwitchboardUpgrade';
 
 const SwitchBoard = () => {
   return (
@@ -20,6 +21,7 @@ const SwitchBoard = () => {
       <Navbar/>
       <SwitchBoardDescription/>
       <SwitchBoardContent/>
+      <RecentSwitchboardUpgrade/>
       <Footer/>
     </div>
   );
