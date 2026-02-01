@@ -5,6 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const ServiceSidebar = () => {
   const services = [
     { name: "Electrical Services", link: "/services/electrical-services" },
+    { name: "Power Points & Electrical Upgrades", link: "/services/power-points-electrical-upgrades" },
     { name: "Smart Home Solutions", link: "/services/smart-home" },
     { name: "Security Systems", link: "/services/security-systems" },
     { name: "Lighting", link: "/lighting-installation" },

@@ -40,6 +40,7 @@ import EmergencyElectrician from "./pages/EmergencyElectrician";
 import ElectricalFaultFindingRepairs from "./pages/ElectricalFaultFindingRepairs";
 import LightingInstallation from "./pages/LightingInstallation";
 import SmokeAlarmSafetyChecks from "./pages/SmokeAlarmSafetyChecks";
+import PowerPointsElectricalUpgrades from "./pages/PowerPointsElectricalUpgrades";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Route path="/smart-home-more-info" element={<SmartHomeMoreInfo />} />
         <Route path="/services" element={<ServicesDirectory />} />
         <Route path="/services/electrical-services" element={<ElectricService />} />
+        <Route path="/services/power-points-electrical-upgrades" element={<PowerPointsElectricalUpgrades />} />
         <Route path="/services/smart-home" element={<SmartHomeService />} />
         <Route path="/services/security-systems" element={<SecuritySystemsService />} />
         <Route path="/lighting-installation" element={<LightingInstallation />} />
