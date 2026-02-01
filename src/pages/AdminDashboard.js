@@ -31,8 +31,19 @@ function AdminDashboard() {
   const [showModal, setShowModal] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
-  const [searchTerm, setSearchTerm] = useState(""); // Add this line
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+
+  // Form submissions state
+  const [activeTab, setActiveTab] = useState("products");
+  const [enquirySubmissions, setEnquirySubmissions] = useState([]);
+  const [quoteSubmissions, setQuoteSubmissions] = useState([]);
+  const [allEnquiries, setAllEnquiries] = useState([]);
+  const [allQuotes, setAllQuotes] = useState([]);
+  const [submissionSearchTerm, setSubmissionSearchTerm] = useState("");
+  const [selectedSubmission, setSelectedSubmission] = useState(null);
+  const [showSubmissionModal, setShowSubmissionModal] = useState(false);
+  const [submissionFilter, setSubmissionFilter] = useState("all");
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -49,16 +60,82 @@ function AdminDashboard() {
           ...doc.data(),
         }));
         setProducts(items);
-        setAllProducts(items); // Save original list
+        setAllProducts(items);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
 
+    const fetchSubmissions = async () => {
+      try {
+        const enquirySnapshot = await getDocs(collection(db, "enquiry_submissions"));
+        const enquiries = enquirySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        enquiries.sort((a, b) => {
+          const ta = a.timestamp?.toDate ? a.timestamp.toDate() : new Date(a.timestamp || 0);
+          const tb = b.timestamp?.toDate ? b.timestamp.toDate() : new Date(b.timestamp || 0);
+          return tb - ta;
+        });
+        setEnquirySubmissions(enquiries);
+        setAllEnquiries(enquiries);
+
+        const quoteSnapshot = await getDocs(collection(db, "quote_submissions"));
+        const quotes = quoteSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        quotes.sort((a, b) => {
+          const ta = a.timestamp?.toDate ? a.timestamp.toDate() : new Date(a.timestamp || 0);
+          const tb = b.timestamp?.toDate ? b.timestamp.toDate() : new Date(b.timestamp || 0);
+          return tb - ta;
+        });
+        setQuoteSubmissions(quotes);
+        setAllQuotes(quotes);
+      } catch (error) {
+        console.error("Error fetching submissions:", error);
+      }
+    };
+
     fetchProducts();
+    fetchSubmissions();
 
     return () => unsubscribe();
   }, [navigate]);
+
+  // Apply search and status filter to submissions
+  useEffect(() => {
+    let filteredEnquiries = [...allEnquiries];
+    let filteredQuotes = [...allQuotes];
+
+    if (submissionSearchTerm) {
+      const term = submissionSearchTerm.toLowerCase();
+      filteredEnquiries = filteredEnquiries.filter(
+        (item) =>
+          item.name?.toLowerCase().includes(term) ||
+          item.email?.toLowerCase().includes(term) ||
+          item.phone?.toLowerCase().includes(term) ||
+          item.message?.toLowerCase().includes(term)
+      );
+      filteredQuotes = filteredQuotes.filter(
+        (item) =>
+          item.firstName?.toLowerCase().includes(term) ||
+          item.lastName?.toLowerCase().includes(term) ||
+          item.email?.toLowerCase().includes(term) ||
+          item.phone?.toLowerCase().includes(term) ||
+          item.description?.toLowerCase().includes(term)
+      );
+    }
+
+    if (submissionFilter !== "all") {
+      filteredEnquiries = filteredEnquiries.filter((item) => item.status === submissionFilter);
+      filteredQuotes = filteredQuotes.filter((item) => item.status === submissionFilter);
+    }
+
+    setEnquirySubmissions(filteredEnquiries);
+    setQuoteSubmissions(filteredQuotes);
+  }, [submissionSearchTerm, submissionFilter, allEnquiries, allQuotes]);
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
@@ -224,6 +301,114 @@ function AdminDashboard() {
     setIsModalOpen(false);
   };
 
+  const formatDate = (timestamp) => {
+    if (!timestamp) return "Unknown";
+    const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+    return date.toLocaleString();
+  };
+
+  const getWhatsAppLink = (submission) => {
+    const phone = submission.phone?.replace(/[^0-9]/g, "") || "61437885910";
+    const message =
+      submission.type === "enquiry"
+        ? `Hi ${submission.name}, thanks for your enquiry about "${(submission.message || "").substring(0, 50)}...". We'll get back to you soon!`
+        : `Hi ${submission.firstName}, thanks for your quote request for "${(submission.description || "").substring(0, 50)}...". We'll prepare your quote shortly!`;
+    return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  };
+
+  const getEmailLink = (submission) => {
+    const subject =
+      submission.type === "enquiry"
+        ? `Re: Your Enquiry - ${submission.name}`
+        : `Re: Your Quote Request - ${submission.firstName} ${submission.lastName}`;
+    return `mailto:${submission.email}?subject=${encodeURIComponent(subject)}`;
+  };
+
+  const hasAttachments = (submission) => {
+    return (submission.attachments && submission.attachments.length > 0) || submission.attachment;
+  };
+
+  const getAttachmentCount = (submission) => {
+    if (submission.attachments && submission.attachments.length > 0) {
+      return submission.attachments.length;
+    }
+    if (submission.attachment) return 1;
+    return 0;
+  };
+
+  const downloadAttachment = (attachment) => {
+    if (!attachment || !attachment.fileData) return;
+    try {
+      const base64Data = attachment.fileData.split(",")[1];
+      const byteCharacters = atob(base64Data);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: attachment.fileType });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = attachment.fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error downloading file:", error);
+      alert("Error downloading file");
+    }
+  };
+
+  const viewSubmission = (submission) => {
+    setSelectedSubmission(submission);
+    setShowSubmissionModal(true);
+    if (submission.status === "unread") {
+      markSubmissionAsRead(submission.id, submission.type);
+    }
+  };
+
+  const markSubmissionAsRead = async (id, type) => {
+    try {
+      const collectionName = type === "enquiry" ? "enquiry_submissions" : "quote_submissions";
+      await updateDoc(doc(db, collectionName, id), { status: "read" });
+      if (type === "enquiry") {
+        setEnquirySubmissions((prev) => prev.map((item) => (item.id === id ? { ...item, status: "read" } : item)));
+        setAllEnquiries((prev) => prev.map((item) => (item.id === id ? { ...item, status: "read" } : item)));
+      } else {
+        setQuoteSubmissions((prev) => prev.map((item) => (item.id === id ? { ...item, status: "read" } : item)));
+        setAllQuotes((prev) => prev.map((item) => (item.id === id ? { ...item, status: "read" } : item)));
+      }
+    } catch (error) {
+      console.error("Error marking as read:", error);
+    }
+  };
+
+  const deleteSubmission = async (id, type) => {
+    if (!window.confirm("Are you sure you want to delete this submission?")) return;
+    try {
+      const collectionName = type === "enquiry" ? "enquiry_submissions" : "quote_submissions";
+      await deleteDoc(doc(db, collectionName, id));
+      if (type === "enquiry") {
+        setEnquirySubmissions((prev) => prev.filter((item) => item.id !== id));
+        setAllEnquiries((prev) => prev.filter((item) => item.id !== id));
+      } else {
+        setQuoteSubmissions((prev) => prev.filter((item) => item.id !== id));
+        setAllQuotes((prev) => prev.filter((item) => item.id !== id));
+      }
+      setShowSubmissionModal(false);
+    } catch (error) {
+      alert("Error deleting submission");
+    }
+  };
+
+  const totalEnquiries = allEnquiries.length;
+  const totalQuotes = allQuotes.length;
+  const unreadEnquiries = allEnquiries.filter((item) => item.status === "unread").length;
+  const unreadQuotes = allQuotes.filter((item) => item.status === "unread").length;
+  const totalUnread = unreadEnquiries + unreadQuotes;
+
   const handleLogout = () => {
     auth.signOut().then(() => {
       navigate("/admin");
@@ -240,7 +425,28 @@ function AdminDashboard() {
       <Navbar />
       <div className="dashboard-container">
         <h2>Admin Dashboard</h2>
-        <p className="subtext">Manage your products, pricing, and more.</p>
+        <p className="subtext">Manage your products, form submissions, and more.</p>
+
+        <div className="tab-navigation">
+          <button
+            type="button"
+            onClick={() => setActiveTab("products")}
+            className={`tab-button ${activeTab === "products" ? "active" : ""}`}
+          >
+            Products ({allProducts.length})
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("submissions")}
+            className={`tab-button ${activeTab === "submissions" ? "active" : ""}`}
+          >
+            Form Submissions ({totalEnquiries + totalQuotes})
+            {totalUnread > 0 && <span className="unread-badge">{totalUnread}</span>}
+          </button>
+        </div>
+
+        {activeTab === "products" && (
+          <>
         <div
           style={{
             width: "100%",
@@ -629,7 +835,283 @@ function AdminDashboard() {
             ))
           )}
         </div>
+          </>
+        )}
+
+        {activeTab === "submissions" && (
+          <div className="submissions-section">
+            <div className="submissions-controls">
+              <input
+                type="text"
+                placeholder="Search submissions..."
+                className="search-input"
+                value={submissionSearchTerm}
+                onChange={(e) => setSubmissionSearchTerm(e.target.value)}
+              />
+              <select
+                value={submissionFilter}
+                onChange={(e) => setSubmissionFilter(e.target.value)}
+                className="filter-select"
+              >
+                <option value="all">All Status</option>
+                <option value="unread">Unread</option>
+                <option value="read">Read</option>
+              </select>
+              <button type="button" className="btn btn-danger" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+
+            <div className="stats-grid">
+              <div className="stat-card enquiries">
+                <h3>{totalEnquiries}</h3>
+                <p>Total Enquiries</p>
+              </div>
+              <div className="stat-card quotes">
+                <h3>{totalQuotes}</h3>
+                <p>Total Quotes</p>
+              </div>
+              <div className="stat-card unread-enquiries">
+                <h3>{unreadEnquiries}</h3>
+                <p>Unread Enquiries</p>
+              </div>
+              <div className="stat-card unread-quotes">
+                <h3>{unreadQuotes}</h3>
+                <p>Unread Quotes</p>
+              </div>
+            </div>
+
+            <div className="submissions-layout">
+              <div className="submission-section">
+                <div className="submission-header">
+                  <h3>📝 Enquiry Submissions <span className="submission-count">{enquirySubmissions.length}</span></h3>
+                </div>
+                <div className="submissions-container">
+                  {enquirySubmissions.length === 0 ? (
+                    <div className="empty-state">No enquiry submissions found.</div>
+                  ) : (
+                    <table className="submissions-table">
+                      <thead>
+                        <tr>
+                          <th>Status</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Message</th>
+                          <th>Files</th>
+                          <th>Date</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {enquirySubmissions.map((submission) => (
+                          <tr key={submission.id} className={submission.status === "unread" ? "unread" : ""}>
+                            <td>
+                              <span className={`status-badge ${submission.status}`}>
+                                {submission.status === "unread" ? "NEW" : "READ"}
+                              </span>
+                            </td>
+                            <td className="name-cell">{submission.name}</td>
+                            <td>{submission.email}</td>
+                            <td>{submission.phone}</td>
+                            <td className="truncate">{(submission.message || "").substring(0, 50)}...</td>
+                            <td>
+                              <span className={`file-indicator ${hasAttachments(submission) ? "has-file" : "no-file"}`}>
+                                {hasAttachments(submission) ? `📎 ${getAttachmentCount(submission)}` : "-"}
+                              </span>
+                            </td>
+                            <td className="date-cell">{formatDate(submission.timestamp)}</td>
+                            <td>
+                              <button
+                                type="button"
+                                onClick={() => viewSubmission({ ...submission, type: "enquiry" })}
+                                className="btn btn-sm btn-info"
+                              >
+                                View
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
+              </div>
+
+              <div className="submission-section">
+                <div className="submission-header">
+                  <h3>💰 Quote Submissions <span className="submission-count">{quoteSubmissions.length}</span></h3>
+                </div>
+                <div className="submissions-container">
+                  {quoteSubmissions.length === 0 ? (
+                    <div className="empty-state">No quote submissions found.</div>
+                  ) : (
+                    <table className="submissions-table">
+                      <thead>
+                        <tr>
+                          <th>Status</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Building</th>
+                          <th>Description</th>
+                          <th>Files</th>
+                          <th>Date</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {quoteSubmissions.map((submission) => (
+                          <tr key={submission.id} className={submission.status === "unread" ? "unread" : ""}>
+                            <td>
+                              <span className={`status-badge ${submission.status}`}>
+                                {submission.status === "unread" ? "NEW" : "READ"}
+                              </span>
+                            </td>
+                            <td className="name-cell">{submission.firstName} {submission.lastName}</td>
+                            <td>{submission.email}</td>
+                            <td>{submission.phone}</td>
+                            <td>{submission.buildingType}</td>
+                            <td className="truncate">{(submission.description || "").substring(0, 50)}...</td>
+                            <td>
+                              <span className={`file-indicator ${hasAttachments(submission) ? "has-file" : "no-file"}`}>
+                                {hasAttachments(submission) ? `📎 ${getAttachmentCount(submission)}` : "-"}
+                              </span>
+                            </td>
+                            <td className="date-cell">{formatDate(submission.timestamp)}</td>
+                            <td>
+                              <button
+                                type="button"
+                                onClick={() => viewSubmission({ ...submission, type: "quote" })}
+                                className="btn btn-sm btn-info"
+                              >
+                                View
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
+      {showSubmissionModal && selectedSubmission && (
+        <div className="modal-overlay" onClick={() => setShowSubmissionModal(false)}>
+          <div className="modal-container submission-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>{selectedSubmission.type === "enquiry" ? "📝 Enquiry" : "💰 Quote"} Submission</h3>
+              <button type="button" onClick={() => setShowSubmissionModal(false)} className="modal-close" aria-label="Close">×</button>
+            </div>
+            <div className="submission-details">
+              <div className="detail-section">
+                <h4>👤 Personal Information</h4>
+                <div className="detail-grid">
+                  {selectedSubmission.type === "enquiry" ? (
+                    <>
+                      <div className="detail-item"><span className="label">Name:</span><span className="value">{selectedSubmission.name}</span></div>
+                      <div className="detail-item"><span className="label">Email:</span><span className="value">{selectedSubmission.email}</span></div>
+                      <div className="detail-item"><span className="label">Phone:</span><span className="value">{selectedSubmission.phone || "Not provided"}</span></div>
+                      <div className="detail-item"><span className="label">Address:</span><span className="value">{selectedSubmission.address || "Not provided"}</span></div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="detail-item"><span className="label">Name:</span><span className="value">{selectedSubmission.firstName} {selectedSubmission.lastName}</span></div>
+                      <div className="detail-item"><span className="label">Email:</span><span className="value">{selectedSubmission.email}</span></div>
+                      <div className="detail-item"><span className="label">Phone:</span><span className="value">{selectedSubmission.phone || "Not provided"}</span></div>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="detail-section">
+                <h4>📋 Submission Details</h4>
+                <div className="detail-grid">
+                  <div className="detail-item"><span className="label">Type:</span><span className="value">{selectedSubmission.type === "enquiry" ? "General Enquiry" : "Quote Request"}</span></div>
+                  <div className="detail-item"><span className="label">Source:</span><span className="value">{selectedSubmission.source || "—"}</span></div>
+                  <div className="detail-item"><span className="label">Date:</span><span className="value">{formatDate(selectedSubmission.timestamp)}</span></div>
+                  <div className="detail-item"><span className="label">Status:</span><span className={`value status-${selectedSubmission.status}`}>{selectedSubmission.status.toUpperCase()}</span></div>
+                </div>
+              </div>
+              <div className="detail-section">
+                <h4>💬 {selectedSubmission.type === "enquiry" ? "Message" : "Work Description"}</h4>
+                <div className="message-content">
+                  {selectedSubmission.type === "enquiry" ? selectedSubmission.message : selectedSubmission.description}
+                </div>
+              </div>
+              {selectedSubmission.type === "quote" && (
+                <div className="detail-section">
+                  <h4>🏗️ Project Details</h4>
+                  <div className="detail-grid">
+                    <div className="detail-item"><span className="label">Building Type:</span><span className="value">{selectedSubmission.buildingType}</span></div>
+                    {selectedSubmission.otherSpec && <div className="detail-item"><span className="label">Other Spec:</span><span className="value">{selectedSubmission.otherSpec}</span></div>}
+                    <div className="detail-item"><span className="label">Roof Type:</span><span className="value">{selectedSubmission.roofType}</span></div>
+                    {selectedSubmission.wallTypes && <div className="detail-item"><span className="label">Wall Types:</span><span className="value">{selectedSubmission.wallTypes}</span></div>}
+                    {selectedSubmission.ceilingTypes && <div className="detail-item"><span className="label">Ceiling Types:</span><span className="value">{selectedSubmission.ceilingTypes}</span></div>}
+                    {selectedSubmission.additionalInfo && <div className="detail-item"><span className="label">Additional Info:</span><span className="value">{selectedSubmission.additionalInfo}</span></div>}
+                  </div>
+                </div>
+              )}
+              {(hasAttachments(selectedSubmission) || selectedSubmission.attachment) && (
+                <div className="detail-section">
+                  <h4>📎 Attached Files {hasAttachments(selectedSubmission) && `(${getAttachmentCount(selectedSubmission)})`}</h4>
+                  {selectedSubmission.attachments && selectedSubmission.attachments.length > 0 && (
+                    <div className="attachments-list">
+                      {selectedSubmission.attachments.map((attachment, index) => (
+                        <div key={index} className="attachment-item">
+                          <div className="attachment-info">
+                            <span className="file-icon">📄</span>
+                            <div className="file-details">
+                              <div className="file-name">{attachment.fileName}</div>
+                              <div className="file-meta">Size: {attachment.fileSize ? (attachment.fileSize / 1024 / 1024).toFixed(2) : "—"} MB | Type: {attachment.fileType || "—"}</div>
+                            </div>
+                          </div>
+                          {attachment.fileData ? (
+                            <button type="button" onClick={() => downloadAttachment(attachment)} className="btn btn-sm btn-success">📥 Download</button>
+                          ) : (
+                            <span className="file-meta">(Not stored – file too large)</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {selectedSubmission.attachment && !selectedSubmission.attachments && (
+                    <div className="attachments-list">
+                      <div className="attachment-item">
+                        <div className="attachment-info">
+                          <span className="file-icon">📄</span>
+                          <div className="file-details">
+                            <div className="file-name">{selectedSubmission.attachment.fileName}</div>
+                            <div className="file-meta">Size: {(selectedSubmission.attachment.fileSize / 1024 / 1024).toFixed(2)} MB | Type: {selectedSubmission.attachment.fileType}</div>
+                          </div>
+                        </div>
+                        {selectedSubmission.attachment.fileData ? (
+                          <button type="button" onClick={() => downloadAttachment(selectedSubmission.attachment)} className="btn btn-sm btn-success">📥 Download</button>
+                        ) : (
+                          <span className="file-meta">(Not stored)</span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+            <div className="modal-actions">
+              <div className="action-group-left">
+                <button type="button" onClick={() => deleteSubmission(selectedSubmission.id, selectedSubmission.type)} className="btn btn-danger">🗑️ Delete</button>
+              </div>
+              <div className="action-group-right">
+                <button type="button" onClick={() => setShowSubmissionModal(false)} className="btn btn-secondary">Close</button>
+                <a href={getEmailLink(selectedSubmission)} className="btn btn-primary">📧 Reply via Email</a>
+                <a href={getWhatsAppLink(selectedSubmission)} target="_blank" rel="noopener noreferrer" className="btn btn-success">📱 Reply via WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       {isModalOpen && modalItem && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-container" onClick={(e) => e.stopPropagation()}>
