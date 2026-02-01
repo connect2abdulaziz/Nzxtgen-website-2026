@@ -123,6 +123,9 @@ const Navbar = () => {
                 <a href="/services/electrical-services">Electrical Services</a>
               </li>
               <li>
+                <a href="/services/power-points-electrical-upgrades">Power Points & Electrical Upgrades</a>
+              </li>
+              <li>
                 <a href="/switchboard-upgrade">Switchboard Upgrades</a>
               </li>
             </ul>
