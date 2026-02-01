@@ -31,7 +31,7 @@ import DataNetworkingService from "./pages/DataNetworkingService";
 import EntertainmentService from "./pages/EntertainmentService";
 // Builders & Contracting pages
 import ResidentialElectrical from "./pages/BUILDERS & CONTRACTING/ResidentialElectrical";
-import CommercialIndustrialElectrical from "./pages/CommercialIndustrialElectrical";
+import CommercialIndustrialElectrical from "./pages/BUILDERS & CONTRACTING/CommercialIndustrialElectrical";
 import NewBuildsRenovations from "./pages/BUILDERS & CONTRACTING/NewBuildsRenovations";
 import ComplianceLicensing from "./pages/ComplianceLicensing";
 import ComplianceLicence from "./pages/BUILDERS & CONTRACTING/ComplianceLicence";
