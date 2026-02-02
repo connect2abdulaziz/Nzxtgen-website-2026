@@ -6,14 +6,8 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SEO from "../../components/SEO";
 import newBuildHero from "../../assets/services/service-image-2.WEBP";
-import serviceImage1 from "../../assets/servicePage/1.WEBP";
-import serviceImage2 from "../../assets/servicePage/2.WEBP";
 import serviceImage3 from "../../assets/servicePage/3.WEBP";
 import serviceImage4 from "../../assets/servicePage/4.WEBP";
-import serviceImage5 from "../../assets/servicePage/5.WEBP";
-import serviceImage6 from "../../assets/servicePage/6.WEBP";
-import serviceImage7 from "../../assets/servicePage/7.WEBP";
-import serviceImage8 from "../../assets/servicePage/8.WEBP";
 import whyChooseBg from "../../assets/services/service-image-4.WEBP";
 // Import new images from assets/electricity
 import bathroomElectrical from "../../assets/electricity/bathroom-electrical.WEBP";

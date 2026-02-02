@@ -5,7 +5,7 @@ import siteLogo from "../assets/site-logo.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [, setIsAboutDropdownOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isBuildersDropdownOpen, setIsBuildersDropdownOpen] = useState(false);
   const [isSmartHomeDropdownOpen, setIsSmartHomeDropdownOpen] = useState(false);

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   FaCheckCircle,
-  FaFire,
   FaShieldAlt,
   FaPlug,
   FaTools,

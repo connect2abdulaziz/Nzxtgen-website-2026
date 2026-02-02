@@ -93,15 +93,9 @@ const items = [
 ];
 
 const ResponsiveCardSlider = () => {
+  // Favorites functionality - kept for future use
+  // eslint-disable-next-line no-unused-vars
   const [favorites, setFavorites] = useState([]);
-
-  const toggleFavorite = (title) => {
-    setFavorites((prev) =>
-      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
-    );
-  };
-
-  const isFavorite = (title) => favorites.includes(title);
 
   return (
     <div className="responsive-card-slider">

@@ -305,7 +305,6 @@ export const formatMessageTemplate = (template, data) => {
 
 // Analytics functions
 export const getNotificationStats = () => {
-  const today = new Date();
   const stats = {
     enquiriesSentToday: 0,
     quotesSentToday: 0,
@@ -330,7 +329,7 @@ ${type === 'enquiry' ? formatEnquiryNotification(submissionData) : formatQuoteNo
   window.open(whatsappURL, '_blank');
 };
 
-export default {
+const whatsappService = {
   sendAdminNotification,
   sendCustomerMessage,
   getReplyWhatsAppLink,
@@ -343,3 +342,5 @@ export default {
   formatMessageTemplate,
   getNotificationStats
 };
+
+export default whatsappService;
