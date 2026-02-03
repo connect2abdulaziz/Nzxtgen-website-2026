@@ -6,12 +6,12 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SEO from "../../components/SEO";
 // Assets for hero and sections – each section uses a unique image
-import commercialHero from "../../assets/services/service-image-1.WEBP";
+import commercialHero from "../../assets/services/nzxtgen-commercial-electrical-service.webp";
 import electricalInfrastructure from "../../assets/electricity/electrician-1.WEBP";
 import industrialCabling from "../../assets/electricity/electrician-2.WEBP";
-import serviceImage3 from "../../assets/services/service-image-3.WEBP";
-import serviceImage4 from "../../assets/services/service-image-4.WEBP";
-import serviceImage5 from "../../assets/services/service-image-5.WEBP";
+import serviceImage3 from "../../assets/services/nzxtgen-electrician-working-service.webp";
+import serviceImage4 from "../../assets/services/nzxtgen-why-choose-electrical-service.webp";
+import serviceImage5 from "../../assets/services/nzxtgen-residential-electrical-service.webp";
 import whyChooseBg from "../../assets/contact-page/electric-support-contact.jpg";
 import "./CommercialIndustrialElectrical.css";
 

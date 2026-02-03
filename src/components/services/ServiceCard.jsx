@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import serviceImage1 from '../../assets/services/service-image-1.jpg';
-import serviceImage2 from '../../assets/services/service-image-2.jpg';
-import serviceImage3 from '../../assets/services/service-image-3.jpg';
-import serviceImage4 from '../../assets/services/service-image-4.jpg';
-import serviceImage5 from '../../assets/services/service-image-5.jpg';
+import serviceImage1 from '../../assets/services/nzxtgen-commercial-electrical-service.webp';
+import serviceImage2 from '../../assets/services/nzxtgen-new-build-electrical-hero.webp';
+import serviceImage3 from '../../assets/services/nzxtgen-electrician-working-service.webp';
+import serviceImage4 from '../../assets/services/nzxtgen-why-choose-electrical-service.webp';
+import serviceImage5 from '../../assets/services/nzxtgen-residential-electrical-service.webp';
 import './ServiceCard.css';
 
 const ServiceCard = ({ service, index }) => {

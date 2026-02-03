@@ -5,10 +5,10 @@ import MobileCallButton from "../../components/MobileCallButton";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SEO from "../../components/SEO";
-import complianceHero from "../../assets/services/service-image-1.WEBP";
+import complianceHero from "../../assets/services/nzxtgen-commercial-electrical-service.webp";
 import electricianWorking from "../../assets/electricity/electrician-1.WEBP";
 import circuitImage from "../../assets/electricity/circuit-1.WEBP";
-import whyChooseBg from "../../assets/services/service-image-6.WEBP";
+import whyChooseBg from "../../assets/services/nzxtgen-compliance-electrical-service.webp";
 import "./ComplianceLicence.css";
 
 const ComplianceLicence = () => {

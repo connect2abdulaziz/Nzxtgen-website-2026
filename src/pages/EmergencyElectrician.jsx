@@ -8,7 +8,7 @@ import SEO from "../components/SEO";
 import electricianHero from "../assets/electricity/electrician-1.WEBP";
 import circuitImage from "../assets/electricity/circuit-1.WEBP";
 import electricianWorking from "../assets/electricity/electrician-2.WEBP";
-import serviceImage from "../assets/services/service-image-1.WEBP";
+import serviceImage from "../assets/services/nzxtgen-commercial-electrical-service.webp";
 import "./EmergencyElectrician.css";
 
 const EmergencyElectrician = () => {

@@ -2,12 +2,12 @@
 import React from 'react';
 import './SMServices.css';
 import { motion } from 'framer-motion';
-import sm1 from "../assets/sm/sm3.WEBP";
-import sm2 from "../assets/sm/sm2.WEBP";
-import sm3 from "../assets/sm/sm4.WEBP";
-import sm4 from "../assets/sm/sm6.WEBP";
-import sm5 from "../assets/sm/sm1.WEBP";
-import sm6 from "../assets/sm/sm5.WEBP";
+import sm1 from "../assets/smart-home-services/nzxtgen-smart-home-voice-control-alexa.webp";
+import sm2 from "../assets/smart-home-services/nzxtgen-smart-home-smartphone-control.webp";
+import sm3 from "../assets/smart-home-services/nzxtgen-smart-home-tablet-integration.webp";
+import sm4 from "../assets/smart-home-services/nzxtgen-smart-home-automated-programming.webp";
+import sm5 from "../assets/smart-home-services/nzxtgen-smart-home-user-friendly-interface.webp";
+import sm6 from "../assets/smart-home-services/nzxtgen-smart-home-app-control.webp";
 const servicesData = [
   {
     id: 1,

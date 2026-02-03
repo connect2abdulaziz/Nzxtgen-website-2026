@@ -6,22 +6,53 @@ const url = require('url');
 
 // Routes to pre-render (excluding admin and dynamic routes)
 const routes = [
+  // Core pages
   '/',
   '/about-us',
   '/contact-us',
   '/our-services',
-  '/smart-home',
-  '/electrical-services',
-  '/security-systems',
-  '/entertainment-technology',
-  '/data-networking',
-  '/areas-we-service',
-  '/switchboard-upgrade',
   '/free-quote',
   '/privacy-policy',
   '/terms-and-conditions',
+  '/areas-we-service',
+  '/switchboard-upgrade',
+  
+  // Service directories
   '/services',
-  '/suburbs'
+  '/suburbs',
+  
+  // Main service pages
+  '/smart-home',
+  '/smart-home-more-info',
+  '/services/electrical-services',
+  '/services/power-points-electrical-upgrades',
+  '/services/smart-home',
+  '/services/security-systems',
+  '/services/data-networking',
+  '/services/entertainment-technology',
+  '/lighting-installation',
+  
+  // Builders & Contracting pages
+  '/residential-electrical',
+  '/commercial-industrial-electrical',
+  '/new-builds-renovations',
+  '/compliance-licensing',
+  '/compliance-licence',
+  
+  // Quick Links / Emergency services
+  '/emergency-electrician',
+  '/electrical-fault-finding-repairs',
+  '/smoke-alarms-electrical-safety-checks',
+  
+  // Suburb/City pages (electrician in specific areas)
+  '/electrician-canterbury',
+  '/electrician-bankstown',
+  '/electrician-earlwood',
+  '/electrician-panania',
+  '/electrician-revesby',
+  '/electrician-strathfield',
+  '/electrician-condell-park',
+  '/electrician-padstow'
 ];
 
 const BUILD_DIR = path.join(__dirname, '..', 'build');

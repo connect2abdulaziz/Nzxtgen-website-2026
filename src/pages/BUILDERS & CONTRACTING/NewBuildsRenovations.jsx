@@ -5,10 +5,10 @@ import MobileCallButton from "../../components/MobileCallButton";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SEO from "../../components/SEO";
-import newBuildHero from "../../assets/services/service-image-2.WEBP";
-import serviceImage3 from "../../assets/servicePage/3.WEBP";
-import serviceImage4 from "../../assets/servicePage/4.WEBP";
-import whyChooseBg from "../../assets/services/service-image-4.WEBP";
+import newBuildHero from "../../assets/services/nzxtgen-new-build-electrical-hero.webp";
+import serviceImage3 from "../../assets/servicePage/nzxtgen-speaker-mounting-installation.webp";
+import serviceImage4 from "../../assets/servicePage/nzxtgen-downlight-installation.webp";
+import whyChooseBg from "../../assets/services/nzxtgen-why-choose-electrical-service.webp";
 // Import new images from assets/electricity
 import bathroomElectrical from "../../assets/electricity/bathroom-electrical.WEBP";
 import kitchenElectrical from "../../assets/electricity/kitchen-electric.WEBP";

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import faqImage from '../../assets/services/service-image-6.WEBP';
+import faqImage from '../../assets/services/nzxtgen-compliance-electrical-service.webp';
 import './ServiceFAQ.css';
 
 const ServiceFAQ = () => {
