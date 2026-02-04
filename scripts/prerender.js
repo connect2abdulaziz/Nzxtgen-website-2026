@@ -170,6 +170,11 @@ async function prerender() {
     process.exit(1);
   }
 
+  // IMPORTANT: Save the original template BEFORE any modifications
+  const originalTemplatePath = path.join(BUILD_DIR, 'index.html');
+  const originalTemplate = fs.readFileSync(originalTemplatePath, 'utf8');
+  console.log('Saved original template for use across all pages');
+
   let browser;
   try {
     // Start local server
@@ -269,26 +274,27 @@ async function prerender() {
           filePath = path.join(routeDir, 'index.html');
         }
         
-        // Extract body content
-        const bodyContent = await page.evaluate(() => {
-          return document.body.innerHTML;
+        // Extract ONLY the root div content (not entire body)
+        const rootContent = await page.evaluate(() => {
+          const rootElement = document.getElementById('root');
+          return rootElement ? rootElement.innerHTML : '';
         });
 
         // Extract head content (for meta tags from react-helmet)
         const headContent = await page.evaluate(() => {
           const head = document.head;
-          const metaTags = Array.from(head.querySelectorAll('meta, title, link[rel="canonical"]'));
+          const metaTags = Array.from(head.querySelectorAll('meta[data-rh="true"], title, link[rel="canonical"]'));
           return metaTags.map(tag => tag.outerHTML).join('\n    ');
         });
 
-        // Read the original index.html template
-        const templatePath = path.join(BUILD_DIR, 'index.html');
-        let templateHtml = fs.readFileSync(templatePath, 'utf8');
+        // ALWAYS use the original template (not the potentially modified index.html)
+        let templateHtml = originalTemplate;
 
-        // Replace the root div content with pre-rendered content
-        const rootDivRegex = /<div id="root">[\s\S]*?<\/div>/;
-        const newRootDiv = `<div id="root">${bodyContent}</div>`;
-        templateHtml = templateHtml.replace(rootDivRegex, newRootDiv);
+        // Replace the empty root div with pre-rendered content
+        templateHtml = templateHtml.replace(
+          /<div id="root"><\/div>/,
+          `<div id="root">${rootContent}</div>`
+        );
 
         // Update head with meta tags from react-helmet (if any)
         if (headContent) {
